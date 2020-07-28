@@ -2,6 +2,9 @@ package com.pluralsight.bookstore.repository;
 
 import com.pluralsight.bookstore.model.Book;
 import com.pluralsight.bookstore.model.Language;
+import com.pluralsight.bookstore.util.IsbnGenerator;
+import com.pluralsight.bookstore.util.NumberGenerator;
+import com.pluralsight.bookstore.util.TextUtil;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.junit.InSequence;
@@ -25,6 +28,12 @@ public class BookRepositoryTest {
     @Inject
     private BookRepository bookRepository;
 
+    @Inject
+    private IsbnGenerator isbnGenerator;
+
+    @Inject
+    private TextUtil textUtil;
+
     @Deployment
     public static Archive<?> createDeploymentPackage() {
 
@@ -32,6 +41,9 @@ public class BookRepositoryTest {
             .addClass(Book.class)
             .addClass(Language.class)
             .addClass(BookRepository.class)
+            .addClass(NumberGenerator.class)
+            .addClass(IsbnGenerator.class)
+            .addClass(TextUtil.class)
             .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml")
             .addAsManifestResource("META-INF/test-persistence.xml", "persistence.xml");
     }
@@ -40,6 +52,8 @@ public class BookRepositoryTest {
     @InSequence(1)
     public void shouldBeDeployed() {
         assertNotNull(bookRepository);
+        assertNotNull(isbnGenerator);
+        assertNotNull(textUtil);
     }
 
     @Test
@@ -55,7 +69,7 @@ public class BookRepositoryTest {
     @InSequence(3)
     public void shouldCreateABook() {
         // Creates a book
-        Book book = new Book("isbn", "title", 12F, 123, Language.ENGLISH, new Date(), "imageURL", "description");
+        Book book = new Book("isbn", "a  title", 12F, 123, Language.ENGLISH, new Date(), "imageURL", "description");
         book = bookRepository.create(book);
         // Checks the created book
         assertNotNull(book);
@@ -70,7 +84,9 @@ public class BookRepositoryTest {
         Book bookFound = bookRepository.find(bookId);
         // Checks the found book
         assertNotNull(bookFound.getId());
-        assertEquals("title", bookFound.getTitle());
+
+        assertTrue(bookFound.getIsbn().startsWith("13-84356-"));
+        assertEquals("a title", bookFound.getTitle());
     }
 
     @Test
@@ -148,4 +164,6 @@ public class BookRepositoryTest {
     public void shouldNotDeleteUnknownId() {
         bookRepository.delete(99999L);
     }
+
+
 }
