@@ -1,5 +1,16 @@
 package com.pluralsight.bookstore.model;
 
+/**
+ * @author Antonio Goncalves
+ *         http://www.antoniogoncalves.org
+ *         --
+ */
+
 public enum Language {
-    ENGLISH, FRENCH, SPANISH, ITALIAN, FINNISH, GERMAN, DUTCH, RUSSIAN
+
+    // ======================================
+    // =             Constants              =
+    // ======================================
+
+    ENGLISH, FRENCH, SPANISH, PORTUGUESE, ITALIAN, FINISH, GERMAN, DUTCH, RUSSIAN
 }

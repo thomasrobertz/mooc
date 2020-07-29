@@ -2,7 +2,6 @@ package com.pluralsight.bookstore.repository;
 
 import com.pluralsight.bookstore.model.Book;
 import com.pluralsight.bookstore.util.NumberGenerator;
-import com.pluralsight.bookstore.util.IsbnGenerator;
 import com.pluralsight.bookstore.util.TextUtil;
 
 import javax.inject.Inject;
@@ -16,8 +15,17 @@ import java.util.List;
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
+/**
+ * @author Antonio Goncalves
+ *         http://www.antoniogoncalves.org
+ *         --
+ */
 @Transactional(SUPPORTS)
 public class BookRepository {
+
+    // ======================================
+    // =          Injection Points          =
+    // ======================================
 
     @PersistenceContext(unitName = "bookStorePU")
     private EntityManager em;
@@ -27,6 +35,10 @@ public class BookRepository {
 
     @Inject
     private TextUtil textUtil;
+
+    // ======================================
+    // =          Business methods          =
+    // ======================================
 
     public Book find(@NotNull Long id) {
         return em.find(Book.class, id);
@@ -44,8 +56,8 @@ public class BookRepository {
 
     @Transactional(REQUIRED)
     public Book create(@NotNull Book book) {
-        book.setTitle(textUtil.sanitize(book.getTitle()));
         book.setIsbn(generator.generateNumber());
+        book.setTitle(textUtil.sanitize(book.getTitle()));
         em.persist(book);
         return book;
     }

@@ -6,10 +6,19 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
+/**
+ * @author Antonio Goncalves
+ *         http://www.antoniogoncalves.org
+ *         --
+ */
 
 @Entity
 public class Book {
+
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
     @Id
     @GeneratedValue
@@ -47,7 +56,21 @@ public class Book {
     @Enumerated
     private Language language;
 
+    // ======================================
+    // =            Constructors            =
+    // ======================================
+
     public Book() {
+    }
+
+    public Book(String isbn, String title, Float unitCost, Integer nbOfPages, Language language, String imageURL, String description) {
+        this.isbn = isbn;
+        this.title = title;
+        this.unitCost = unitCost;
+        this.nbOfPages = nbOfPages;
+        this.language = language;
+        this.imageURL = imageURL;
+        this.description = description;
     }
 
     public Book(String isbn, String title, Float unitCost, Integer nbOfPages, Language language, Date publicationDate, String imageURL, String description) {
@@ -60,6 +83,11 @@ public class Book {
         this.imageURL = imageURL;
         this.description = description;
     }
+
+    // ======================================
+    // =        Getters and Setters         =
+    // ======================================
+
 
     public Long getId() {
         return id;
@@ -133,8 +161,20 @@ public class Book {
         this.imageURL = imageURL;
     }
 
+    // ======================================
+    // =   Methods hash, equals, toString   =
+    // ======================================
+
     @Override
     public String toString() {
-        return ReflectionToStringBuilder.toString(this);
+        return "Book{" +
+            "id=" + id +
+            ", title='" + title + '\'' +
+            ", description='" + description + '\'' +
+            ", unitCost=" + unitCost +
+            ", isbn='" + isbn + '\'' +
+            ", publicationDate=" + publicationDate +
+            ", language=" + language +
+            '}';
     }
 }
