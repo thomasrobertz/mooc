@@ -152,7 +152,7 @@ public class BookEndpointTest {
     public void shouldFailCreatingANullBook(@ArquillianResteasyResource("api/books") WebTarget webTarget) {
         response = webTarget.request(APPLICATION_JSON).post(null);
         assertEquals(UNSUPPORTED_MEDIA_TYPE.getStatusCode(), response.getStatus());
-    }
+}
 
     @Test
     @InSequence(11)

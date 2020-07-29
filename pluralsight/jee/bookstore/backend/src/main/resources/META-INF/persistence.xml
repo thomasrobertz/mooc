@@ -8,8 +8,8 @@
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
-            <property name="javax.persistence.schema-generation.scripts.create-target" value="bookStoreCreate.ddl"/>
-            <property name="javax.persistence.schema-generation.scripts.drop-target" value="bookStoreDrop.ddl"/>
+            <property name="javax.persistence.schema-generation.scripts.create-target" value="ddl/bookStoreCreate.ddl"/>
+            <property name="javax.persistence.schema-generation.scripts.drop-target" value="ddl/bookStoreDrop.ddl"/>
             <property name="javax.persistence.sql-load-script-source" value="import.sql"/>
         </properties>
     </persistence-unit>
