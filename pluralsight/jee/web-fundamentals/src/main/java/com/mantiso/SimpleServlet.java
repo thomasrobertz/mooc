@@ -1,6 +1,5 @@
 package com.mantiso;
 
-import javax.jws.soap.InitParam;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -12,12 +11,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/home"}, name="SimpleServlet", initParams = {@WebInitParam(name = "ProductName", value="Welcome Application")})
 public class SimpleServlet extends HttpServlet {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
-	String appName = "My Application";
+    String appName = "My Application";
 
     @Override
     public void init() throws ServletException {

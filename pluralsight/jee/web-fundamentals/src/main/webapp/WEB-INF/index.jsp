@@ -1,3 +1,5 @@
+<%@ page import="java.util.Calendar" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +13,15 @@
 <c:import url="_header.jsp" var="_header"/>
 ${_header}
 <section class="main container-fluid">
+    <%
+        Calendar calendar = Calendar.getInstance();
+    %>
     <div class="container">
         <h1>Home</h1>
         <div class="row-fluid">
+            <div class="col-md-3">
+                <%= calendar.getTime().toString() %>
+            </div>
             <div class="col-md-9">
                 <ul class="nav nav-tabs">
                     <c:forEach items="${app.tabs}" var="tab">
