@@ -34,8 +34,8 @@
 				<version>2.3-SNAPSHOT</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
-                    <username>tomcat-script</username>
-                    <password>s3cret</password>
+                    <username>tomscript</username>
+                    <password>abcd1234</password>
                 </configuration>
 			</plugin>
 		</plugins>

@@ -18,10 +18,23 @@
             <param-value>Yet Another Product Name</param-value>
         </init-param>
     </servlet>
+        <servlet>
+        <servlet-name>ControllerServlet</servlet-name>
+        <servlet-class>com.mantiso.ControllerServlet</servlet-class>
+    </servlet>
     
     <servlet-mapping>
         <servlet-name>SimpleServlet</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    
+    <error-page>
+        <location>/WEB-INF/errorpage.jsp</location>
+    </error-page>    
+    
 </web-app>
