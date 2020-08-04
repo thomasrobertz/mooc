@@ -37,4 +37,8 @@
         <location>/WEB-INF/errorpage.jsp</location>
     </error-page>    
     
+    <listener>
+        <listener-class>com.mantiso.event.AppListener</listener-class>
+    </listener>
+    
 </web-app>

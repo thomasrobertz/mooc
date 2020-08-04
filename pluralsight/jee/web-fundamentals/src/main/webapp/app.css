@@ -7,3 +7,12 @@
     border: 1px solid black;
     background-color: lightcoral;
 }
+
+.highPriority {
+    color: white;
+    background-color: red;
+}
+
+.priorityList {
+    list-style: none;
+}

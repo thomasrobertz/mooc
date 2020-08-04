@@ -1,5 +1,7 @@
 <%@ page import="java.util.Calendar" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://mantiso.com/simple" prefix="m" %>
+<%@ taglib prefix="st" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +32,25 @@ ${_header}
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="home">
+                        <m:repeat repeat="5">
+                            <m:Simple></m:Simple><br/>
+                        </m:repeat>
+                        <st:priority user="${user}">
+                            <jsp:attribute name="normalPriority">
+                                <li>
+                                    <span>${description}</span>
+                                    <span>${priority}</span>
+                                </li>
+                            </jsp:attribute>
+                            <jsp:attribute name="highPriority">
+                                <li class="highPriority">
+                                    <span>${description}</span>
+                                    <span>${priority}</span>
+                                </li>
+                            </jsp:attribute>
+                        </st:priority>
+                    </div>
+                    <div class="tab-pane" id="signin">
                         <div class="${app["formCssClass"]["name"]}">
                             <c:choose>
                                 <c:when test="${!empty user.name}">
@@ -51,8 +72,17 @@ ${_header}
                         </div>
 
                     </div>
-                    <div class="tab-pane" id="other">
-                        Yet More Static content
+                    <div class="tab-pane " id="profile">
+                        <m:helloworld name="${user.name}"></m:helloworld>
+                        <c:if test="${!empty user.name}">
+                            <st:profile user="${user}"></st:profile>
+                        </c:if>
+                    </div>
+                    <div class="tab-pane" id="messages">
+                        Messages
+                    </div>
+                    <div class="tab-pane" id="settings">
+                        Settings
                     </div>
                 </div>
             </div>

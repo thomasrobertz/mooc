@@ -1,17 +1,12 @@
 package com.mantiso;
 
-import org.omg.DynamicAny._DynAnyFactoryStub;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ControllerServlet extends HttpServlet {
 
@@ -41,6 +36,9 @@ public class ControllerServlet extends HttpServlet {
         User user = new User();
         user.setName("Kevin");
         user.setEmail("kevinj@mantiso.com");
+        user.setAvatarUrl("images/kevin-head.jpg");
+        user.addTodo("Finish Course", 1);
+        user.addTodo("Go for a run", 3);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
         request.setAttribute("user", user);
