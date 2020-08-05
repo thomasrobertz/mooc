@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<book>
+    <id>321</id>
+    <title>H2G2</title>
+    <description>Best Scifi book</description>
+    <unitCost>63.98</unitCost>
+    <isbn>1234</isbn>
+    <nbOfPage>123</nbOfPage>
+    <language>ENGLISH</language>
+    <publisher name="Megadodo"/>
+    <category name="IT"/>
+    <authors>
+        <first-name>Douglas</first-name>
+        <last-name>Adams</last-name>
+    </authors>
+    <authors>
+        <first-name>John</first-name>
+        <last-name>Cleese</last-name>
+    </authors>
+</book>

@@ -1,0 +1,26 @@
+{
+  "book": {
+    "isbn": "1234",
+    "title": "H2G2",
+    "unit-cost": "63.98",
+    "description": "Best Scifi book",
+    "nb-of-pages": "123",
+    "language": "ENGLISH",
+    "category": {
+      "name": "IT"
+    },
+    "publisher": {
+      "name": "Megadodo"
+    },
+    "authors": [
+      {
+        "first-name": "Douglas",
+        "last-name": "Adams"
+      },
+      {
+        "first-name": "John",
+        "last-name": "Cleese"
+      }
+    ]
+  }
+}
