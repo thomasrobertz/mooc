@@ -2,8 +2,6 @@ package org.agoncal.application.cdbookstore.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -25,13 +23,12 @@ public class Book extends Item {
     // =             Attributes             =
     // ======================================
 
-    @Column(length = 15)
-    @NotNull
-    @Size(max = 15)
+    @Column(length = 50)
     private String isbn;
 
     @Column(name = "nb_of_pages")
     @Min(1)
+    @XmlElement(name = "pages")
     private Integer nbOfPage;
 
     @Column(name = "publication_date")

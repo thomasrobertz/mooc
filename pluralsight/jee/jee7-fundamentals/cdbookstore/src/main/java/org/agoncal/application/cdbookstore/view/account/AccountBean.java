@@ -17,7 +17,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -98,6 +97,7 @@ public class AccountBean implements Serializable {
     // =          Business methods          =
     // ======================================
 
+    @Transactional(dontRollbackOn = IllegalArgumentException.class)
     public String doSignup() {
         // Does the login already exists ?
         if (em.createNamedQuery(User.FIND_BY_LOGIN, User.class).setParameter("login", user.getLogin())
@@ -111,6 +111,9 @@ public class AccountBean implements Serializable {
         // Everything is ok, we can create the user
         user.setPassword(password1);
         em.persist(user);
+        // if (user.getEmail().contains("antonio"))
+        //     throw new IllegalArgumentException("Wrong email");
+
         resetPasswords();
         facesContext.addMessage(null,
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Hi " + user.getFirstName(), "Welcome to this website"));
