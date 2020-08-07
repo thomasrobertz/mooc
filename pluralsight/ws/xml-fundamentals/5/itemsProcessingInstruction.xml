@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?report full summery?>
+<Items>
+<?running?>
+<stockroom>A09</stockroom>
+<washer qty="3">A556</washer>
+<nail qty="5">A556</nail>
+<?report rollups?>
+</Items>

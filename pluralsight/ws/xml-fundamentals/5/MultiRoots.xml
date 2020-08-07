@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ENTITY items "<item>hammer</item>
+<item>screwdriver</item>
+<item>wrench</item>">
+]>
+<items>
+&items;
+</items>

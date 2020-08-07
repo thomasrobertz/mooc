@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!NOTATION jpeg SYSTEM "image-jpeg">
+<!ENTITY tree-image SYSTEM "tree.jpg" NDATA jpeg>
+]>
+<items>
+&tree-image;
+</items>

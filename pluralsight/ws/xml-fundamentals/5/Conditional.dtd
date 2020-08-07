@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % no-data "INCLUDE">
+<!ENTITY % data "IGNORE">
+<!ELEMENT items (item+)>
+<![%no-data;[
+<!ELEMENT item EMPTY>
+]]>
+<![%data; [
+<!ELEMENT item (#PCDATA)>
+]]>

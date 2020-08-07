@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+<!ENTITY square4 "&square3; &square3;">
+<!ENTITY square3 "&square2; &square2;">
+<!ENTITY square2 "&square1; &square1;">
+<!ENTITY square1 "grain">
+]>
+<item>&square4;</item>

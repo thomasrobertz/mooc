@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- inventory done by Joe-->
+<items>
+	<!-- check by hand by Mary -->
+	<washer qty="3">A44<!-- part number hard to read-->6</washer>
+	<nail qty="3" sharpness="]]>">B23</nail>
+	<!-- the ]]> is ok -->
+</items>
+<!-- next inventory in one month -->

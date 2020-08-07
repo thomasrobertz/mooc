@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items
+[
+<!ENTITY % default '"drill"'>
+<!ENTITY cpr "Copyright me 2012">
+<!ELEMENT items (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST item tool CDATA #IMPLIED>
+]>
+<items>
+<item >asdfasdf</item>
+</items>

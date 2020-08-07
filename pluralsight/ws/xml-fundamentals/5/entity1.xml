@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items
+[
+<!ENTITY lt1     "&#38;#60;">
+]>
+<items>&lt1;</items>

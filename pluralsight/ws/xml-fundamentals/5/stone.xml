@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ENTITY hardness "h8">
+<!ENTITY stone SYSTEM 'stone.txt'>
+]>
+<items>
+<item>&stone;</item>
+</items>

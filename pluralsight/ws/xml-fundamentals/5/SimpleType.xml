@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ELEMENT items (item+)>
+<!ELEMENT item (#PCDATA)>
+]>
+<items>
+	<item>Nail</item>
+	<item>Screw</item>
+</items>

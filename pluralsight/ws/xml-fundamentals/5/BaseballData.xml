@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<baseball-scores>
+	<boston>
+		<red-sox>6</red-sox>
+		<yankees>5</yankees>
+	</boston>
+	<chicago>
+		<white-sox>4</white-sox>
+		<cardinals>9</cardinals>
+	</chicago>
+</baseball-scores>

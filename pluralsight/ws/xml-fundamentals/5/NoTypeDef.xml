@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD format example -->
+<?example simple processing?>
+<!DOCTYPE items [
+	<!ENTITY copyright "Copyright me 2012">
+]>
+<items cpr="&copyright;">
+	<item>gear</item>
+</items>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ENTITY item-open "<item>">
+<!ENTITY item-close "</item>">
+<!ENTITY drill "drill">
+]>
+<items>
+<![CDATA[&item-open;&drill;&item-close;]]>
+</items>

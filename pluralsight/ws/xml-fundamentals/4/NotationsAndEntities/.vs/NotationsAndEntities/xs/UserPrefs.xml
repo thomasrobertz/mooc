@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{AD850BC4-101C-42B6-8017-591AE5C8E85C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NotationsAndEntities/Program.cs">
+    <Files>
+      <File FileName="NotationsAndEntities/Program.cs" Line="24" Column="38" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NotationsAndEntities" expanded="True">
+            <Node name="NotationsAndEntities" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.NotationsAndEntities PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

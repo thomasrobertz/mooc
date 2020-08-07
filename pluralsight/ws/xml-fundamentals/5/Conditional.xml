@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items SYSTEM "Conditional.dtd"
+[
+<!ENTITY % no-data "INCLUDE">
+<!ENTITY % data "IGNORE">
+]>
+<items >
+	<item ></item>
+</items>

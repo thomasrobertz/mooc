@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items SYSTEM "Copyright.dtd"
+[
+<!ENTITY copyright "Copyright internal 2012">
+<!ENTITY xparts "Expendable Parts">
+]
+>
+<items cpr="&copyright;" part-class="&xparts;">
+	<item/>
+</items>

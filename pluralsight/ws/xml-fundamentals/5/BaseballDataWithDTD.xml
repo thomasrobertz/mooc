@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE baseball-scores [
+<!ELEMENT yankees (#PCDATA)>
+<!ELEMENT white-sox (#PCDATA)>
+<!ELEMENT red-sox (#PCDATA)>
+<!ELEMENT chicago ((white-sox, cardinals))>
+<!ELEMENT cardinals (#PCDATA)>
+<!ELEMENT boston ((red-sox, yankees))>
+<!ELEMENT baseball-scores ((boston, chicago))>
+]>
+<baseball-scores>
+	<boston>
+		<red-sox>6</red-sox>
+		<yankees>5</yankees>
+	</boston>
+	<chicago>
+		<white-sox>4</white-sox>
+		<cardinals>9</cardinals>
+	</chicago>
+</baseball-scores>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<p>Last night in <city>Boston</city> the 
+<team>red-sox</team> beat the <team>yankees</team>
+ by <score>6</score> to <score>5</score>
+</p>
+<p>Last night in <city>Chicago</city>
+ the <team>White-Sox</team> lost to the 
+ <team>Cardinals</team> by <score>
+ 4</score> to <score>9</score>
+</p>
+</document>

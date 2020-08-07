@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD format example -->
+<?example simple processing?>
+<!DOCTYPE items SYSTEM "DTDFormat.dtd"
+ [
+	<!ELEMENT items (item+)>
+]
+>
+<items>
+	<item/>
+</items>
