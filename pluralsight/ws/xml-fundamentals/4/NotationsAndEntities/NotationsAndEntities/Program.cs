@@ -20,7 +20,11 @@ namespace NotationsAndEntities
             var image = name.Attributes["image"];
             var entity = (XmlEntity)xdoc.DocumentType.Entities.GetNamedItem(image.Value);
             var notation = (XmlNotation)xdoc.DocumentType.Notations.GetNamedItem(entity.NotationName);
- 
+
+            Console.WriteLine(name); 
+            Console.WriteLine(image);
+            Console.WriteLine(entity);
+            Console.WriteLine(notation);       
         }
     }
 }
