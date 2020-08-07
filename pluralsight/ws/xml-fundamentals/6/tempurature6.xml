@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<readings>
+	<run exp="1-9">
+		<temp>38</temp>
+		<temp>45</temp>
+		<temp>54</temp>
+		<temp>80</temp>
+		<temp>56</temp>
+		<temp>44</temp>
+	</run>
+</readings>

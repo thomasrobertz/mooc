@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<datum x="3" y="4">
+		<length>7</length>
+		<width>5</width>
+	</datum>
+	<datum x="5" y="4">
+		<length>6</length>
+		<width>1</width>
+	</datum>
+	<datum x="2" y="1">
+		<length>9</length>
+		<width>4</width>
+	</datum>
+	<datum x="7" y="8">
+		<length>3</length>
+		<width>3</width>
+	</datum>
+</data>

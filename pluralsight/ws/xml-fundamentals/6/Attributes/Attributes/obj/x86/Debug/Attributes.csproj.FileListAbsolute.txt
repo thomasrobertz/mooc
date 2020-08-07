@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\04-ContentAndMarkup\examples\xml-fund-cm\Attributes\Attributes\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\04-ContentAndMarkup\examples\xml-fund-cm\Attributes\Attributes\bin\Debug\Attributes.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\04-ContentAndMarkup\examples\xml-fund-cm\Attributes\Attributes\bin\Debug\Attributes.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\04-ContentAndMarkup\examples\xml-fund-cm\Attributes\Attributes\obj\x86\Debug\Attributes.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\04-ContentAndMarkup\examples\xml-fund-cm\Attributes\Attributes\obj\x86\Debug\Attributes.pdb

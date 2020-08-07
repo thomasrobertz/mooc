@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items use="retail">
+	<!-- only process steel ones -->
+	<item>
+		<name>wrench</name>
+		<?add standard currencies?>
+		<standard-price>&gt;$5.60</standard-price>
+	</item>
+	<nothing-to-see-here/>
+	<item>
+		<name>&#115;crew driver</name>
+		<:price>$3.60</:price>
+	</item>
+</items>

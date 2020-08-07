@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE point [
+	<!ELEMENT point (x, y)>
+	<!ELEMENT x (#PCDATA)>
+	<!ELEMENT y (#PCDATA)>
+]>
+<point>
+	<x>76.6</x>
+	<y>32.54</y>
+</point>

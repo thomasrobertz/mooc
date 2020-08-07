@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+	<!ELEMENT items (item+)>
+	<!ELEMENT item EMPTY>
+]>
+<!-- a comment -->
+<items>
+<?process a processing instruction?>
+	<item/>
+	<item/>
+</items>
