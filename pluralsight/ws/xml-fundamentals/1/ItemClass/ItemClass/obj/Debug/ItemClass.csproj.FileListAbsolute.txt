@@ -1,0 +1,7 @@
+M:/Pluralsight Video Courses/FundamentalOfXML/00-Course-Intro/examples/xml-fund-overview/ItemClass/ItemClass/bin/Debug/ItemClass.dll
+M:/Pluralsight Video Courses/FundamentalOfXML/00-Course-Intro/examples/xml-fund-overview/ItemClass/ItemClass/bin/Debug/ItemClass.pdb
+M:/Pluralsight Video Courses/FundamentalOfXML/00-Course-Intro/examples/xml-fund-overview/ItemClass/ItemClass/obj/Debug/ResolveAssemblyReference.cache
+M:/Pluralsight Video Courses/FundamentalOfXML/00-Course-Intro/examples/xml-fund-overview/ItemClass/ItemClass/obj/Debug/ItemClass.dll
+M:/Pluralsight Video Courses/FundamentalOfXML/00-Course-Intro/examples/xml-fund-overview/ItemClass/ItemClass/obj/Debug/ItemClass.pdb
+/home/thor/github/mooc/pluralsight/ws/xml-fundamentals/1/ItemClass/ItemClass/obj/Debug/ItemClass.dll
+/home/thor/github/mooc/pluralsight/ws/xml-fundamentals/1/ItemClass/ItemClass/obj/Debug/ItemClass.pdb

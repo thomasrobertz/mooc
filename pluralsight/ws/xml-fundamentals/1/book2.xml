@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+	<!ELEMENT book (chapter+)>
+	<!ELEMENT chapter (#PCDATA)>
+	<!ATTLIST book
+		publisher CDATA #REQUIRED
+	>
+]>
+<book publisher="Me">
+	<chapter/>
+	<chapter/>
+	<chapter/>
+</book>

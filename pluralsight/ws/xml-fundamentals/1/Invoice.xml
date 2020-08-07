@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<account xmlns:me="urn:my-names" xmlns:you="urn:your-names">
+	<me:invoice>
+		<customer>joe</customer>
+	</me:invoice>
+	<you:invoice>
+		<vendor>Jane</vendor>
+	</you:invoice>
+</account>

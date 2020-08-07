@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!NOTATION jpg SYSTEM "urn:jpg2000">
+<!ENTITY small-flower SYSTEM "flower-9.jpeg" NDATA jpg>
+<!ENTITY chapter1 SYSTEM "chap1.xml">
+<!ENTITY chapter2 SYSTEM "chap2.xml">
+<!ENTITY chapter3 SYSTEM "chap3.xml">
+]>
+<book publisher="Me" cover="small-flower">
+&chapter1;
+&chapter2;
+&chapter3;
+</book>
