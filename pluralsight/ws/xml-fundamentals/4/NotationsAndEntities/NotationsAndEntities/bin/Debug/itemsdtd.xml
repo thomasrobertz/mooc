@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+	<!ELEMENT items (item*)>
+	<!ELEMENT item (name, price)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT price (#PCDATA)>
+	<!NOTATION gif SYSTEM "http://en.wikipedia.org/wiki/Gif">
+	<!NOTATION jpg SYSTEM "http://www.w3.org/Graphics/JPEG/">
+	<!ENTITY house SYSTEM "urn:house.gif" NDATA gif>
+	<!ENTITY horse SYSTEM "urn:horse.jpg" NDATA jpg>
+	<!ATTLIST name
+		image (horse | house) #REQUIRED
+	>
+]>
+<items>
+	<item>
+		<name image="house">Tara</name>
+		<price>50.09</price>
+	</item>
+	<item>
+		<name image="horse">Trigger</name>
+		<price>34.67</price>
+	</item>
+</items>

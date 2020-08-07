@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locations [
+<!ELEMENT locations (place*)>
+<!ELEMENT place (name, state)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ATTLIST place type  (gas|food|park) "park">]>
+<locations>
+	<place type="gas">
+		<name>Joe's</name>
+		<state>MA</state>
+	</place>
+	<place type="food">
+		<name>Carbo's</name>
+		<state>NH</state>
+	</place>
+</locations>

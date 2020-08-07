@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ELEMENT items ((item+))>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST item
+	size (16p | 14p | 12p) #IMPLIED>
+]>
+<items>
+	<item>washer</item>
+	<item size="10p">nail</item>
+	<item>screw</item>
+</items>
+

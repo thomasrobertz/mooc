@@ -1,0 +1,3 @@
+AZ119, 21.00, dollar
+BZ009, 12.01, dollar
+AD439, 1.08, doller

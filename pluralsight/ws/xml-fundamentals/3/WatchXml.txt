@@ -1,0 +1,9 @@
+<name model="North Star">
+   <balance/>
+   <jewels>
+      <jewel/>
+      <jewel/>
+      <jewel/>
+   </jewels>
+</name>
+

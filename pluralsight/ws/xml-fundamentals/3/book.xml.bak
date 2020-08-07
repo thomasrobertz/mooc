@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (chapter)+>
+<!ELEMENT chapter (title,body)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+<book>
+	<chapter>
+		<title>Chapter 1</title>
+		<body>In a small town far away...</body>
+	</chapter>
+	<chapter>
+		<title>Chapter 2</title>
+		<body>In a big town nearby...</body>
+	</chapter>
+</book>
+
+
+
+

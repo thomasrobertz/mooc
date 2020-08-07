@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="urn:geometry"
+    elementFormDefault="qualified"
+    xmlns="urn:geometry"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:complexType name="Point">
+    <xs:sequence>
+      <xs:element type="xs:decimal" name="X"/>
+      <xs:element type="xs:decimal" name="Y"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

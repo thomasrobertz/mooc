@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inv:part xmlns:inv="urn:inventory" xmlns:ix="urn:inventory">
+	<inv:name ix:id="T009">amplifier</inv:name> 
+</inv:part>

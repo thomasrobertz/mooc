@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+<!NOTATION gif SYSTEM "urn:gif-imate">
+<!ENTITY house SYSTEM "house.gif" NDATA gif>
+<!ENTITY horse SYSTEM "trigger.img" NDATA gif>
+<!ENTITY copyright "Copyright me 2012">
+]>
+<doc>
+<p>The house <picture img="house"/>is white.</p>
+</doc>
+
+
+

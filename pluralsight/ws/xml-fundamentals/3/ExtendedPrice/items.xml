@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<items>
+  <item pn="X123" qty="3" price="1.20"/>
+  <item pn="A123" qty="1" price="2.50"/>
+  <item pn="Q34" qty="1" price="10.00"/>
+  <item pn="B19" qty="9" price="3.42"/>
+  <item pn="L334" qty="4" price="9.99"/>
+</items>

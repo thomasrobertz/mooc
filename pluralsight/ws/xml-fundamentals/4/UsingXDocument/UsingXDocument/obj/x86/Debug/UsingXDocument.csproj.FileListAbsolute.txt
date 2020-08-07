@@ -1,0 +1,6 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\02-XMLRecommendation\Examples\UsingXDocument\UsingXDocument\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\02-XMLRecommendation\Examples\UsingXDocument\UsingXDocument\bin\Debug\UsingXDocument.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\02-XMLRecommendation\Examples\UsingXDocument\UsingXDocument\bin\Debug\UsingXDocument.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\02-XMLRecommendation\Examples\UsingXDocument\UsingXDocument\obj\x86\Debug\UsingXDocument.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\02-XMLRecommendation\Examples\UsingXDocument\UsingXDocument\obj\x86\Debug\UsingXDocument.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\02-XMLRecommendation\Examples\UsingXDocument\UsingXDocument\bin\Debug\items.xml

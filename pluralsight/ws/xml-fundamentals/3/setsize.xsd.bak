@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:simpleType name="set-size">
+<xsd:restriction base="int">
+<xsd:enumeration value="1"/>
+<xsd:enumeration value="8"/>
+<xsd:enumeration value="22"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>
