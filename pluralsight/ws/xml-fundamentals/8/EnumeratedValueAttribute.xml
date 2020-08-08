@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+ use (fix | restore | reclaim) "restore"
+ size (small | medium | large) #REQUIRED
+ flux (capacitor | inductor) #IMPLIED > 
+]>
+<item size="medium"/>

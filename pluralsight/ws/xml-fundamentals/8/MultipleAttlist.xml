@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item SYSTEM "MultipleAttlist.dtd" [
+<!ELEMENT item EMPTY>
+<!ATTLIST item location CDATA "internal">
+<!ATTLIST item location CDATA "internal2">
+<!ATTLIST item thickness CDATA "3">
+]>
+<item/>
+

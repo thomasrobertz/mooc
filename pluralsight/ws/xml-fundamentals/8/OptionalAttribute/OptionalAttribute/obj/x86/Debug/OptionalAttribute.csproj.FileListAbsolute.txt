@@ -1,0 +1,10 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\OptionalAttribute\OptionalAttribute\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\OptionalAttribute\OptionalAttribute\bin\Debug\OptionalAttribute.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\OptionalAttribute\OptionalAttribute\bin\Debug\OptionalAttribute.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\OptionalAttribute\OptionalAttribute\obj\x86\Debug\OptionalAttribute.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\OptionalAttribute\OptionalAttribute\obj\x86\Debug\OptionalAttribute.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-atr\OptionalAttribute\OptionalAttribute\obj\x86\Debug\OptionalAttribute.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-atr\OptionalAttribute\OptionalAttribute\obj\x86\Debug\OptionalAttribute.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-atr\OptionalAttribute\OptionalAttribute\bin\Debug\OptionalAttribute.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-atr\OptionalAttribute\OptionalAttribute\bin\Debug\OptionalAttribute.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-atr\OptionalAttribute\OptionalAttribute\obj\x86\Debug\ResolveAssemblyReference.cache

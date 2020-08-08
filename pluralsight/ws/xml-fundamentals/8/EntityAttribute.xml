@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ELEMENT items (item+)>
+<!ELEMENT item EMPTY>
+<!NOTATION plan-view SYSTEM "urn:specifications:drawer3">
+<!ENTITY house SYSTEM "http://www.danal.com/house.gif" NDATA plan-view>
+<!ENTITY garage SYSTEM "http://www.danal.com/house.gif" NDATA plan-view>
+<!ENTITY driveway SYSTEM "http://www.danal.com/house.gif" NDATA plan-view>
+<!ATTLIST item type ENTITY #IMPLIED>
+]>
+<items>
+<item type="house"/>
+<item type="driveway"/>
+</items>

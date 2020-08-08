@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+	id CDATA "My id"
+	tag-line CDATA "The sun also rises"
+>
+]>
+<item tag-line="The sun and the yeast also rise" id="A45"/>
