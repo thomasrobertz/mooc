@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ELEMENT items (item+ |thing+)>
+<!ELEMENT item EMPTY>
+<!ELEMENT thing EMPTY>
+]>
+<items>
+<thing/>
+<item/>
+<thing/>
+<thing/>
+<thing/>
+<thing/>
+</items>

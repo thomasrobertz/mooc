@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{DF3AFCA3-F8F1-41CE-AD92-1500FDCD6281}|Default">
+  <MonoDevelop.Ide.ItemProperties.pfb PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="../../ProcessParasFromBody/ProcessParasFromBody/Program.cs" Line="23" Column="1" />
+      <File FileName="../../ProcessParasFromBody/PfB.cs" Line="23" Column="1" />
+      <File FileName="pfb/Program.cs" Line="1" Column="1" />
+      <File FileName="pfb/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="pfb" expanded="True">
+            <Node name="pfb" expanded="True">
+              <Node name="References" expanded="True">
+                <Node name="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

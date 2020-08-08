@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE message SYSTEM "TypeLibrary.dtd" [
+<!ELEMENT message (para | message-break)*>
+]>
+<message>
+<para>Look, here comes the sun!</para>
+<para>Break out the sun tan lotion.</para>
+<message-break/>
+<message-break/>
+<message-break/>
+<para>Last light before the stars.</para>
+<para>Last shadow before dawn.</para>
+<para>More than oil, more than water.</para>
+</message>

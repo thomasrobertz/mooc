@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item  [
+<!ELEMENT item EMPTY>
+<!ATTLIST item location CDATA "internal">
+<!ATTLIST item weight CDATA "5 lb">
+<!ATTLIST item thickness CDATA "3">
+]>
+<item/>
+

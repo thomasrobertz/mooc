@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\Validate\Validate\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\Validate\Validate\bin\Debug\Validate.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\Validate\Validate\bin\Debug\Validate.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\Validate\Validate\obj\x86\Debug\Validate.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\Validate\Validate\obj\x86\Debug\Validate.pdb

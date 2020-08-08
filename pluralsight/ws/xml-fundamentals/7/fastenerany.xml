@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fastener [
+	<!ELEMENT bolt EMPTY>
+	<!ELEMENT nut EMPTY>
+	<!ELEMENT washer EMPTY>
+	<!ELEMENT fastener ANY>
+]>
+<fastener>
+<fastener/>
+Hello
+	<bolt/>
+	<nut/> World!
+	<washer/>
+	<bolt/>
+	<bolt/>
+	<bolt/>
+	<nut/>
+</fastener>

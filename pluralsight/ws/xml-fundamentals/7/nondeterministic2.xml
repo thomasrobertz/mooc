@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+	<!ELEMENT item ((nail, staple) | (nail, wood) )>
+	<!ELEMENT nail EMPTY>
+	<!ELEMENT staple EMPTY>
+	<!ELEMENT wood EMPTY>
+]>
+<item>
+		<nail/><wood/>
+</item>

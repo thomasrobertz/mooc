@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item SYSTEM "ParameterEntities.dtd"
+[
+<!ENTITY % test1 "100">
+<!ENTITY % YN '"No"' >
+
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST item location CDATA "40">
+]>
+<item location="3">&WhatHeSaid;</item>
+

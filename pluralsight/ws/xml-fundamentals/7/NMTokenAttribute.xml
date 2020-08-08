@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+single-color NMTOKEN "red"
+multi-color NMTOKENS #IMPLIED>
+]>
+<item single-color = "   green   " multi-color="orange blue"/>

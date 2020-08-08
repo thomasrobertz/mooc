@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+	<!ELEMENT items (item+)>
+	<!ELEMENT item (#PCDATA)>
+	<!ATTLIST item
+		primary-key ID #REQUIRED	
+		used-on IDREF #IMPLIED	
+		multi-used-on IDREFS #IMPLIED
+	>
+]>
+<items>
+	<item primary-key="A234"/>
+	<item primary-key="A345" used-on="VC45"/>
+	<item primary-key="B345"/>
+	<item primary-key="A645"/>
+	<item primary-key="C945" multi-used-on="A234 A645"/>
+	<item primary-key="VC45"/>
+</items>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ELEMENT items (item+)>
+<!ELEMENT item (#PCDATA)>
+<!NOTATION horse  PUBLIC "house.definition">
+<!NOTATION house PUBLIC "house.definition">
+<!ATTLIST item
+kind NOTATION (horse | house) "house">
+]>
+<items>
+<item kind = "horse">Running Fast</item>
+<item kind ="house">Tara</item>
+</items>
+

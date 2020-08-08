@@ -1,0 +1,10 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\bin\Debug\ProcessParasFromBodyValidate.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\bin\Debug\ProcessParasFromBodyValidate.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\obj\x86\Debug\ProcessParasFromBodyValidate.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\obj\x86\Debug\ProcessParasFromBodyValidate.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-ele\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\obj\x86\Debug\ProcessParasFromBodyValidate.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-ele\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\obj\x86\Debug\ProcessParasFromBodyValidate.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-ele\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\bin\Debug\ProcessParasFromBodyValidate.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-ele\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\bin\Debug\ProcessParasFromBodyValidate.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\05-Type-Unparsed-Entities\examples\xml-fund-ele\ProcessParasFromBodyValidate\ProcessParasFromBodyValidate\obj\x86\Debug\ResolveAssemblyReference.cache

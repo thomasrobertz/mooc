@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ATTLIST item 
+location CDATA "external">
+<!ATTLIST item
+weight CDATA "5">
+

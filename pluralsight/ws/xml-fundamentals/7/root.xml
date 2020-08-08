@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "root.dtd" [
+<!ELEMENT root EMPTY>
+<!ATTLIST root foo (asdf| vrwe) "asdf">
+
+]
+>
+<root foo="vrwex"/>

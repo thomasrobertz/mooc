@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+	<!ELEMENT item (#PCDATA | washer | nail)*>
+	<!ELEMENT washer EMPTY>
+	<!ELEMENT nail EMPTY>
+]>
+<item>Hello
+	<nail/>
+	<washer/>
+	World!
+	<nail/>
+	<washer/>
+	World!
+	<nail/>
+</item>

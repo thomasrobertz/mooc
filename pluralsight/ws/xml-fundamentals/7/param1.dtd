@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % root "chapter">
+<!ELEMENT %root; (#PCDATA)>
+<!ENTITY % stuff "more stuff">
+
