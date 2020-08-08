@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item
+ [
+<!ENTITY % test3 SYSTEM "test3.dtd">
+<!ENTITY % test4 SYSTEM "test4.dtd">
+<!ENTITY foo1 "goo1000">
+%test3;
+%test4;
+
+]>
+<item>&foo2;&foo1;</item>

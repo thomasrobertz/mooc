@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE item [
+<!ENTITY % cpy2012 "Copyright Me 2012">
+<!ENTITY  MyCpy "%cpy2012;">
+]>
+<item copyright="&MyCpy;"/>
+

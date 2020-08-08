@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE play SYSTEM "play.dtd"
+[
+<!ENTITY % cpy-year "2012">
+<!ENTITY % cpy-owner "Me">
+<!ENTITY % scene "III">
+<!ENTITY % act "IV">
+<!ENTITY % play "How to Succeed at Pointy Brackets Without Really Trying">
+
+]>
+<play copyright="&copyright;">
+&scene-title;
+<lines>
+<line actor="Joe">Watch out you don't get cut!</line>
+<line actor="Jim">It's ok, the worst stuff is in the external subset.</line>
+</lines>
+</play>

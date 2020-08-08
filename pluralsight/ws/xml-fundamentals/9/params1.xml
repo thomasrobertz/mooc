@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"  standalone="no"?>
+<!DOCTYPE items SYSTEM "params1.dtd"
+[
+<!ENTITY % SYSTEM "copyright.ent">
+<!ENTITY % draft 'IGNORE' >
+<!ENTITY % final 'INCLUDE' >
+%cpy;
+]>
+<items status="&status;" copyright="&copyright;">
+&t2;
+</items>

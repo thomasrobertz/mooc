@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % cpy-year "2010">
+<!ENTITY % cpy-owner "no one">
+<!ENTITY % scene "I">
+<!ENTITY % act "I">
+<!ENTITY % play "no name">
+<!ENTITY scene-title "<title produced='%cpy-year;'>Play &quot;%play;&quot; ACT %act; SCENE %scene; </title>">
+<!ENTITY copyright "Copyright %cpy-owner; %cpy-year;">
+

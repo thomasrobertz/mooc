@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % draft 'INCLUDE' >
+<!ENTITY % final 'IGNORE' >
+<![%draft;[
+<!ENTITY status "draft">
+]]>
+<![%final;[
+<!ENTITY status "final">
+]]>
+<!ENTITY % cpy "<!ENTITY copyright 'Copyright me 2012'>">
+
+
+

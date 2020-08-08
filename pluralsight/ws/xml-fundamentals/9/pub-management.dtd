@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % publication-year "2010">
+<!ENTITY % publication-month "March">
+<!ENTITY % publication-type "Play">
+<!ENTITY % publication-title "">
+<!ENTITY publication "<publication year='%publication-year;' month= '%publication-month;' type='%publication-type;'>&quot;%publication-title;&quot;</publication>">
+ <!ENTITY copyright "<notice>This article is covered by a copyright and is owned by Me.
+ Copyright ME %publication-year;
+ </notice>" >
+  

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % test3 SYSTEM "test3.dtd">
+<!ENTITY % test4 SYSTEM "test4.dtd">
+%test3;
+%test4;
+
+ 

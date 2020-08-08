@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY loc "test.dtd">
+<!ENTITY % stuff SYSTEM "test.dtd">
+%stuff;

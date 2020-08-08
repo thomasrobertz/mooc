@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE to-do SYSTEM "todo.dtd"
+[
+
+]>
+<to-do>&foo;</to-do>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE magazine-publication [
+	<!ENTITY % publication-type "magazine">
+	<!ENTITY % publication-year "2012">
+	<!ENTITY % publication-month "Janurary">
+	<!ENTITY % publication-title "Better Code and Language">
+	<!ENTITY % managment SYSTEM "pub-management.dtd">
+	<!ENTITY % content SYSTEM "content-management.dtd">
+	%managment;
+	%content;
+]>
+<magazine-publication>
+&publication;
+&copyright;
+&toc-marker;
+<page number="1">
+&page-header;
+<page-content>
+Duis sit amet venenatis tellus. Aliquam vulputate, sem vitae rhoncus ultricies, augue leo faucibus leo, eu iaculis massa ligula non augue. Integer gravida magna ut lectus fermentum sodales. 
+</page-content>
+	</page>
+	<page number="2">
+&page-header;
+<page-content>
+Sed arcu elit, suscipit eget rutrum eget, blandit quis nunc. Suspendisse tristique molestie ullamcorper. Vestibulum scelerisque massa quis urna pellentesque tempor.
+</page-content>
+	</page>
+</magazine-publication>

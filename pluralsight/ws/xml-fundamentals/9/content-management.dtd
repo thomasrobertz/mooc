@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % publication-year "2009">
+<!ENTITY % publication-month "March">
+<!ENTITY toc-marker "<table-of-contents>replace me with table of contents</table-of-contents>">
+<!ENTITY page-header "<header>Published %publication-month; %publication-year; Chapter: <chapter/> Page: <page/></header>">
