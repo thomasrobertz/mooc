@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\Preserve\Preserve\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\Preserve\Preserve\bin\Debug\Preserve.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\Preserve\Preserve\bin\Debug\Preserve.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\Preserve\Preserve\obj\x86\Debug\Preserve.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\Preserve\Preserve\obj\x86\Debug\Preserve.pdb

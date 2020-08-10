@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\LineSpace\LineSpace\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\LineSpace\LineSpace\bin\Debug\LineSpace.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\LineSpace\LineSpace\bin\Debug\LineSpace.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\LineSpace\LineSpace\obj\x86\Debug\LineSpace.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\08-Normalization\examples\LineSpace\LineSpace\obj\x86\Debug\LineSpace.pdb

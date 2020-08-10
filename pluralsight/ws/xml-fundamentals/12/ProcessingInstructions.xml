@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?version-control purchasing order-form:v3 dts?>
+<!DOCTYPE items
+[
+<!-- should have at least one item -->
+<!ELEMENT items ((item+))>
+<!ELEMENT item ((description))>
+<!ATTLIST item
+	sn NMTOKEN #REQUIRED>
+<!ELEMENT description (#PCDATA)>
+]>
+<!-- there may be more items later -->
+<items>
+	<?restriction weight "\d+ (oz|lb)"?>
+	<item sn="A334" >
+		<description>washer</description>
+		<weight>10 lb</weight>
+	</item>
+	<item sn="B34">
+		<description>bolt</description>
+		<weight>7 oz</weight>
+	</item>
+	<item sn="X33">
+		<!-- the following part cannot be exported -->
+		<description>hammer</description>
+		<weight>3 lb</weight>
+	</item>
+	<!-- TODO add total weight -->
+</items>
+<!-- a closing comment -->

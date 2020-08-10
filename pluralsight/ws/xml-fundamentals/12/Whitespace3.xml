@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+<!ATTLIST item
+id NMTOKENS "B">
+]>
+<items>
+    <item id="  7  8  9  10   ">  A big dog.  </item>
+</items>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<poem  >
+	<line>one two three four five</line>
+	<line>six seven eight nine</line>
+	<line>                 </line>
+	<line >ten eleven twelve</line>
+</poem>
