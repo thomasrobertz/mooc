@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acct:chart-of-accounts xmlns:acct="urn:accounting">
+	<account status="open">
+		<name>consulting</name>
+		<balance>1000</balance>
+	</account>
+	<account status="closed">
+		<name>rent</name>
+		<balance>2000</balance>
+	</account>
+</acct:chart-of-accounts>

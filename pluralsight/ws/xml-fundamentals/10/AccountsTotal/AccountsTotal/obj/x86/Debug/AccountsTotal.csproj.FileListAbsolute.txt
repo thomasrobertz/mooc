@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\AccountsTotal\AccountsTotal\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\AccountsTotal\AccountsTotal\bin\Debug\AccountsTotal.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\AccountsTotal\AccountsTotal\bin\Debug\AccountsTotal.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\AccountsTotal\AccountsTotal\obj\x86\Debug\AccountsTotal.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\AccountsTotal\AccountsTotal\obj\x86\Debug\AccountsTotal.pdb

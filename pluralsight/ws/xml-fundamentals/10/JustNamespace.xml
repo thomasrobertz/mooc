@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<act:invoice xmlns:act="accounting">
+	<company>Jane</company>
+	<due>6/2/13</due>
+	<reference>88U-09</reference>
+	<amount>66.09</amount>
+</act:invoice>

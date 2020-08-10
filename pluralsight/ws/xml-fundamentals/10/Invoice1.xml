@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice number="444-09">
+	<customer>Joe</customer>
+	<balance>23.09</balance>
+</invoice>

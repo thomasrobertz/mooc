@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\Namespaces\Namespaces\bin\Debug\Namespaces.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\Namespaces\Namespaces\bin\Debug\Namespaces.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\Namespaces\Namespaces\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\Namespaces\Namespaces\obj\x86\Debug\Namespaces.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\Namespaces\Namespaces\obj\x86\Debug\Namespaces.pdb

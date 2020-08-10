@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice invoice-number="4556">
+	<line-item>
+		<description>nail</description>
+		<quantity>5</quantity>
+		<price>0.34</price>
+	</line-item>
+</invoice>

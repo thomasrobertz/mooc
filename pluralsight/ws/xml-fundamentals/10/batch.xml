@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoices>
+	<cust1:invoice invoice-number="4556" xmlns:cust1="urn:cust1">
+		<line-item>
+			<inventory-number>151234</inventory-number>
+			<price>300.00</price>
+			<purchaser-fee>30.00</purchaser-fee>
+		</line-item>
+		<line-item>
+			<inventory-number>47B998</inventory-number>
+			<price>100.00</price>
+			<purchaser-fee>15.00</purchaser-fee>
+		</line-item>
+	</cust1:invoice>
+	<cust2:invoice invoice-number="4556" xmlns:cust2="urn:cust2">
+		<line-item>
+			<description>nail</description>
+			<quantity>5</quantity>
+			<price>0.34</price>
+		</line-item>
+	</cust2:invoice>
+</invoices>

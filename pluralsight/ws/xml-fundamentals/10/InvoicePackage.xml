@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- invoice batch for processing-->
+<inv:invoices xmlns:inv="urn:invoice-package">
+	<inv:invoice invoice-number="4556" xmlns:inv="urn:auction-place/v2">
+		<line-item>
+			<inventory-number>151234</inventory-number>
+			<price>300.00</price>
+			<purchaser-fee>30.00</purchaser-fee>
+		</line-item>
+		<line-item>
+			<inventory-number>47B998</inventory-number>
+			<price>100.00</price>
+			<purchaser-fee>15.00</purchaser-fee>
+		</line-item>
+	</inv:invoice>
+	<inv:invoice invoice-number="4556" xmlns:inv="urn:retail-place/v1">
+		<line-item>
+			<description>nail</description>
+			<quantity>5</quantity>
+			<price>0.34</price>
+		</line-item>
+	</inv:invoice>
+</inv:invoices>

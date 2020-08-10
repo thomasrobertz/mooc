@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\InvoiceReport\InvoiceReport\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\InvoiceReport\InvoiceReport\bin\Debug\InvoiceReport.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\InvoiceReport\InvoiceReport\bin\Debug\InvoiceReport.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\InvoiceReport\InvoiceReport\obj\x86\Debug\InvoiceReport.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\06-Namespaces\examples\InvoiceReport\InvoiceReport\obj\x86\Debug\InvoiceReport.pdb

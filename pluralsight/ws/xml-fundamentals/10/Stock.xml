@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stock:items xmlns:stock="urn:stock" xmlns="urn:general">
+	<stock:nail>
+		<stock-room>
+		<location xmlns="">NW</location>
+		<availability xmlns:stock="urn:inventory">
+			<stock:week>100</stock:week>
+			<stock:month>2000</stock:month>
+		</availability>
+		</stock-room>
+	</stock:nail>
+</stock:items>

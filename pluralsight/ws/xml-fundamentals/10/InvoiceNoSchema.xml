@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice id="890" xmlns:accounting="urn:accounting/invoice">
+	<customer>Joe</customer>
+	<amount>50.00</amount>
+</invoice>
+ 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- asdfasdf -->
+<items xmlns="urn:800-555-4385" length="6" 
+	xmlns:dim="urn:800-555-5000" 
+	xmlns:geo="urn:800-555-4000"
+		xmlns:solve="800-555-3000"
+	>
+<geo:point dim:size="5" geo:x="50" geo:y="40">dog food</geo:point>
+<linear-equation solve:m="2" solve:b="3" xmlns:geo="800-555-3000">
+<geo:x>4</geo:x>
+<geo:y>?</geo:y>
+</linear-equation>
+<item />
+</items>
