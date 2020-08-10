@@ -1,0 +1,13 @@
+-Needed to chown tomcat to allow to be added to eclipse
+-Postgres is included with Ubuntu, but installed PGAdmin 4 for convenience
+-Logging into instance:
+ 1. sudo -u postgres psql
+ 2. ALTER USER postgres PASSWORD 'myPassword';
+ 3. \q
+-Right click to create login user and role "orders" (In PgAdmin under "Login/Group Roles")
+-Right click to create databse "orders"
+-Right click on db "orders" to create schema "orders"
+-Now execute create-orders.sql
+-Test: SELECT * FROM orders.orderItem; Should show the columns
+-Execute load-orders.sql (in dml/)
+-Test: SELECT COUNT(*) FROM order.orderItem; Should return 11 
