@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item lang="en-us">
+		<price>3.00</price>
+		<length>4</length>
+		<width>5</width>
+	</item>
+	<item lang="en-gb">
+		<price>3.00</price>
+		<length>4</length>
+		<width>5</width>
+	</item>
+</items>

@@ -1,0 +1,5 @@
+M:\Pluralsight Video Courses\FundamentalOfXML\07-Language\Examples\CustomLang\CustomLang\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Pluralsight Video Courses\FundamentalOfXML\07-Language\Examples\CustomLang\CustomLang\bin\Debug\CustomLang.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\07-Language\Examples\CustomLang\CustomLang\bin\Debug\CustomLang.pdb
+M:\Pluralsight Video Courses\FundamentalOfXML\07-Language\Examples\CustomLang\CustomLang\obj\x86\Debug\CustomLang.exe
+M:\Pluralsight Video Courses\FundamentalOfXML\07-Language\Examples\CustomLang\CustomLang\obj\x86\Debug\CustomLang.pdb
