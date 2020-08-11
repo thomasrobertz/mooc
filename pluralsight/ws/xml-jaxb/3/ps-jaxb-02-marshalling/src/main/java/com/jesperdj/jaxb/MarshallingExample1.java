@@ -32,6 +32,8 @@ public class MarshallingExample1 {
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
         // Create a JAXB element wrapper
+        // QName (qualified name) is a combination of namespace and element name
+        // To keep it simple we are not specifying a namespace, hence null
         QName rootElementName = new QName(null, "purchaseOrder");
         JAXBElement<PurchaseOrder> rootElement =
                 new JAXBElement<>(rootElementName, PurchaseOrder.class, purchaseOrder);

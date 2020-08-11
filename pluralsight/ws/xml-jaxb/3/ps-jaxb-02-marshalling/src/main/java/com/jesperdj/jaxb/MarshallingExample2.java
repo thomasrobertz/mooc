@@ -19,6 +19,8 @@ import java.util.Arrays;
 
 /**
  * Example that shows how you can marshal an object into a StAX stream.
+ * 
+ * Since StAX is based on streaming, can be helpful for large files.
  */
 public class MarshallingExample2 {
 
