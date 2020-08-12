@@ -9,10 +9,13 @@ import com.jesperdj.jaxb.domain.PurchaseOrder;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlElementWrapper;
+
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
+// Using a wrapper annotation @XmlElementWrapper(name = "items") instead of wrapper class.
 public class AnnotationsListsExample2 {
 
     public static void main(String[] args) throws JAXBException {

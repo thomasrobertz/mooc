@@ -14,6 +14,9 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
+// Country complexType is mapped to a SimpleType with @XmlValue annotation in Country.java
+// But then Country cannot have an @XmlElement. As possible workaround, more @XmlValue
+// annotations can be added to get a key/value type mapping as XML attribute/value
 public class AnnotationsSimpleTypesExample {
 
     public static void main(String[] args) throws JAXBException {

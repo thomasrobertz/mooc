@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
+// Enum mapping in class Loyalty
 public class AnnotationsEnumExample {
 
     public static void main(String[] args) throws JAXBException {

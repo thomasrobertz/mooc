@@ -11,6 +11,7 @@ public class PurchaseOrder {
     @XmlSchemaType(name = "date")
     private Date orderDate;
 
+    // Items is a wrapper class for the items.
     private Items items;
     private Customer customer;
     private String comment;

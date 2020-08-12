@@ -9,6 +9,8 @@ import com.jesperdj.jaxb.domain.PurchaseOrder;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.math.BigDecimal;
@@ -16,6 +18,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+// Using @XmlJavaTypeAdapter as custom marshalling/unmarshalling mapper.
 public class AnnotationsAdaptersExample {
 
     public static void main(String[] args) throws JAXBException {

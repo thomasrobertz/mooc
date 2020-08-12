@@ -14,6 +14,9 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
+/*
+ * Wrap a list with a container class, Items
+ * */
 public class AnnotationsListsExample1 {
 
     public static void main(String[] args) throws JAXBException {

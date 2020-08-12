@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+// Translating a map to XML. Items now have keys.
 public class AnnotationsMapsExample {
 
     public static void main(String[] args) throws JAXBException {

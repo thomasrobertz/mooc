@@ -16,6 +16,9 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
+/*
+ * @XmlAccessorType is annotaed for all classes in this package in package-info.java
+ */
 public class AnnotationsBasicExample {
 
     public static void main(String[] args) throws JAXBException {
@@ -27,6 +30,9 @@ public class AnnotationsBasicExample {
 
         // Marshal to a string
         StringWriter writer = new StringWriter();
+        
+        // Because we're using annotations (XmlRootElement) we don't need a QName 
+        // and JAXBElement anymore.
         marshaller.marshal(purchaseOrder, writer);
         String xml = writer.toString();
 
