@@ -6,14 +6,16 @@ const DynamoStore = require("./dynamoStore")
 
 const saltRounds = 10
 
+const USERS_TABLE = "users"
+
 async function create (username, passwordString) {
   const passwordHash = hashPassword(passwordString)
   const user = new User(username, passwordHash)
-  DynamoStore.putItem("users", user)
+  DynamoStore.putItem(USERS_TABLE, user)
 }
 
 async function get (username) {
-  return DynamoStore.getItem("users", "username", username)
+  return DynamoStore.getItem(USERS_TABLE, "username", username)
 }
 
 async function authenticate (username, passwordString) {

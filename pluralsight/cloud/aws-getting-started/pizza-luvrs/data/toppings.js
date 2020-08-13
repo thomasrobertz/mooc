@@ -2,6 +2,8 @@ const Topping = require('../models/topping')
 const { sortBy, values } = require('lodash')
 const DynamoStore = require("./dynamoStore")
 
+const TOPPINGS_TABLE = "toppings"
+
 function init () {
   create('Dough Crust', 'dough_crust.png', 'dough_crust.png', 1)
   create('Marinara Sauce', 'marinara_sauce.png', 'marinara_sauce.png', 2)
@@ -18,7 +20,7 @@ function init () {
 }
 
 async function getAll () {
-  const toppings = await DynamoStore.getAllItems("toppings")
+  const toppings = await DynamoStore.getAllItems(TOPPINGS_TABLE)
   return sortBy(toppings, ["order"])
 }
 
@@ -26,7 +28,7 @@ async function create (name, previewImage, image, order) {
   const id = name.replace(/ /g, '_').toLowerCase()
   const topping = new Topping(id, name, previewImage, image, order)
 
-  DynamoStore.putItem("toppings", topping)
+  DynamoStore.putItem(TOPPINGS_TABLE, topping)
 }
 
 module.exports = {
