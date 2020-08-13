@@ -79,6 +79,6 @@ module.exports.register = async server => {
 
   server.auth.default('session')
 
-  // setup data
-  mockData.hydrate()
+  // setup data (commented out since were now using RDS/Dynamo)
+  //mockData.hydrate()
 }
