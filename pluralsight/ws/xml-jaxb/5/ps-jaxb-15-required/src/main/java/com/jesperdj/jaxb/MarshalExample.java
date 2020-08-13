@@ -58,6 +58,10 @@ public class MarshalExample {
 
         purchaseOrder.setCustomer(customer);
 
+        // Even though this is required, JAXB will marshal (and unmarshal) with a null customer!
+        // Validation is disabled by default. See ps-jaxb-17+18 for this.
+        //purchaseOrder.setCustomer(null);
+        
         return purchaseOrder;
     }
 }

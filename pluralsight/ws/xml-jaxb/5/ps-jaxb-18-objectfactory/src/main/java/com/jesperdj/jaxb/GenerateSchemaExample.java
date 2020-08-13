@@ -10,6 +10,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
+// No element vs. nil element
 public class GenerateSchemaExample {
 
     public static void main(String[] args) throws JAXBException, IOException {

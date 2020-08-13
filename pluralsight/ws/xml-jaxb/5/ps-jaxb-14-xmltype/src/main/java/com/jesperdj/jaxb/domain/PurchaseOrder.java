@@ -10,6 +10,7 @@ import java.util.List;
 
 @XmlRootElement
 @XmlType(name = "POType")
+//@XmlType(name = "") // Will generate an anonymous element type, which is better for schemas.
 public class PurchaseOrder {
     @XmlAttribute
     private Date orderDate;

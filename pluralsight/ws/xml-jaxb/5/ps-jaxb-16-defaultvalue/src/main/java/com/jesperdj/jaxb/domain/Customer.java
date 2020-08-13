@@ -7,8 +7,13 @@ public class Customer {
     private Address shippingAddress;
     private Address billingAddress;
 
+    // This will be omitted just like a null value (null = no element = no default value)
+    // Pertains to marshalling and unmarshalling (element not in XML)
     @XmlElement(defaultValue = "BRONZE")
     private Loyalty loyalty;
+    // Workaround for this (unexpected but correct) behaviour:
+    //@XmlElement(defaultValue = "BRONZE")
+    //private Loyalty loyalty = Loyalty.BRONZE;    
 
     public String getName() {
         return name;

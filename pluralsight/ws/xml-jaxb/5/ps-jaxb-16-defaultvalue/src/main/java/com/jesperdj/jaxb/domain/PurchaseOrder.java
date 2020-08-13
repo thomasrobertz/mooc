@@ -9,6 +9,8 @@ import java.util.List;
 
 @XmlRootElement
 public class PurchaseOrder {
+	
+	// JAXB doesn't yet have default values for attributes.
     @XmlAttribute
     private Date orderDate;
 

@@ -9,6 +9,8 @@ import com.jesperdj.jaxb.domain.PurchaseOrder;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlElement;
+
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
@@ -40,6 +42,11 @@ public class MarshalExample {
         item2.setProductName("Pencil");
         item2.setQuantity(10);
         item2.setPrice(new BigDecimal("2.95"));
+        // Because of:
+        // @XmlElement(nillable = true)
+        //private String comment;
+        // The XML now contains:
+        // <comment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
 
         purchaseOrder.setItems(Arrays.asList(item1, item2));
 
