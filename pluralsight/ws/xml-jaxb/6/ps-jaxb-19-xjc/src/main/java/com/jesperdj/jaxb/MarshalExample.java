@@ -26,8 +26,8 @@ public class MarshalExample {
         JAXBContext context = JAXBContext.newInstance("com.jesperdj.jaxb.domain");
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
         marshaller.marshal(purchaseOrder, System.out);
+
     }
 
     private static PurchaseOrder createPurchaseOrder() throws DatatypeConfigurationException {
