@@ -11,8 +11,9 @@ public class AppConfig {
     // Bean is registered in the Spring registry and is a (Spring) Singleton.
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService() {
-        SpeakerServiceImpl service = new SpeakerServiceImpl();
-        service.setRepository(getSpeakerRepository());
+
+        SpeakerServiceImpl service = new SpeakerServiceImpl(getSpeakerRepository());
+
         return service;
     }
 
