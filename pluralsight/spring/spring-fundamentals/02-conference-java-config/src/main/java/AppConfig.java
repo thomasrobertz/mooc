@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
-    // Bean is registered in Spring and is a (Spring) Singleton.
+    // Bean is registered in the Spring registry and is a (Spring) Singleton.
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService() {
         SpeakerServiceImpl service = new SpeakerServiceImpl();
