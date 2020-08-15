@@ -22,6 +22,9 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
+// Moxy preserves the comment on purchaseOrder.xml line 17, that the standard implementation drops (possible bug).
+// We need to add the org.eclipse.presistence.moxy artifact to maven and
+// jaxb.properties in src/main/resources
 public class BinderExample {
 
     public static void main(String[] args) throws JAXBException, ParserConfigurationException, IOException, SAXException, TransformerException {
