@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LearnProject.iml" filepath="$PROJECT_DIR$/LearnProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/conference-java-config.iml" filepath="$PROJECT_DIR$/conference-java-config.iml" />
     </modules>
   </component>
 </project>
