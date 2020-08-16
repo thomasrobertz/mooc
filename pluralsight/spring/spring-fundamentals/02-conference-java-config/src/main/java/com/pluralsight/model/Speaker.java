@@ -4,6 +4,16 @@ public class Speaker {
 
     private String firstName;
 
+    public double getSeedNumber() {
+        return seedNumber;
+    }
+
+    public void setSeedNumber(double seedNumber) {
+        this.seedNumber = seedNumber;
+    }
+
+    private double seedNumber;
+
     public String getFirstName() {
         return firstName;
     }

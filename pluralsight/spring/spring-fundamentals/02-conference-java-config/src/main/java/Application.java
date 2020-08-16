@@ -13,9 +13,6 @@ public class Application {
         System.out.println(service);
 
         System.out.println(service.findAll().get(0).getFirstName());
-
-        // Test that it is a singleton
-        SpeakerService service2 = context.getBean("speakerService", SpeakerService.class);
-        System.out.println(service2);
+        System.out.println(service.findAll().get(0).getSeedNumber());
     }
 }
