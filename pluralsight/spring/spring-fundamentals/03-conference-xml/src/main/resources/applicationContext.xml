@@ -9,6 +9,6 @@
 
     <bean name="speakerService" class="com.pluralsight.service.SpeakerServiceImpl" autowire="byType">
         <!--<property name="speakerRepository" ref="speakerRepository" />-->
-        <constructor-arg index="0" ref="speakerRepository" />
+        <!--<constructor-arg index="0" ref="speakerRepository" />-->
     </bean>
 </beans>
