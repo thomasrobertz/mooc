@@ -8,9 +8,6 @@ public class Application {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        // Before: Create new
-        //SpeakerService service = new SpeakerServiceImpl();
-        // After: Get / Inject singleton bean from Spring registry (typesafe)
         SpeakerService service = context.getBean("speakerService", SpeakerService.class);
 
         System.out.println(service);
