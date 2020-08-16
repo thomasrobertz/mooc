@@ -13,6 +13,12 @@ public class Application {
         // After: Get / Inject singleton bean from Spring registry (typesafe)
         SpeakerService service = context.getBean("speakerService", SpeakerService.class);
 
+        System.out.println(service);
+
         System.out.println(service.findAll().get(0).getFirstName());
+
+        // Test that it is a singleton
+        SpeakerService service2 = context.getBean("speakerService", SpeakerService.class);
+        System.out.println(service2);
     }
 }
