@@ -1,8 +1,8 @@
 package com.pluralsight.service;
 
 import com.pluralsight.model.Speaker;
-import com.pluralsight.model.com.pluralsight.repository.HibernateSpeakerRepositoryImpl;
-import com.pluralsight.model.com.pluralsight.repository.SpeakerRepository;
+import com.pluralsight.repository.HibernateSpeakerRepositoryImpl;
+import com.pluralsight.repository.SpeakerRepository;
 
 import java.util.List;
 
