@@ -1,0 +1,116 @@
+
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://www.jesperdj.com/ps-jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.jesperdj.com/ps-jaxb">
+
+<xs:element name="addOrder" type="tns:addOrder"></xs:element>
+
+<xs:element name="addOrderResponse" type="tns:addOrderResponse"></xs:element>
+
+<xs:element name="deleteOrder" type="tns:deleteOrder"></xs:element>
+
+<xs:element name="deleteOrderResponse" type="tns:deleteOrderResponse"></xs:element>
+
+<xs:element name="getOrder" type="tns:getOrder"></xs:element>
+
+<xs:element name="getOrderResponse" type="tns:getOrderResponse"></xs:element>
+
+<xs:element name="getOrders" type="tns:getOrders"></xs:element>
+
+<xs:element name="getOrdersResponse" type="tns:getOrdersResponse"></xs:element>
+
+<xs:element name="purchaseOrder" type="tns:purchaseOrder"></xs:element>
+
+<xs:complexType name="getOrder">
+<xs:sequence>
+<xs:element name="id" type="xs:long" form="unqualified"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getOrderResponse">
+<xs:sequence>
+<xs:element name="order" type="tns:purchaseOrder" form="unqualified" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="purchaseOrder">
+<xs:sequence>
+<xs:element name="id" type="xs:long"></xs:element>
+<xs:element name="items" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="item" type="tns:item" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="customer" type="tns:customer" minOccurs="0"></xs:element>
+<xs:element name="comment" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+<xs:attribute name="orderDate" type="xs:dateTime"></xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="item">
+<xs:sequence>
+<xs:element name="productName" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="quantity" type="xs:int"></xs:element>
+<xs:element name="price" type="xs:decimal" minOccurs="0"></xs:element>
+<xs:element name="comment" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customer">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="shippingAddress" type="tns:address" minOccurs="0"></xs:element>
+<xs:element name="billingAddress" type="tns:address" minOccurs="0"></xs:element>
+<xs:element name="loyalty" type="tns:loyalty" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="address">
+<xs:sequence>
+<xs:element name="street" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="city" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="postalCode" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="country" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getOrders">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getOrdersResponse">
+<xs:sequence>
+<xs:element name="orders" type="tns:purchaseOrder" form="unqualified" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteOrder">
+<xs:sequence>
+<xs:element name="id" type="xs:long" form="unqualified"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteOrderResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addOrder">
+<xs:sequence>
+<xs:element name="order" type="tns:purchaseOrder" form="unqualified" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addOrderResponse">
+<xs:sequence>
+<xs:element name="id" type="xs:long" form="unqualified"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="loyalty">
+<xs:restriction base="xs:string">
+<xs:enumeration value="BRONZE"></xs:enumeration>
+<xs:enumeration value="SILVER"></xs:enumeration>
+<xs:enumeration value="GOLD"></xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
