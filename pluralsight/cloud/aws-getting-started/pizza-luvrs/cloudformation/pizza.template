@@ -179,7 +179,8 @@
       "Type": "AWS::AutoScaling::LaunchConfiguration",
       "Properties": {
         "AssociatePublicIpAddress": true,
-        "ImageId": "ami-0764955a23cb7490a",
+        "ImageId": "ami-0e0df8bdf6cfaeef8
+",
         "InstanceType": "t2.micro",
         "KeyName": "pizza-keys",
         "IamInstanceProfile": "pizza-ec2-role",
