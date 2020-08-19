@@ -1,12 +1,12 @@
 // Imports
 const AWS = require('aws-sdk')
 
-AWS.config.update({ region: 'us-east-1'})
+AWS.config.update({ region: 'eu-central-1'})
 
 // Declare local variables
 const ec2 = new AWS.EC2()
 
-createImage('i-0808d73007ea08019', 'hamsterImage')
+createImage('i-06f661e5f47d3e56d', 'hamsterImage')
 .then(() => console.log('Complete'))
 
 function createImage (seedInstanceId, imageName) {
