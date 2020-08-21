@@ -1,0 +1,8 @@
+Errors:
+
+UnhandledPromiseRejectionWarning: EntityAlreadyExists: Instance Profile hamsterLCRole_profile already exists.
+
+1. Delete hamsterLC Role in web console or from cli
+2. Delete Profile:
+
+aws --region=eu-central-1 iam delete-instance-profile --instance-profile-name hamsterLCRole_profile
