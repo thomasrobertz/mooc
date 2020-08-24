@@ -12,8 +12,8 @@ createHostedZone(hzName)
 
 function createHostedZone (hzName) {
   const params = {
-    Name:hzName,
-    CallerReference: `${Date.now()}`
+    CallerReference: `${Date.now()}`,
+    Name: hzName
   }
 
   return new Promise((resolve, reject) => {
