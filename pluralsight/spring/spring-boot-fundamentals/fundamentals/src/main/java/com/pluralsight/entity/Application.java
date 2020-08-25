@@ -8,7 +8,7 @@ public class Application {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="application_id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "app_name", nullable = false)
     private String name;
@@ -26,11 +26,11 @@ public class Application {
         this.owner = owner;
         this.description = description;
     }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

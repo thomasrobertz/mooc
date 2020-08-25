@@ -6,7 +6,7 @@ AWS.config.update({ region: 'eu-central-1' })
 // Declare local variables
 const sns = new AWS.SNS()
 const type = 'email'
-const endpoint = 'thomas.robertz@googlemail.com'
+const endpoint = 'your@email.com'
 const topicArn = 'arn:aws:sns:eu-central-1:425906221170:hamster-topic'
 
 createSubscription(type, topicArn, endpoint)
