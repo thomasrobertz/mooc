@@ -1,13 +1,38 @@
 package com.pluralsight.exception;
 
-public class ApplicationNotFoundException extends RuntimeException {
+import graphql.ErrorType;
+import graphql.GraphQLError;
+import graphql.language.SourceLocation;
 
-    /**
-	 * svuid
-	 */
-	private static final long serialVersionUID = -3975577793806778390L;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-	public ApplicationNotFoundException(String exception) {
-        super(exception);
+public class ApplicationNotFoundException extends RuntimeException implements GraphQLError {
+
+    private Map<String, Object> extensions = new HashMap<>();
+
+    public ApplicationNotFoundException(String message) {
+        super(message);
+    }
+    
+    public ApplicationNotFoundException(String message, Long invalidApplicationId) {
+        super(message);
+        extensions.put("invalidApplicationId", invalidApplicationId);
+    }
+
+    @Override
+    public List<SourceLocation> getLocations() {
+        return null;
+    }
+
+    @Override
+    public Map<String, Object> getExtensions() {
+        return extensions;
+    }
+
+    @Override
+    public ErrorType getErrorType() {
+        return ErrorType.DataFetchingException;
     }
 }

@@ -26,6 +26,7 @@ public class Application {
         this.owner = owner;
         this.description = description;
     }
+
     public Long getId() {
         return id;
     }
