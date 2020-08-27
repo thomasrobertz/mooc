@@ -11,10 +11,6 @@ import java.util.Map;
 public class ApplicationNotFoundException extends RuntimeException implements GraphQLError {
 
     private Map<String, Object> extensions = new HashMap<>();
-
-    public ApplicationNotFoundException(String message) {
-        super(message);
-    }
     
     public ApplicationNotFoundException(String message, Long invalidApplicationId) {
         super(message);

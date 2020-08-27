@@ -26,7 +26,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         if(optionalApplication.isPresent())
             return optionalApplication.get();
         else
-            throw new ApplicationNotFoundException("Application Not Found");
+            throw new ApplicationNotFoundException("Application Not Found", 0L);
     }
 
 
