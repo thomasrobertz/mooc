@@ -7,9 +7,11 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
+
+// id will be used in http/jmx actuator path
 @Endpoint(id = "readiness")
 public class ReadinessEndpoint {
-
+	
     private String ready = "NOT_READY";
 
     @ReadOperation
@@ -19,6 +21,6 @@ public class ReadinessEndpoint {
 
     @EventListener(ApplicationReadyEvent.class)
     public void setReady() {
-        ready = "READY";
+        ready = "READY to receive and process requests";
     }
 }
