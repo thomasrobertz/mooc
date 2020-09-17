@@ -7,7 +7,7 @@ function permAlone(str) {
 
       if (length < 2) {
           // The last recusrion has been reached
-          // (Or a singel character string has been passed)
+          // (Or a single character string has been passed)
           return str
       }
 
