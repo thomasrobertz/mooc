@@ -29,9 +29,9 @@ function permAlone(str) {
         // Cut the string into three parts:
         // 1. Pick a single character to be the pivot
         const pivot = str[i]
-        // 2. The left part of the string before the slice
+        // 2. The left part of the string before the pivot
         const left = str.slice(0, i)
-        // 3. Thr right part of the string after the slice
+        // 3. Thr right part of the string after the pivot
         const right = str.slice(i + 1, length)
     
         // The remaining characters (without the pivot)
