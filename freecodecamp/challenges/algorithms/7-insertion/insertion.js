@@ -11,11 +11,11 @@ function insertionSort(array) {
         }      
     }
   
-    // First walk forwards through array, start at the second item becuase 
+    // First walk forwards through the array, start at the second item because 
     // the first item is considered already sorted.
     for(let i = 1; i < length; i++) {
       const current = array[i]
-      // On each pass, walk backwards through solution array and (if necessary), 
+      // On each pass, walk backwards through the solution array and (if necessary,)
       // slide items until the current element fits.
       for(let sub = i - 1; sub >= 0; sub--) {
         slide(array, sub, current)
