@@ -27,7 +27,7 @@
         <!-- Test -->
         <version.arquillian>1.1.11.Final</version.arquillian>
         <version.arquillian.wildfly.remote>8.2.1.Final</version.arquillian.wildfly.remote>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <!-- Plugins -->
         <version.clean.plugin>3.0.0</version.clean.plugin>
         <version.compiler.plugin>3.5.1</version.compiler.plugin>
