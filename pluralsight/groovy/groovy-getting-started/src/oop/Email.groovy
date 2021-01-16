@@ -1,6 +1,3 @@
-import java.lang.reflect.Field
-import java.lang.reflect.Modifier
-
 class Email {
 
     public String prospectName
@@ -14,13 +11,14 @@ class Email {
         // split() returns only a string array, can't access the capture group.
         //return this.dump().split(/(\w+)\=/).join("\n")
 
-        // Use reflection instead
-        String result = ""
-        this.class.getDeclaredFields().each {
-            if (!it.isSynthetic()) { // TODO maybe use filter for synthetic, and collect to StringBuilder
-                result += it.getName() + ": " + it.get(this) + "\n"
-            }
-        }
-        return result
+        // Use reflection and some powerful groovy stream enhancements instead:
+        // First filter the instance fields to not be synthetic,
+        // then map to a map which can then be formatted in groovy in the collect method.
+        // Lastly the resulting string array is joined by newlines.
+        return this.class.getDeclaredFields()
+            .stream()
+            .filter { f -> !f.isSynthetic() }
+            .map { f -> [key: f.getName(), value: f.get(this)] }
+            .collect { /$it.key = $it.value/ }.join("\n")
     }
 }

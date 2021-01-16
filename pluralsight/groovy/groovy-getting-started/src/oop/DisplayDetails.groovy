@@ -8,4 +8,3 @@ email.sendDate = new Date() // Groovy can access all Objects in the Java platfor
 email.notes = "Follow-up Email"
 
 println email.display()
-
