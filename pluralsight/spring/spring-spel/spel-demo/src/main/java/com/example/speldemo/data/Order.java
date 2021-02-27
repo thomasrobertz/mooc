@@ -54,4 +54,12 @@ public class Order {
     public void setOrigin(String origin) {
         this.origin = origin;
     }
+
+    public String getFormattedAmountString() {
+        return formattedAmountString;
+    }
+
+    public void setFormattedAmountString(String formattedAmountString) {
+        this.formattedAmountString = formattedAmountString;
+    }
 }
