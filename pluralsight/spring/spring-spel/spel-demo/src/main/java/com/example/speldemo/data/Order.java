@@ -10,10 +10,10 @@ public class Order {
     @Value("#{100.55 + 500.75 + 400-66}")
     double amount;
 
-    @Value("#{order.amount = 1000 ? order order.amount * 5 / 1000 : 0}")
+    @Value("#{order.amount >= 1000 ? order.amount * 5 / 100 : 0}")
     double discount;
 
-    @Value("#{user.country == 'US' and user-timeZone == 'America/NewYork' ? 3 : 1}")
+    @Value("#{user.country == 'US' and user.timeZone == 'America/NewYork' ? 3 : 1}")
     int daysToDeliver;
 
     @Value("#{user.country}")
