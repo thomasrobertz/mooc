@@ -23,6 +23,45 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:8080/order/customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/order/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/order/shipping/locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/order/shipping/locations",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"shipping",
+						"locations"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

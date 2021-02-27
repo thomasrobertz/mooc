@@ -3,6 +3,8 @@ package com.example.speldemo.data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class Order {
 
@@ -22,6 +24,12 @@ public class Order {
     // T designates static methods
     @Value("#{T(java.text.NumberFormat).getCurrencyInstance(T(java.util.Locale).getDefault()).format(order.amount)}")
     String formattedAmountString;
+
+    @Value("#{shipping.locationsByCountry[user.country]}")
+    List<City> shippingLocations;
+
+    @Value("#{order.shippingLocations.?[isCapital == false]}")
+    List<City> nonCapitalShippingLocations;
 
     public double getAmount() {
         return amount;
@@ -61,5 +69,21 @@ public class Order {
 
     public void setFormattedAmountString(String formattedAmountString) {
         this.formattedAmountString = formattedAmountString;
+    }
+
+    public List<City> getShippingLocations() {
+        return shippingLocations;
+    }
+
+    public void setShippingLocations(List<City> shippingLocations) {
+        this.shippingLocations = shippingLocations;
+    }
+
+    public List<City> getNonCapitalShippingLocations() {
+        return nonCapitalShippingLocations;
+    }
+
+    public void setNonCapitalShippingLocations(List<City> nonCapitalShippingLocations) {
+        this.nonCapitalShippingLocations = nonCapitalShippingLocations;
     }
 }

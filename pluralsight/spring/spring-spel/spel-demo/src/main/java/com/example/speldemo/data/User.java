@@ -8,9 +8,13 @@ public class User {
 
     @Value("#{'John Doe'}")
     private String name;
+
     @Value("#{30}")
     private int age;
+
+    @Value("#{'US'}")
     private String country;
+
     private String language;
     private String timeZone;
 
