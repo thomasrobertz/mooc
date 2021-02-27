@@ -31,6 +31,9 @@ public class Order {
     @Value("#{order.shippingLocations.?[isCapital == false]}")
     List<City> nonCapitalShippingLocations;
 
+    @Value("#{user.name}, your order total due amount is #{order.formattedAmountString}")
+    String orderSummary;
+
     public double getAmount() {
         return amount;
     }
@@ -85,5 +88,13 @@ public class Order {
 
     public void setNonCapitalShippingLocations(List<City> nonCapitalShippingLocations) {
         this.nonCapitalShippingLocations = nonCapitalShippingLocations;
+    }
+
+    public String getOrderSummary() {
+        return orderSummary;
+    }
+
+    public void setOrderSummary(String orderSummary) {
+        this.orderSummary = orderSummary;
     }
 }

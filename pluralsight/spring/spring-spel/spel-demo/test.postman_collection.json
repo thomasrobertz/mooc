@@ -62,6 +62,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:8080/order/summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/order/summary",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"summary"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

@@ -57,6 +57,11 @@ public class OrderController {
         return order.getFormattedAmountString();
     }
 
+    @RequestMapping(value = "/summary", method = RequestMethod.GET)
+    public String getOrderSummary() {
+        return order.getOrderSummary();
+    }
+
     @RequestMapping(value = "/shipping/locations", method = RequestMethod.GET)
     public List<City> getShippingLocations() {
         return order.getShippingLocations();
