@@ -15,9 +15,9 @@ public class User {
     private String timeZone;
 
     public User() { }
-    
-    public User(@Value("#{systemProperties['user.country']}")String country,
-                @Value("#{systemProperties['user.language']}")String language) {
+
+    public User(@Value("#{systemProperties['user.country']}") String country,
+                @Value("#{systemProperties['user.language']}") String language) {
         this.country = country;
         this.language = language;
     }

@@ -19,7 +19,9 @@ public class Order {
     @Value("#{user.country}")
     String origin;
 
-    
+    // T designates static methods
+    @Value("#{T(java.text.NumberFormat).getCurrencyInstance(T(java.util.Locale).getDefault()).format(order.amount)}")
+    String formattedAmountString;
 
     public double getAmount() {
         return amount;
