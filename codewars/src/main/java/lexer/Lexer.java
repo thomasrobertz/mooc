@@ -1,5 +1,6 @@
 package lexer;
 
+// TODO: Check for possible refactorings
 public class Lexer {
 
     public enum State {
