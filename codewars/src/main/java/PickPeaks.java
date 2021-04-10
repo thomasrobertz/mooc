@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 // https://www.codewars.com/kata/5279f6fe5ab7f447890006a7
@@ -9,75 +6,148 @@ public class PickPeaks {
 
     public static void main(String[] args) {
 
+        //                                      1 1 1 1
+        //                  0 1 2 3 4 5 6 7 8 9 0 1 2 3
+        getPeaks(new int[] {3,2,3,6,4,1,2,3,2,1,2,2,2,1}); // 3,7,10
+        //                        ^       ^     ^
+
+        //getPeaks(new int[] {3,2,3,6,4,1,2,3,2,1,2,3});
+        //getPeaks(new int[] {1,2,3,6,4,1,2,3,2,1});
+        //getPeaks(new int[] {1,2,3,6,6,4,1,2,3,2,1,1,2,3,3,4,4,1});
+        //getPeaks(new int[] {1,2,3,3,2,1});
+        //new SolutionTest().sampleTests();
     }
 
     public static Map<String, List<Integer>> getPeaks(int[] arr) {
-
-        return null;
+        Waypoints waypoints = new Waypoints(Arrays.stream(arr).boxed().collect(Collectors.toList()));
+        State current = new Search(new ArrayList<>());
+        while(waypoints.hasNext()) {
+            current = current.next(waypoints.next());
+        }
+        Map<String, List<Integer>> result = new HashMap<>();
+        result.put("pos", new ArrayList<>());
+        result.put("peaks", new ArrayList<>());
+        current.peaks.stream().forEach(w -> {
+            result.get("pos").add(w.position);
+            result.get("peaks").add(w.value);
+        });
+        return result;
     }
 
-    /*
-    * In this kata, you will write a function that returns the positions and the values
-    * of the "peaks" (or local maxima) of a numeric array.
-For example, the array arr = [0, 1, 2, 5, 1, 0] has a peak
-*  at position 3 with a value of 5 (since arr[3] equals 5).
-
-The output will be returned as a ``Map<String,List>with two key-value pairs:"pos"and"peaks".
-* If there is no peak in the given array, simply return {"pos" => [], "peaks" => []}`.
-
-Example: pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3]) should return
-* {pos: [3, 7], peaks: [6, 3]} (or equivalent in other languages)
-
-All input arrays will be valid integer arrays (although it could still be empty),
-*  so you won't need to validate the input.
-
-The first and last elements of the array will not be considered as peaks
-* (in the context of a mathematical function, we don't know what is after and before and therefore, we don't know if it is a peak or not).
-
-Also, beware of plateaus !!! [1, 2, 2, 2, 1] has a peak while [1, 2, 2, 2, 3] and [1, 2, 2, 2, 2] do not.
-* In case of a plateau-peak, please only return the position and value of the beginning of the plateau. For example: pickPeaks([1, 2, 2, 2, 1]) returns {pos: [1], peaks: [2]} (or equivalent in other languages)
-
-
-    * */
-    public static class SolutionTest {
-
-        private static String[] msg = {"should support finding peaks",
-                "should support finding peaks, but should ignore peaks on the edge of the array",
-                "should support finding peaks; if the peak is a plateau, it should only return the position of the first element of the plateau",
-                "should support finding peaks; if the peak is a plateau, it should only return the position of the first element of the plateau",
-                "should support finding peaks, but should ignore peaks on the edge of the array"};
-
-        private static int[][] array = {{1,2,3,6,4,1,2,3,2,1},
-                {3,2,3,6,4,1,2,3,2,1,2,3},
-                {3,2,3,6,4,1,2,3,2,1,2,2,2,1},
-                {2,1,3,1,2,2,2,2,1},
-                {2,1,3,1,2,2,2,2}};
-
-        private static int[][] posS  = {{3,7},
-                {3,7},
-                {3,7,10},
-                {2,4},
-                {2},};
-
-        private static int[][] peaksS = {{6,3},
-                {6,3},
-                {6,3,2},
-                {3,2},
-                {3}};
-
-        public void sampleTests() {
-            for (int n = 0 ; n < msg.length ; n++) {
-                final int[] p1 = posS[n], p2 = peaksS[n];
-                Map<String,List<Integer>> expected = new HashMap<String,List<Integer>>() {{
-                    put("pos",   Arrays.stream(p1).boxed().collect(Collectors.toList()));
-                    put("peaks", Arrays.stream(p2).boxed().collect(Collectors.toList()));
-                }},
-                        actual = PickPeaks.getPeaks(array[n]);
-                if(expected != actual) {
-                    throw new RuntimeException("Wrong");
+    public static class Waypoint {
+        enum Attitude {
+            CLIMB, LEVEL, DESCEND
+        }
+        public Waypoint previous = null;
+        public Waypoint next = null;
+        public int position;
+        public int value;
+        public Attitude attitude = Attitude.LEVEL;
+        public Waypoint(Waypoint previous, int position, int value) {
+            this.previous = previous;
+            this.position = position;
+            this.value = value;
+            determineAttitude();
+        }
+        public void setNext(Waypoint next) {
+            this.next = next;
+            determineAttitude();
+        }
+        private void determineAttitude() {
+            if (previous instanceof Waypoint) {
+                if (previous.value > value) {
+                    attitude = Attitude.DESCEND;
+                }
+                if (previous.value < value) {
+                    attitude = Attitude.CLIMB;
                 }
             }
         }
     }
 
+    public static class Waypoints {
+        List<Waypoint> waypoints = new ArrayList<>();
+        int index = 0;
+        public Waypoints(List<Integer> elements) {
+            Waypoint previous = null;
+            int position = 0;
+            for(Integer value : elements) {
+                if (previous == null) {
+                    previous = new Waypoint(null, position, value);
+                    this.waypoints.add(previous);
+                } else {
+                    Waypoint newWaypoint = new Waypoint(previous, position, value);
+                    previous.setNext(newWaypoint);
+                    this.waypoints.add(newWaypoint);
+                    previous = newWaypoint;
+                }
+                position++;
+            }
+        }
+        public boolean hasNext() {
+            return waypoints.size() > index;
+        }
+        public Waypoint next() {
+            Waypoint waypoint = waypoints.get(index);
+            index++;
+            return waypoint;
+        }
+    }
+
+    public static abstract class State {
+        public List<Waypoint> peaks;
+        public State(List<Waypoint> peaks) {
+            this.peaks = peaks;
+        }
+        public abstract State next(Waypoint next);
+    }
+
+    public static class Search extends State {
+        public Search(List<Waypoint> peaks) {
+            super(peaks);
+        }
+        @Override
+        public State next(Waypoint next) {
+            if (next.attitude == Waypoint.Attitude.CLIMB) {
+                return new Peak(peaks);
+            }
+            return this;
+        }
+    }
+
+    public static class Peak extends State {
+        public Peak(List<Waypoint> peaks) {
+            super(peaks);
+        }
+        @Override
+        public State next(Waypoint next) {
+            if (next.attitude == Waypoint.Attitude.LEVEL) {
+                return new Plateau(peaks, next.previous);
+            }
+            if (next.attitude == Waypoint.Attitude.DESCEND) {
+                peaks.add(next.previous);
+                return new Search(peaks);
+            }
+            return this;
+        }
+    }
+
+    public static class Plateau extends State {
+        private Waypoint plateauStart;
+        public Plateau(List<Waypoint> peaks, Waypoint start) {
+            super(peaks);
+            plateauStart = start;
+        }
+        @Override
+        public State next(Waypoint next) {
+            if (next.attitude == Waypoint.Attitude.CLIMB) {
+                return new Peak(peaks);
+            }
+            if (next.attitude == Waypoint.Attitude.LEVEL) {
+                return new Plateau(peaks, plateauStart);
+            }
+            peaks.add(plateauStart);
+            return new Search(peaks);
+        }
+    }
 }
