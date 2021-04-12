@@ -8,8 +8,10 @@ public class PickPeaks {
 
         //                                      1 1 1 1
         //                  0 1 2 3 4 5 6 7 8 9 0 1 2 3
-        getPeaks(new int[] {3,2,3,6,4,1,2,3,2,1,2,2,2,1}); // 3,7,10
+        //getPeaks(new int[] {3,2,3,6,4,1,2,3,2,1,2,2,2,1}); // 3,7,10
         //                        ^       ^     ^
+
+        System.out.println(getPeaks(new int[] {5,4,8,4,5})); // 3,7,10
 
         //getPeaks(new int[] {3,2,3,6,4,1,2,3,2,1,2,3});
         //getPeaks(new int[] {1,2,3,6,4,1,2,3,2,1});
