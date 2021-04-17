@@ -20,12 +20,6 @@ public class TopWords {
                         top3Words.put(tf, 1);
                     }
         });
-
-        List<String> res = top3Words.entrySet().stream()
-                .sorted(comparing(Map.Entry<String, Integer>::getValue).reversed()
-                        .thenComparing(Map.Entry::getKey)).limit(10)
-                .map(tf -> tf.getKey().toLowerCase()).collect(Collectors.toList());
-
         return top3Words.entrySet().stream()
                 .sorted(comparing(Map.Entry<String, Integer>::getValue).reversed()
                         .thenComparing(Map.Entry::getKey)).limit(3)
