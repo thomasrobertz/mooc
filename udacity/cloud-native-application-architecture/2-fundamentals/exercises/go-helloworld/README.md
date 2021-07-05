@@ -12,3 +12,9 @@ go run main.go
 ```
 
 Access the application on: http://127.0.0.1:6111/
+
+## Run the docker image
+
+```
+docker run -p 6111:6111 thomasrobertz/helloworld-go:0.0.1
+```
