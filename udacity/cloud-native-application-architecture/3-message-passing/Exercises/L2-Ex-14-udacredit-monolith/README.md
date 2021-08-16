@@ -15,7 +15,7 @@ For subsequent runs, you can run `docker-compose up` without the `--build` comma
 * The Flask application can be found at `http://localhost:5000`:
     `http://localhost:5000/api/employees`
 
-    `http://localhost:5000/api/customers`
+    `http://localhost:5001/api/customers`
 
 * The UI can be found at `http://localhost:3000`
 

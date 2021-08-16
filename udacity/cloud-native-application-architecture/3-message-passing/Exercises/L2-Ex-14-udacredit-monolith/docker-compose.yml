@@ -3,7 +3,7 @@ version: '3'
 services:
   api:
     build: api
-    command: ["flask", "run", "--host=0.0.0.0"]
+    command: ["flask", "run", "--host=0.0.0.0 --port 5000"]
     volumes:
       - ./api:/backend
     environment:
@@ -11,7 +11,16 @@ services:
       - FLASK_APP=app.py
     ports:
       - "5000:5000"
-
+  customer_service:
+    build: customer_service
+    command: ["flask", "run", "--host=0.0.0.0 --port 5001"]
+    volumes:
+      - ./customer_service:/backend
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+    ports:
+      - "5001:5001"
   client:
     tty: true
     build: client
@@ -25,6 +34,7 @@ services:
       - '3000:3000'
     depends_on:
       - api
+      - customer_service
 
 volumes:
   node-modules:
