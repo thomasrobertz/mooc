@@ -1,0 +1,8 @@
+With Zookeeper
+.\zookeeper-server-start.bat ..\..\config\zookeeper.properties
+.\kafka-server-start.bat ..\..\config\server.properties
+.\kafka-topics.bat --create --topic udacity-items --bootstrap-server localhost:9092
+.\kafka-console-consumer.bat --topic udacity-items --from-beginning --bootstrap-server localhost:9092
+.\kafka-console-producer.bat --topic udacity-items --bootstrap-server localhost:9092
+
+

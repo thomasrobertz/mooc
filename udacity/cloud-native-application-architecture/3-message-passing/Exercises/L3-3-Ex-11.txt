@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message OrderItem {
+  int32 id = 1;
+  string computer_name = 2;
+  string computer_model = 3;
+  string computer_manufacturer = 4;
+  repeated string equipment = 5;
+}
+
+Service OrderService {
+    rpc Create(OrderItem ) returns (OrderItem)
+}
