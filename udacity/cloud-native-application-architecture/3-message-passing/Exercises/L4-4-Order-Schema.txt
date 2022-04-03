@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  description: Enables ordering computers from our shop.
+  version: "1.0.0"
+  title: Simple Computer Orders API
+paths:
+  /retrieve_orders:
+    get:
+      summary: Retrieve all orders from the order book
+      operationId: retrieve_orders
+      description: Deprecated develpment endpoint, will be removed for production
+      responses:
+        '200':
+          description: Successfully retrieved order list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /create_order:
+    post:
+      summary: Creates a computer order
+      operationId: create_order
+      description: Adds an order entry to the Order book
+      responses:
+        '201':
+          description: Order entry created
+        '400':
+          description: Invalid input, object invalid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+        description: Computer Order to add
+components:
+  schemas:
+    Order:
+      type: object
+      required:
+      - equipment
+      properties:
+        id:
+          type: string
+          example: 1
+        orderId:
+          type: string
+          example: 1
+        status:
+          type: array
+          items:
+            enum: [Queued, Processing, Completed, Failed]
+        equipment:
+          type: array
+          items:
+            type: string
+          example: ["KEYBOARD", "WEBCAM"]
+        created_at:
+          type: string
+          example: "2020-10-16T10:29:10.969696"
+        created_by:
+          type: string
+          example: "Frank"
