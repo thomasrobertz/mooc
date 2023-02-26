@@ -1,0 +1,11 @@
+I have chosen to adopt a systematic and well-organized approach to decision making, as outlined below. The initial step involved summarizing the functionalities of the app and identifying potential service candidates. The functionalities are also reflected in the services.py file, which served as the starting point for this process.
+
+The ability to locate individuals is contingent upon retrieving personal information. This functionality does not have any other dependencies, allowing it to be implemented as a standalone service. Given this information, a straightforward architecture has been selected at this stage, as illustrated in the accompanying diagram (architecture_draft.png).
+
+It was noted that the original name "ConnectionService" might create confusion as it could be interpreted as a service for connecting to external systems, databases or storage systems. As a result, it has been renamed to "VicinityService" to better reflect its intended purpose.
+
+The decision was straightforward - the controller endpoints simply needed to be extracted and allocated to their corresponding microservices and then converted to their respective protocol implementations.
+
+Sharing models/schemas between microservices is a complex undertaking. Even when utilizing one of the most straightforward solutions, such as a centralized schema registry that can be easily discovered, a significant amount of effort is required to manage the registry and respond to changes in the architecture. In the context of this prototype application, the required effort would far outweigh the potential benefits.
+
+Given the above considerations, I made the decision to centralize the schemas but implement them in a straightforward manner by hardwiring them. Each service was then given the necessary information on how to retrieve these schemas.

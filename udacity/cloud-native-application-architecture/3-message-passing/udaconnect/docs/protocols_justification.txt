@@ -1,0 +1,36 @@
+Justification for each strategy.
+
+Kafka
+-----
+Since Kafka can be used well in event-driven architectures, I decided to use it in this project for a similar task.
+In a later phase of the project i decided to decompose the connection service further and
+implement it to support parallel operation (Scatter-Gather).
+This way are also future proof in this area, because Kafka scales extremely well, and so we will be able to 
+handle a lot more geo data easily, sould the need arise.
+Furthermore, I use Kafka to provide an event-based, centralized logging endpoint.
+
+-> Kafka is used for:
+-Geolocation Compute.
+-Centralized Logging.
+
+
+gRPC
+----
+gRPC is a good fit for inter-service communications in a microservice architecture.
+Unlike our use of ReST, we use the gRPC protocol more for internal tasks.
+
+-> gRPC is used for:
+-Performing CRUD operations between microservices.
+
+ReST
+----
+Rest is a standard that is used in most web-based applications, so it is a good choice for the more general implementations.
+Unlike gRPC and Kafka operations, which can be seen as geared more towards internal operations, ReST in this 
+application is more upstream oriented, towards the customer and the presentation layer.
+Which makes sense from a design point of view, firstly because of the simplicity in design and implementation.
+It is future proof because we can easily react to changing requirements.
+New developers will be able to pick up the API easily and be able to work on a wide area of tasks.
+Also ReST is typically used for CRUD operations.
+
+-> ReST is used for:
+-All web application endpoints.

@@ -1,0 +1,43 @@
+1. General architecture approach
+
+I decided to follow an overall structured and (hopefully) logical step-by-step decision making process which is outlined here.
+First the app functionality was summarized and service candidates identified.
+The functionality is also reflected in the services.py file, so I started there.
+
+Functionialities
+-Find people by geo distance.
+-Retrieve and create locations.
+-Retrieve and create persons.
+
+The functionality to find people depends on retrieving persons.
+There are no other dependencies, so the location functionality can be implemented as a stand-alone service.
+A very simple architecture based on this information was chosen at this stage (see architecture_draft.png)
+
+Concerns
+In the ConnectionService, it is mentioned that ...
+A way to improve performance here could be to ... parallel, or cache/precompile
+
+    # Cache all users in memory for quick lookup
+    Move person cache to own service. New person or person deleted -> update cache with kafka event
+    do same for Location. Make a new service that can scatter/gather or similar. 
+    or make just a new service for the big for loop that does the "compute"
+    or even better, do both: serviceA gets/caches locations, serviceB does compute (on two pods, parallel)
+
+    
+
+2. Refactoring
+
+
+Next I reviewed each of the remaining files to further define the architecture.
+
+controllers.py
+This was a simple decision, controller endpoints just need to be extracted to each corresponding microservice, and converted to 
+their respective protocol implementation.
+For Kafka, ...
+For gRPC,...
+
+models.py and schemas.py
+Sharing models/schemas between microservices is no trivial task. Even using one of the simplest solutions commonly used,
+a centralized, perhaps discoverable schema registry, considerable efforts are necessary in order to manage them and react to an evolving architecture.
+In this simple prototype application, such efforts are beyond scope.
+Therefore I chose to centralize but simply hardwire the schemas and give each service the knowledge of how to retrieve them.
