@@ -4,7 +4,7 @@ I decided to follow an overall structured and (hopefully) logical step-by-step d
 First the app functionality was summarized and service candidates identified.
 The functionality is also reflected in the services.py file, so I started there.
 
-Functionialities
+Functionalities
 -Find people by geo distance.
 -Retrieve and create locations.
 -Retrieve and create persons.
@@ -13,31 +13,47 @@ The functionality to find people depends on retrieving persons.
 There are no other dependencies, so the location functionality can be implemented as a stand-alone service.
 A very simple architecture based on this information was chosen at this stage (see architecture_draft.png)
 
-Concerns
-In the ConnectionService, it is mentioned that ...
-A way to improve performance here could be to ... parallel, or cache/precompile
+2. Considering further improvements to the architecture as stretch goals
 
-    # Cache all users in memory for quick lookup
-    Move person cache to own service. New person or person deleted -> update cache with kafka event
-    do same for Location. Make a new service that can scatter/gather or similar. 
-    or make just a new service for the big for loop that does the "compute"
-    or even better, do both: serviceA gets/caches locations, serviceB does compute (on two pods, parallel)
+In the ConnectionService, it is mentioned that the find_contacts method might run rather long for large datasets.
+A question was posed on how this could be improved, which prompted me to rethink the architecture from a
+performance perspective. A way to improve performance here is to introduce parallel operation, and 
+also use a cache of some precompiled results. 
 
+The cache being the simpler solution, can be applied to storing all Persons in memory for quick lookup.
+If a new Person is created or a Person is deleted, the cache would have to be updated.
+As a stretch goal I thought about moving such a Person cache to its own service. 
+After thinking about it I realized that this could also be used for Location.
+    
+Looking at how to further decouple/improve the solution, as mentioned I considered implementing a parallel operation
+for the expensive Connection calculation.
+Here my idea was to create a new service that uses the scatter/gather or a similar microservice pattern. 
+However at this point I was not sure if this added effort would fit the scope of the project.
     
 
-2. Refactoring
+3. Refactoring
 
-
-Next I reviewed each of the remaining files to further define the architecture.
+The stretch goal improvements pu aside, next I reviewed each of the remaining files to further define the architecture.
 
 controllers.py
-This was a simple decision, controller endpoints just need to be extracted to each corresponding microservice, and converted to 
-their respective protocol implementation.
-For Kafka, ...
-For gRPC,...
+This was a simple decision, controller endpoints necessary for the frontend operation just needed to be extracted 
+to each corresponding microservice. These would be the consumer facing ReST endpoints.
+To identify the endpoints needed in the frontend, I searched the frontend code (see additional_files/frontend_requests.txt).
+
+Next inter-services communication endpoints and reqeust methods had to be converted to their respective protocol implementation.
+For the costly operation of computing and retrieving geo data, Kafka event endpoints seemed the right choice.
+For the rest of the inter-services communication, gRPC endpoints were created.
+To identify the necessary send/receive endpoints for refactoring, I constrasted the existing endpoints in the 
+controllers.py file with those found in the frontend.
 
 models.py and schemas.py
 Sharing models/schemas between microservices is no trivial task. Even using one of the simplest solutions commonly used,
 a centralized, perhaps discoverable schema registry, considerable efforts are necessary in order to manage them and react to an evolving architecture.
 In this simple prototype application, such efforts are beyond scope.
 Therefore I chose to centralize but simply hardwire the schemas and give each service the knowledge of how to retrieve them.
+gRPC messages were treated in the same manner.
+
+
+4. Assembling the new Architecture
+
+Lastlsy ... which is depicted in the final architecture diagram (xxx.jpg);

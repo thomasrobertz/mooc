@@ -18,6 +18,12 @@ DATE_FORMAT = "%Y-%m-%d"
 
 api = Namespace("UdaConnect-Connection", description="Connection CRUD services.")  # noqa
 
+### REFACTORING TO NEW ARCHITECTURE
+
+import grpc
+from generated import connection_protocol_pb2;
+from generated import connection_protocol_pb2_grpc;
+
 @api.route("/persons/<person_id>/connection")
 @api.param("start_date", "Lower bound of date range", _in="query")
 @api.param("end_date", "Upper bound of date range", _in="query")
@@ -37,4 +43,5 @@ class ConnectionDataResource(Resource):
             end_date=end_date,
             meters=distance,
         )
+                
         return results
