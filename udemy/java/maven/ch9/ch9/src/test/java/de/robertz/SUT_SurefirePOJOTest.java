@@ -4,7 +4,7 @@ package de.robertz;
 // Surefire will pick up *Test classes and test* methods (configurable)
 // Target is mvn test
 
-public class SUTTest {
+public class SUT_SurefirePOJOTest {
 
 	public void testGetHello() {
 		SUT s = new SUT();
