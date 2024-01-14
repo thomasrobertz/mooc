@@ -5,6 +5,9 @@ package de.robertz;
 // Target is mvn test
 
 // Since we also have JUnit in the classpath, Sonar will complain that there is no test in this class.
+// Also, IntelliJ will not pick this up as test. Use mvn test.
+// But we can run Jupiter test from IntelliJ.
+// If using Jupiter it probably doesn't make sense to use Surefire POJO tests alongside though.
 
 public class SUT_SurefirePOJOTest {
 
