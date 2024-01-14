@@ -15,6 +15,14 @@
         <junit.version>5.10.1</junit.version>
     </properties>
 
+    <!--
+    Examples of testing with maven:
+        -Surefire/POJO
+        -JUnit
+        -TestNG
+        -Failsafe/IT
+    -->
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
