@@ -18,7 +18,6 @@
         The Maven Reactor builds the whole project and each submodule.
         This happens sequentially by default, BUT:
         -Modules (or Plugins) used by other modules will get built first.
-        -Order can be declared.
 
         A typical smell is the overuse of modules (Will also slow down build)
             -> YAGNI, Consolidate
