@@ -19,7 +19,6 @@ The flexibility then comes in the caller. Where we see lambdas being passed to t
 <br />
 This often works in conjunction with several other FP principles, for instance staying immutable:
 <br />
-// Could also use "return this" but it is to show explicit immutability
 `return new Order(cart, targetDestination)`
 
 `return new Burger(burger)`
