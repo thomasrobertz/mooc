@@ -27,7 +27,6 @@ public class ApplyOverTest {
 		//			And a "fake" way, see below
 		// We also see the explicit state management (i is manually incremented) in the imperative
 		// approach, where the functional approach limits/prevents such side effects.
-		// Though not a prime example we can imagine that code conciseness and readability also differ.
 
 		List<Integer> classicLoopResults = new ArrayList<>();
 		List<Integer> streamResults = new ArrayList<>();
@@ -49,7 +48,6 @@ public class ApplyOverTest {
 	void fakeImperativeLoop() {
 
 		// Use an IntSream as "provider" for indexes.
-
 		List<String> elements = List.of("a", "b", "c", "d", "e", "f", "g", "h");
 		StringBuilder b = new StringBuilder();
 

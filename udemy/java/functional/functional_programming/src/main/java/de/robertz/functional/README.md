@@ -1,6 +1,11 @@
+Hands-On and Experiments from the course https://adessose.udemy.com/course/functional-programming-and-reactive-programming-in-java 
+
+---
+
 A lot of the constructs and patterns use the same internal pattern to achieve functionality.
 Basically, it's just `apply`, used in different ways and constellations.
 F.i.: <br />
+
 Chainable Function: `next.apply(current.apply(input))`
 <br />
 Currying `f2.apply(input); f1.apply(f2)`

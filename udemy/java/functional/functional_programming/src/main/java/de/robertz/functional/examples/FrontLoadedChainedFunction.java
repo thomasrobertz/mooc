@@ -1,4 +1,4 @@
-package de.robertz.functional.constructs;
+package de.robertz.functional.examples;
 
 /*
  As thought experiment I was wondering if we could stay within an interface, immutable and stateless
@@ -7,7 +7,7 @@ package de.robertz.functional.constructs;
 public interface FrontLoadedChainedFunction<T> {
 
 	static <T> FrontLoadedChainedFunction<T> load(T initial) {
-		// My idea: Use a closure to keep a reference to the input "state"
+		// Idea: Use a closure to keep a reference to the input "state"
 		return t -> initial;
 	}
 

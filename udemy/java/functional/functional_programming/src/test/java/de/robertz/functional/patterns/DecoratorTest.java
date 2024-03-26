@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DecoratorTest {
+
 	@Test
 	public void decorateBurger() {
 
@@ -25,10 +26,11 @@ public class DecoratorTest {
 		// 	1 burger with cheese
 		// 	2 burgers with salad
 		// 	1 burger with cheese and extra sauce
-		// 	1 burger with salad, cheese, extra sause
+		// 	1 burger with salad, cheese, extra sauce
 
 		// Shows how instead of creating some burgers from scratch,
-		// we "reuse" existing burgers as template and decorate them
+		// we "reuse" existing burgers as template and decorate them.
+		// This is only possible if the original burger is not modified.
 		Burger standardBurger = new Preparation().with(new Burger());
 		Burger burgerWithCheese = new Preparation(Burger::addCheese).with(standardBurger);
 		Burger burgerWithSalad1 = new Preparation(Burger::addSalad).with(standardBurger);

@@ -1,5 +1,6 @@
-package de.robertz.functional.constructs;
+package de.robertz.functional.examples;
 
+import de.robertz.functional.examples.FrontLoadedChainedFunction;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

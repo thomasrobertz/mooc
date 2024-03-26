@@ -13,7 +13,7 @@ class ClosureTest {
 
 		Closure c = (s) -> {
 
-			// Of course printing to the console is a bad, impure, no good, side effect...
+			// Of course printing to the console strictly is a side effect...
 			System.out.println("In %s".formatted(s));
 			System.out.println("ESV is: %d".formatted(enclosingScopeVar));
 
