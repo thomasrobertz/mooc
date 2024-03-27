@@ -1,6 +1,5 @@
 package de.robertz.functional.datastructures;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import de.robertz.functional.datastructures.FunctionalList.Concrete;
@@ -13,51 +12,45 @@ class FunctionalListTest {
 	@Test
 	void prependTest() {
 		FunctionalList<Integer> fl = Concrete.of(2, 6, 9).prepend(17);
-		List<Integer> collected = new ArrayList<>();
-		fl.accept(collected::add); // Possible since List has add(int index, E element)
-		assertEquals(List.of(17, 2, 6, 9), collected);
+		assertEquals(List.of(17, 2, 6, 9), fl.toList());
 	}
 
 	@Test
 	void appendTest() {
 		FunctionalList<Integer> fl = FunctionalList.of(2, 6, 9).append(17);
-		List<Integer> collected = new ArrayList<>();
-		fl.accept(collected::add);
-		assertEquals(List.of(2, 6, 9, 17), collected);
+		assertEquals(List.of(2, 6, 9, 17), fl.toList());
 	}
 
 	@Test
-	void insertAtTest() {
+	void insertTest() {
 		FunctionalList<Integer> fl = FunctionalList.of(2, 6, 9);
-		FunctionalList<Integer> fins = fl.insertAt(1, 17);
 
-		List<Integer> collected = new ArrayList<>();
-		fins.accept(collected::add);
+		FunctionalList<Integer> fins = fl.insert(1, 17);
+		assertEquals(List.of(2, 17, 6, 9), fins.toList());
 
-		assertEquals(List.of(2, 17, 6, 9), collected);
+		fins = fl.insert(0, 17);
+		assertEquals(List.of(17, 2, 6, 9), fins.toList());
+	}
 
-		fins = fl.insertAt(0, 17);
+	@Test
+	void addAllTest() {
+		FunctionalList<String> a = FunctionalList.of("a", "b", "c");
+		List<String> s = List.of("d", "e", "f");
 
-		collected = new ArrayList<>();
-		fins.accept(collected::add);
-
-		assertEquals(List.of(17, 2, 6, 9), collected);
+		assertEquals(List.of("a", "b", "c", "d", "e", "f"),
+				a.addAll(s).toList());
 	}
 
 	@Test
 	void removeTest() {
 		FunctionalList<Integer> fl = FunctionalList.of(2, 6, 9).remove(6);
-		List<Integer> collected = new ArrayList<>();
-		fl.accept(collected::add);
-		assertEquals(List.of(2, 9), collected);
+		assertEquals(List.of(2, 9), fl.toList());
 	}
 
 	@Test
 	void removeAtTest() {
 		FunctionalList<Integer> fl = FunctionalList.of(2, 6, 9, 11).removeAt(2);
-		List<Integer> collected = new ArrayList<>();
-		fl.accept(collected::add);
-		assertEquals(List.of(2, 6, 11), collected);
+		assertEquals(List.of(2, 6, 11), fl.toList());
 	}
 
 	@Test
@@ -69,24 +62,18 @@ class FunctionalListTest {
 	@Test
 	void reverseTest() {
 		FunctionalList<Integer> fl = FunctionalList.of(2, 6, 9).reverse();
-		List<Integer> collected = new ArrayList<>();
-		fl.accept(collected::add);
-		assertEquals(List.of(9, 6, 2), collected);
+		assertEquals(List.of(9, 6, 2), fl.toList());
 	}
 
 	@Test
-	void joinTest() {
+	void concatTest() {
 		FunctionalList<Integer> fl1 = FunctionalList.of(2, 6, 9);
 		FunctionalList<Integer> fl2 = FunctionalList.of(7, 16, 22);
-		FunctionalList<Integer> j1 = fl1.join(fl2, fl1.length() - 1);
+		FunctionalList<Integer> concat = FunctionalList.concat(fl1, fl2);
 
-		List<Integer> collected = new ArrayList<>();
-		List<Integer> collectedPreserved = new ArrayList<>();
-		fl1.accept(collectedPreserved::add);
-		j1.accept(collected::add);
-
-		assertEquals(List.of(2, 6, 9), collectedPreserved);
-		assertEquals(List.of(2, 6, 9, 7, 16, 22), collected);
+		assertEquals(List.of(2, 6, 9), fl1.toList());
+		assertEquals(List.of(7, 16, 22), fl2.toList());
+		assertEquals(List.of(2, 6, 9, 7, 16, 22), concat.toList());
 	}
 
 	@Test
