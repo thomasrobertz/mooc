@@ -11,8 +11,8 @@
 	<groupId>de.robertz.security</groupId>
 	<artifactId>spring-security-section2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eazy-bank</name>
-	<description>A basic Spring Boot Security Project</description>
+	<name>eazybank</name>
+	<description>A Spring Boot Security Project</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
