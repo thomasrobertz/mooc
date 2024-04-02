@@ -1,10 +1,10 @@
-package de.robertz.security.springsecuritybasic;
+package de.robertz.security.eazybank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringSecurityBasicApplication {
+public class EazyBankApplication {
 
 	/*
 	* Spring will secure access to our Endpoint.

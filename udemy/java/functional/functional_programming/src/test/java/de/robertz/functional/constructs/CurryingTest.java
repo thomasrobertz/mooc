@@ -19,7 +19,7 @@ public class CurryingTest {
 		// Interesting to see how, unlike in chaining or composition, we are forced to follow the implicit
 		// order of 1. function apply returning 2. function apply, or always u -> v.
 		// In other words, we cannot do f2 apply f1.
-		// Along with ordering, also the functions themselves are fixed.
+		// So along with ordering, also the functions themselves are fixed.
 		//
 		// The flexibility of currying lies in its ability to partially apply functions and
 		// create new functions with some arguments pre-applied, but it does

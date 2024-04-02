@@ -29,7 +29,7 @@ class ChainableFunctionTest {
 	void lambdaCanBePassed_Directly() {
 
 		// Not so much of a test, rather to show that just as well a
-		// type inferrable matching functional interface can be passed into then().
+		// type inferable matching functional interface can be passed into then().
 
 		ChainableFunction<Integer> addOne = i-> i + 1;
 		ChainableFunction<Integer> addTwo = i -> i + 2;

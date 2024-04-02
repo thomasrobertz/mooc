@@ -58,7 +58,7 @@ public class Collectors {
 							return leftList;
 						},
 						(list) -> {			// The Finisher, a Function.
-							Collections.shuffle(list);	// Normally we may not shuffle using a finisher, it's just for demo purposes.
+							Collections.shuffle(list);	// Normally we may not want to shuffle using a finisher, it's just for demo purposes.
 							return list;
 						},
 						Characteristics.UNORDERED	// We want our own order (which is no order)

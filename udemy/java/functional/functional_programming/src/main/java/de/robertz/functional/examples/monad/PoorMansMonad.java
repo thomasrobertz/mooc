@@ -25,6 +25,7 @@ public class PoorMansMonad {
 	}
 
 	static void getFromDb(int id) {
+		// TODO apply
 		dbSideEffect(id).ifPresentOrElse(u -> System.out.println(u.name + " found."),
 				() -> System.out.println("User not found."));
 	}

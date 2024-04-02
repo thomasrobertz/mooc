@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BiConsumer;
 
 /* This is a toy implementation only! It doesn't have consistent List operations.
+ *
  * FunctionalList is like a chain.
  * Each chain has a head and a tail.
  * The tail is another FunctionalList, containing the remaining elements.
@@ -35,10 +36,17 @@ public abstract class FunctionalList<T> {
 	@SuppressWarnings("rawtypes")
 	public static final Terminal TERMINAL = new Terminal();
 
+	/**
+	 * Construct a functional list from the given parameters.
+	 *
+	 * @param ts
+	 * @return
+	 * @param <T>
+	 */
 	public static <T> FunctionalList<T> of(T ... ts) {
 		FunctionalList<T> resultingList = TERMINAL;
 
-		/* Traverse in reverse order.
+		/* Traverse td in reverse order.
 				Example with ts 22, 10, 64:
 
 				ts.length-1 is: 2
@@ -69,10 +77,12 @@ public abstract class FunctionalList<T> {
 	}
 
 	public FunctionalList<T> prepend(T e) {
+		// Prepend is quick
 		return new Concrete<>(e, this);
 	}
 
 	public FunctionalList<T> append(T e) {
+		// A bit of an expensive operation, could be optimized
 		return reverse().prepend(e).reverse();
 	}
 
@@ -97,8 +107,11 @@ public abstract class FunctionalList<T> {
 	}
 
 	public FunctionalList<T> removeAt(int index) {
-		if(index == 0)
+		if(index == 0) {
 			return tail();
+		}
+
+		// Descend the tails until index is met
 		return new Concrete<>(head(), tail().removeAt(index - 1));
 	}
 
@@ -109,10 +122,12 @@ public abstract class FunctionalList<T> {
 		if(index == length() - 1) {
 			return this.tail().append(e);
 		}
+		// Similar to removeAt, descend tails
 		return new Concrete<>(head(), tail().insert(index - 1, e));
 	}
 
 	public T getAt(final int index) {
+		// A bit of a hack but works
 		AtomicReference<T> valueAt = new AtomicReference<>();
 		accept((i, e) -> { if (i == index) valueAt.set(e); });
 		return valueAt.get();
@@ -122,6 +137,8 @@ public abstract class FunctionalList<T> {
 		T currentHead = head();
 		FunctionalList<T> currentTail = tail();
 		int length = length();
+
+		// Loop over all elements
 		for (int i = 0; i < length; i++) {
 			biConsumer.accept(i, currentHead);
 			currentHead = currentTail.head();
@@ -133,6 +150,8 @@ public abstract class FunctionalList<T> {
 		FunctionalList<T> resultingList = TERMINAL;
 		T current = head();
 		FunctionalList<T> temp = this;
+
+		// Also descend tails but prepend each element, resulting in a reversed list.
 		while(!temp.equals(TERMINAL)) {
 			resultingList = resultingList.prepend(current);
 			temp = temp.tail();
@@ -142,18 +161,34 @@ public abstract class FunctionalList<T> {
 	}
 
 	public static <T> FunctionalList<T> concat(FunctionalList<T> left, FunctionalList<T> right) {
+
 		if (left.equals(TERMINAL)) {
 			return right;
 		}
-		if (right.equals(TERMINAL)) {
-			return left;
-		}
+
+		/* Recurse this construction template:
+		 *
+		 * Create a new chain link with the left's head and the concatenation of it's tail
+		 * (as new head in the recursive succession) and the right list.
+		 *
+		 * Example (Not all Terminals shown):
+		 * 1. concat({2, {3}}, {7, {8}})	->	create and 1st recursive call with Concrete(2, concat({3}, {7, {8}}))
+		 * 2. concat({3}, {7, {8}})				->	create and 2nd recursive call with Concrete(3, concat({ }, {7, {8}}))
+		 * 3. concat({ }, {7, {8})				->	TERMINAL left, {7, {8}} returned into previous concat call.
+		 * 4. (Returning from 2.) Concrete(3, concat({ }, {7, {8}})) 	yields Concrete(3, {7, {8}})
+		 * 5. (Returning from 1.) Concrete(2, concat({3}, {7, {8}})) 	yields Concrete(2, { 3, {7, {8}}})
+		 */
 		return new Concrete<>(left.head(), concat(left.tail(), right));
 	}
 
 	public List<T> toList() {
 		List<T> elements = new ArrayList<>();
 		FunctionalList<T> t = tail();
+
+		if (Objects.isNull(t)) {
+			return elements;
+		}
+
 		elements.add(head());
 		while(!t.equals(TERMINAL)) {
 			elements.add(t.head());
@@ -162,7 +197,7 @@ public abstract class FunctionalList<T> {
 		return elements;
 	}
 
-	// Represents a chain link in the list.
+	// Represents a chain link (concrete element, that has a tail) in the list.
 	public static class Concrete<T> extends FunctionalList<T> {
 
 		private T head;
@@ -184,7 +219,7 @@ public abstract class FunctionalList<T> {
 		}
 	}
 
-	// Represents an empty list, or more precisely, the end of the list.
+	// Represents an empty list which is also the end of the list, doesn't have tail (or head)
 	private static class Terminal<T> extends FunctionalList<T> {
 		@Override
 		public T head() {
