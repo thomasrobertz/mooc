@@ -39,15 +39,15 @@ public class FunctionalBinaryTree<T extends Comparable<T>> {
 
 	public static <T extends Comparable<T>> FunctionalBinaryTree<T> tree(T ... ts) {
 		FunctionalBinaryTree<T> tree = TERMINAL;
-		for(int i = 0; i < ts.length; i++) {
-			tree = tree.insert(ts[i]);
+		for (T t : ts) {
+			tree = tree.insert(t);
 		}
 		return tree;
 	}
 
 	public FunctionalBinaryTree<T> insert(T t) {
 		if (isEmpty()) {
-			return new FunctionalBinaryTree<>(TERMINAL, t, TERMINAL);
+			return new FunctionalBinaryTree<T>(TERMINAL, t, TERMINAL);
 		}
 		return switch (t.compareTo(value)) {
 			case 1 -> new FunctionalBinaryTree<>(left, value, right.insert(t));
@@ -63,7 +63,7 @@ public class FunctionalBinaryTree<T extends Comparable<T>> {
 		if (t.compareTo(value) > 0) {
 			return new FunctionalBinaryTree<>(left, value, right.remove(t));
 		}
-		return left.merge(right);
+		return left.join(right);
 	}
 
 	public boolean has(T t) {
@@ -79,76 +79,30 @@ public class FunctionalBinaryTree<T extends Comparable<T>> {
 		return value.equals(t);
 	}
 
-	public boolean withinBranch(T first, T second) {
-		return true;
-	}
-
-	public boolean withinNode(T first, T second) {
+	/*
+	 * Returns true if both values are within the same node
+	 */
+	public boolean neighbours(T first, T second) {
 		if (first.equals(second)) {
 			return true;
 		}
-		FunctionalBinaryTree<T> firstSubTree = sub(first);
-		FunctionalBinaryTree<T> secondSubTree = sub(second);
 
-		if (firstSubTree.equals(secondSubTree)) {
-			return true;
-		}
+		FunctionalBinaryTree<T> lf = local(first);
+		FunctionalBinaryTree<T> ls = local(second);
 
-//		boolean foundInFirst =  firstSubTree.value.equals(second)
-//			|| firstSubTree.left.value.equals(second)
-//			|| firstSubTree.right.value.equals(second);
-//		boolean foundInSecond =  secondSubTree.value.equals(first)
-//				|| secondSubTree.left.value.equals(first)
-//				|| secondSubTree.right.value.equals(first);
-
-		boolean foundInFirst = valueIn(firstSubTree, second);
-		boolean foundInSecond = valueIn(secondSubTree, first);
-
-		return foundInFirst || foundInSecond;
+		return local(first).localEqualsByValue(local(second));
 	}
 
-	private boolean valueIn(FunctionalBinaryTree<T> tree, T value) {
-
-		if (Objects.nonNull(tree.value)) {
-			if (tree.value.equals(value)) {
-				return true;
-			}
-		}
-
-		boolean valueInLeftNode = false;
-		boolean valueInRightNode = false;
-
-		if (Objects.nonNull(tree.left.value)) {
-			valueInLeftNode = tree.left.value.equals(value);
-		}
-
-		if (Objects.nonNull(tree.right.value)) {
-			valueInRightNode = tree.right.value.equals(value);
-		}
-
-		return valueInLeftNode || valueInRightNode;
-	}
-
+	/*
+	 * Return the whole subtree that contains (=super tree) the given value.
+	 */
 	public FunctionalBinaryTree<T> sup(T t) {
 		return perfomSup(t, new FunctionalBinaryTree<>(left, value, right));
 	}
 
-	private FunctionalBinaryTree<T> perfomSup(T t, FunctionalBinaryTree<T> top) {
-		if (Objects.isNull(value)) {
-			return null;
-		}
-		if (localContainsStrict(t)) {
-			return top;
-		}
-		if (t.compareTo(value) < 0) {
-			return left.perfomSup(t, this);
-		}
-		if (t.compareTo(value) > 0) {
-			return right.perfomSup(t, this);
-		}
-		return null;
-	}
-
+	/*
+	 * Return the whole subtree of the given value.
+	 */
 	public FunctionalBinaryTree<T> sub(T t) {
 		if (Objects.isNull(value)) {
 			return null;
@@ -156,7 +110,7 @@ public class FunctionalBinaryTree<T extends Comparable<T>> {
 		if (t.compareTo(value) < 0) {
 			return left.sub(t);
 		}
-		if(localContainsStrict(t)) {
+		if(localContains(t)) {
 			return new FunctionalBinaryTree<>(left, value, right);
 		}
 		if (t.compareTo(value) > 0) {
@@ -165,73 +119,12 @@ public class FunctionalBinaryTree<T extends Comparable<T>> {
 		return null;
 	}
 
+	/*
+	 * Return just the subtree that contains the given value.
+	 */
 	public FunctionalBinaryTree<T> local(T t) {
 		return perfomLocal(t, new FunctionalBinaryTree<>(left, value, right));
 	}
-
-	private FunctionalBinaryTree<T> perfomLocal(T t, FunctionalBinaryTree<T> top) {
-
-		boolean byLeft = false;
-		boolean byValue = false;
-
-		if(Objects.nonNull(left.value)) {
-			if (t.equals(left.value)) {
-				byLeft = true;
-			}
-		}
-		if(Objects.nonNull(value)) {
-			if (t.equals(value)) {
-				byValue = true;
-			}
-		}
-
-		/*
-		if(Objects.nonNull(left.value)) {
-			if (t.equals(left.value)) {
-				return top.left;
-			}
-		}
-		if(Objects.nonNull(value)) {
-			if (t.equals(value)) {
-				return new FunctionalBinaryTree<>(left, value, right);
-			}
-		}
-		if(Objects.nonNull(right.value)) {
-			if (t.equals(right.value)) {
-				return top.right;
-			}
-		}
-		*/
-
-		if (t.compareTo(value) < 0) {
-			return left.perfomLocal(t, top.left);
-		}
-		return right.perfomLocal(t, top.right);
-
-	}
-
-//	private FunctionalBinaryTree<T> perfomLocal(T t, FunctionalBinaryTree<T> top) {
-//		if (Objects.isNull(value)) {
-//			return null;
-//		}
-//		if (Objects.nonNull(left.value)) {
-//			if (t.equals(left.value)) {
-//				return top.left;
-//			}
-//		}
-//		if (t.equals(value)) {
-//			return new FunctionalBinaryTree<>(left, value, right);
-//		}
-//		if (Objects.nonNull(right.value)) {
-//			if (t.equals(right.value)) {
-//				return top.right;
-//			}
-//		}
-//		if (t.compareTo(value) < 0) {
-//			return left.perfomLocal(t, top.left);
-//		}
-//		return right.perfomLocal(t, top.right);
-//	}
 
 	public T min() {
 		// The lowest value will be stored at the leftmost place.
@@ -278,19 +171,15 @@ public class FunctionalBinaryTree<T extends Comparable<T>> {
 		return "%s %s %s".formatted(left, value, right).replaceAll("\\s{2,}", " ").trim();
 	}
 
-	private boolean localContainsStrict(T t) {
+	/*
+	 * Returns true if the given value is equal this node's value, or in other case,
+	 * if it is equal to this node's left or right value.
+	 */
+	private boolean localContains(T t) {
 		if (Objects.nonNull(value)) {
 			return value.equals(t);
 		}
 		return siblings(t);
-	}
-
-	private boolean localContainsLenient(T t) {
-		boolean valueEquals = false;
-		if (Objects.nonNull(value)) {
-			valueEquals = value.equals(t);
-		}
-		return valueEquals || siblings(t);
 	}
 
 	private boolean siblings(T t) {
@@ -305,14 +194,95 @@ public class FunctionalBinaryTree<T extends Comparable<T>> {
 		return leftSibling || rightSibling;
 	}
 
-	private FunctionalBinaryTree<T> merge(FunctionalBinaryTree<T> other) {
+	/*
+	 * Merge the tree at a node, effectively eliminating the node's value
+	 */
+	private FunctionalBinaryTree<T> join(FunctionalBinaryTree<T> other) {
 		if (isEmpty()) {
 			return other;
 		}
 		if (other.isEmpty()) {
 			return this;
 		}
-		return new FunctionalBinaryTree<>(left.merge(right), value, other);
+		return new FunctionalBinaryTree<>(left.join(right), value, other);
+	}
+
+	private FunctionalBinaryTree<T> perfomSup(T t, FunctionalBinaryTree<T> top) {
+		if (Objects.isNull(value)) {
+			return null;
+		}
+		if (localContains(t)) {
+			return top;
+		}
+		if (t.compareTo(value) < 0) {
+			return left.perfomSup(t, this);
+		}
+		if (t.compareTo(value) > 0) {
+			return right.perfomSup(t, this);
+		}
+		return null;
+	}
+
+	private FunctionalBinaryTree<T> perfomLocal(T t, FunctionalBinaryTree<T> top) {
+
+		if (Objects.isNull(value)) {
+			return null;
+		}
+		if (t == value) {
+			return new FunctionalBinaryTree<>(left, value, right);
+		}
+		else {
+			// Length comparison is a bit of a hack but seems to work. TODO: Is there a better way?
+			if (t.equals(left.value)) {
+				if (length <= 3) {
+					return new FunctionalBinaryTree<>(top.left, value, top.right);
+				}
+				if (left.length <= 3) {
+					return left;
+				}
+			}
+			if (t.equals(right.value)) {
+				if (length <= 3) {
+					return new FunctionalBinaryTree<>(top.left, value, top.right);
+				}
+				if (right.length <= 3) {
+					return right;
+				}
+			}
+		}
+		if (t.compareTo(value) < 0) {
+			return left.perfomLocal(t, left);
+		}
+		if (t.compareTo(value) > 0) {
+			return right.perfomLocal(t, right);
+		}
+		return null;
+	}
+
+	private boolean localEqualsByValue(FunctionalBinaryTree<T> other) {
+
+		boolean thisHasLeftValue = Objects.nonNull(this.left.value);
+		boolean thisHasRightValue = Objects.nonNull(this.right.value);
+		boolean otherHasLeftValue = Objects.nonNull(other.left.value);
+		boolean otherHasRightValue = Objects.nonNull(other.right.value);
+		boolean equalsByLeftValue = false;
+		boolean equalsByRightValue = false;
+
+		if (thisHasLeftValue == otherHasLeftValue) {
+			equalsByLeftValue = true;
+			if (Objects.nonNull(left.value)) {
+				equalsByLeftValue = left.value.equals(other.left.value);
+			}
+		}
+
+		if (thisHasRightValue == otherHasRightValue) {
+			equalsByRightValue = true;
+			if (Objects.nonNull(right.value)) {
+				equalsByRightValue = right.value.equals(other.right.value);
+			}
+		}
+
+		return value.equals(other.value) && equalsByLeftValue && equalsByRightValue;
 	}
 
 	record Range<T>(T low, T high) { }

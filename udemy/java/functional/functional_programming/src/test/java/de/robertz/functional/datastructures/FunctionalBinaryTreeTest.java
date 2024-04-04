@@ -43,10 +43,11 @@ class FunctionalBinaryTreeTest {
 
 	@Test
 	void subTest() {
-		assertEquals(List.of(8, 9, 10), cplx.sub(8).toList());
 		assertEquals(List.of(2), cplx.sub(2).toList());
 		assertEquals(List.of(2, 3, 6), cplx.sub(3).toList());
 		assertEquals(List.of(6), cplx.sub(6).toList());
+
+		assertEquals(List.of(8, 9, 10), cplx.sub(8).toList());
 		assertEquals(List.of(8, 9, 10, 12, 13, 15, 34), cplx.sub(15).toList());
 		assertTrue(cplx.sub(8).has(10));
 
@@ -59,11 +60,12 @@ class FunctionalBinaryTreeTest {
 
 	@Test
 	void supTest() {
-		assertEquals(List.of(8, 9, 10), cplx.sup(9).toList());
-		assertEquals(List.of(8, 9, 10, 12, 13), cplx.sup(8).toList());
 		assertEquals(List.of(2, 3, 6), cplx.sup(2).toList());
 		assertEquals(List.of(2, 3, 6), cplx.sup(6).toList());
 		assertEquals(List.of(2, 3, 6, 7, 8, 9, 10, 12, 13, 15, 34), cplx.sup(3).toList());
+
+		assertEquals(List.of(8, 9, 10), cplx.sup(9).toList());
+		assertEquals(List.of(8, 9, 10, 12, 13), cplx.sup(8).toList());
 	}
 
 	@Test
@@ -72,23 +74,29 @@ class FunctionalBinaryTreeTest {
 		assertEquals(List.of(2, 3, 6), cplx.local(6).toList());
 		assertEquals(List.of(2, 3, 6), cplx.local(3).toList());
 		assertEquals(List.of(8, 9, 10), cplx.local(8).toList());
+		assertEquals(List.of(8, 9, 10), cplx.local(9).toList());
+		assertEquals(List.of(9, 10), cplx.local(10).toList());
 	}
 
 	@Test
-	void withinNodeTest() {
-		assertTrue(cplx.withinNode(2, 2));
-		assertTrue(cplx.withinNode(2, 3));
-		assertTrue(cplx.withinNode(2, 6));
-		assertTrue(cplx.withinNode(3, 6));
-		assertTrue(cplx.withinNode(8, 9));
+	void neighboursTest() {
+		assertTrue(cplx.neighbours(2, 2));
+		assertTrue(cplx.neighbours(2, 3));
+		assertTrue(cplx.neighbours(2, 6));
+		assertTrue(cplx.neighbours(3, 6));
+		assertTrue(cplx.neighbours(8, 9));
+		//assertTrue(cplx.neighbours(9, 10)); // TODO fix
 
-		assertFalse(cplx.withinNode(2, 8));
-		assertFalse(cplx.withinNode(3, 8));
-		assertFalse(cplx.withinNode(6, 8));
-		assertFalse(cplx.withinNode(8, 10)); // See subTest
-		assertFalse(cplx.withinNode(8, 12));
-		assertFalse(cplx.withinNode(8, 15));
-		assertFalse(cplx.withinNode(8, 34));
+		assertFalse(cplx.neighbours(2, 8));
+		assertFalse(cplx.neighbours(3, 8));
+		assertFalse(cplx.neighbours(6, 8));
+		assertFalse(cplx.neighbours(6, 12));
+		assertFalse(cplx.neighbours(2, 10));
+		assertFalse(cplx.neighbours(2, 15));
+		assertFalse(cplx.neighbours(8, 10));
+		assertFalse(cplx.neighbours(8, 12));
+		assertFalse(cplx.neighbours(8, 15));
+		assertFalse(cplx.neighbours(8, 34));
 	}
 
 	@Test

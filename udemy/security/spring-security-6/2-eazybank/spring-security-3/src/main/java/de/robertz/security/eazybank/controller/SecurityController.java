@@ -13,6 +13,6 @@ public class SecurityController {
 		request.getSession().invalidate();
 		request.logout(); // Invalidates the session and clears authentication.
 		SecurityContextHolder.clearContext();
-		return "redirect:/dashboard"; // Redirect to the login page or wherever you prefer.
+		return "redirect:/dashboard";
 	}
 }
