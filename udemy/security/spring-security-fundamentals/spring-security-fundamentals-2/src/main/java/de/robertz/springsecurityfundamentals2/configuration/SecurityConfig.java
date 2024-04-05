@@ -6,6 +6,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Configuration
 public class SecurityConfig {
@@ -15,7 +16,7 @@ public class SecurityConfig {
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.formLogin(Customizer.withDefaults());
+        http.httpBasic(Customizer.withDefaults());
         // In this commit, only /hello is authenticated access, /bye is not allowed at all.
         // That is effectively, anyRequest().denyAll()
         http.authorizeHttpRequests(a -> a.requestMatchers("/hello")
@@ -27,6 +28,10 @@ public class SecurityConfig {
                 .logoutSuccessUrl("/login?logout") // Redirects to this URL after successful logout
                 .invalidateHttpSession(true) // Invalidates the HTTP session
                 .deleteCookies("JSESSIONID")); // Remove cookie
+
+        // We will see "Filter handling Before", "Filter handling After" in console
+        http.addFilterBefore(new CustomSecurityFilter(), BasicAuthenticationFilter.class);
+
         return http.build();
     }
 
