@@ -21,10 +21,10 @@ public class SecurityConfig {
 
         // Create a mock user
         UserDetails ud = User.withUsername("tom").password(
-                    // Spring basic/login form will use BCrypt so we need to encode the pw as well
-                    passwordEncoder().encode("king"))
-                .authorities("read") // Role of the user
-                .build();
+                // Spring basic/login form will use BCrypt, so we need to encode the pw as well
+                passwordEncoder().encode("king"))
+            .authorities("read") // Role of the user
+            .build();
 
         imud.createUser(ud);
 
@@ -39,8 +39,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.httpBasic(Customizer.withDefaults());
-        http.authorizeHttpRequests(a -> a.anyRequest().authenticated());
+        http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
+            // Note: Because of CSRF and ReST semantics, logout needs to be a POST!
+            .logout(logout -> logout
+                .permitAll()
+                .logoutUrl("/logout") // Specifies the logout URL
+                .logoutSuccessUrl("/login?logout") // Redirects to this URL after successful logout
+                .invalidateHttpSession(true) // Invalidates the HTTP session
+                .deleteCookies("JSESSIONID")); // Remove cookie
         return http.build();
     }
-
 }
