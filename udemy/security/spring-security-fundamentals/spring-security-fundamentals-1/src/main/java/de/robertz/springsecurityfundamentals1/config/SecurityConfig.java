@@ -14,6 +14,23 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
+    /*
+     * We can use a @Bean like this or extend WebSecurityConfigurerAdapter and override configure
+     */
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.httpBasic(Customizer.withDefaults());
+        http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
+            // Note: Because of CSRF and ReST semantics, logout needs to be a POST!
+            .logout(logout -> logout
+                .permitAll()
+                .logoutUrl("/logout") // Specifies the logout URL
+                .logoutSuccessUrl("/login?logout") // Redirects to this URL after successful logout
+                .invalidateHttpSession(true) // Invalidates the HTTP session
+                .deleteCookies("JSESSIONID")); // Remove cookie
+        return http.build();
+    }
+
     @Bean
     public UserDetailsService pseudoInMemUD() {
         // Create our custom in memory User Details Service
@@ -34,19 +51,5 @@ public class SecurityConfig {
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.httpBasic(Customizer.withDefaults());
-        http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
-            // Note: Because of CSRF and ReST semantics, logout needs to be a POST!
-            .logout(logout -> logout
-                .permitAll()
-                .logoutUrl("/logout") // Specifies the logout URL
-                .logoutSuccessUrl("/login?logout") // Redirects to this URL after successful logout
-                .invalidateHttpSession(true) // Invalidates the HTTP session
-                .deleteCookies("JSESSIONID")); // Remove cookie
-        return http.build();
     }
 }
