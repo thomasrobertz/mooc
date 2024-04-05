@@ -1,5 +1,6 @@
 package de.robertz.security.eazybank.config;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,11 +21,13 @@ public class SecurityConfig {
 						.requestMatchers("/dashboard", "/transcations").authenticated()
 
 						// The paths we want to be publicly accessible
-						.requestMatchers("/contact", "/manual-logout").permitAll()
+						.requestMatchers("/contact").permitAll()
 		)
 		// Users can log in with basic form as before
 		.formLogin(withDefaults())	// Without this, user will get a browser popup login
-		.httpBasic(withDefaults());
+		.httpBasic(withDefaults())
+		.logout(logout -> logout.permitAll()
+				.logoutSuccessHandler((request, response, authentication) -> response.setStatus(HttpServletResponse.SC_OK)));
 
 		// Side note: If we were to use anyRequest().denyAll() on all routes above, we would have to login
 		// first and then get a 403 error on all pages. Then why the need to login first?
