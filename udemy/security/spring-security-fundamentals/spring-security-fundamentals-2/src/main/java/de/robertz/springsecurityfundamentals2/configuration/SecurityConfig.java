@@ -19,7 +19,7 @@ public class SecurityConfig {
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.httpBasic(Customizer.withDefaults());
+        http.formLogin(Customizer.withDefaults());
         http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
             // Note: Because of CSRF and ReST semantics, logout needs to be a POST!
             .logout(logout -> logout
