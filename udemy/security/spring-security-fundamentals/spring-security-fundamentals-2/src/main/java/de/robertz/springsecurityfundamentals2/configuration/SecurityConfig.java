@@ -20,7 +20,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.formLogin(Customizer.withDefaults());
-        http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
+        // In this commit, only /hello is authenticated access, /bye is not allowed at all.
+        // That is effectively, anyRequest().denyAll()
+        http.authorizeHttpRequests(a -> a.requestMatchers("/hello")
+                .authenticated())
             // Note: Because of CSRF and ReST semantics, logout needs to be a POST!
             .logout(logout -> logout
                 .permitAll()
