@@ -11,6 +11,7 @@ import jakarta.servlet.ServletResponse;
 /* Instead of Filter, we could use:
  	GenericFilterBean (auto DI of fields e.g. "userName")
 	OncePerRequestFilter (Filter logic can be quite complex, so this special type of filter is guaranteed to be executed exactly once per each request)
+	or any other of the predefined Spring Boot Security filters.
  */
 public class CustomSecurityFilter implements Filter {
 
