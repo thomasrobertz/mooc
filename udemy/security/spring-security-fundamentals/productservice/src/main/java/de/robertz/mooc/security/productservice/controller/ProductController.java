@@ -4,6 +4,7 @@ import de.robertz.mooc.security.productservice.dto.Coupon;
 import de.robertz.mooc.security.productservice.model.Product;
 import de.robertz.mooc.security.productservice.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("product")
@@ -38,6 +40,9 @@ public class ProductController {
 
 	@GetMapping("/product/{id}")
 	public Product get(@PathVariable(value = "id") String id) {
-		return repository.findById(Long.valueOf(id)).orElseThrow();
+		return repository
+				.findById(Long.valueOf(id))
+				.orElseThrow(
+					() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
 	}
 }

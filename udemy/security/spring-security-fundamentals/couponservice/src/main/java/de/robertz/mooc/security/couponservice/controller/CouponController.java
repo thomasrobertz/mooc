@@ -19,12 +19,12 @@ public class CouponController {
 		this.repository = repository;
 	}
 
-	@PostMapping(value = "/coupon")
+	@PostMapping("/coupon")
 	public Coupon create(@RequestBody Coupon coupon) {
 			return repository.save(coupon);
 	}
 
-	@GetMapping(value = "/coupon/{code}")
+	@GetMapping("/coupon/{code}")
 	public Coupon get(@PathVariable("code") String code) {
 		return repository.findByCode(code);
 	}
