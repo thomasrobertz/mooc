@@ -12,7 +12,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 public class SecurityConfig {
 
     /*
-     * We can use a @Bean like this or extend WebSecurityConfigurerAdapter and override configure
+     * We can use a @Bean like this or have SecurityConfig extend WebSecurityConfigurerAdapter and override configure()
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
