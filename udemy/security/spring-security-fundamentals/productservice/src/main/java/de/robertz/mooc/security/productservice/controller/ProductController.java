@@ -43,7 +43,7 @@ public class ProductController {
 	}
 
 	@GetMapping("/product/{id}/discount/{coupon}")
-	public Product getDiscountedProduct(@PathVariable(value = "id") Long id, @PathVariable(value = "coupon") String couponCode) {
+	public Product getDiscounted(@PathVariable(value = "id") Long id, @PathVariable(value = "coupon") String couponCode) {
 		Coupon coupon = rest.getForObject(couponServiceUrl + couponCode, Coupon.class);
 		return find(id).map(p -> {
 			p.setPrice(p.getPrice().subtract(coupon.getDiscount()));
