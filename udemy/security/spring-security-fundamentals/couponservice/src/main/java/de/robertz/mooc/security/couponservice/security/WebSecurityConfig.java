@@ -19,7 +19,9 @@ public class WebSecurityConfig {
 
 		http.authorizeHttpRequests(a ->
 
-				a.requestMatchers(HttpMethod.GET, "/api/coupon/**")
+				// In the previous version we allowed any string to be passed as coupon name ("/api/coupon/**")
+				// Here we restrict that by RegEx, which is bound to the 'coupon' PathVariable.
+				a.requestMatchers(HttpMethod.GET, "/api/coupon/{code:^[A-Z]*$}")
 
 					// Compare to SQL. "ROLE_" is automatically prepended by spring security.
 					.hasAnyRole("USER", "ADMIN")
