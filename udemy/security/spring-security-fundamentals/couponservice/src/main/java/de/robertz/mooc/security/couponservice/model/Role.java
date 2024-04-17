@@ -7,27 +7,26 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 
+@Entity
 @Getter
 @Setter
-@ToString
-@RequiredArgsConstructor
-@Entity
 public class Role implements GrantedAuthority {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	private String name;
+
 	@ManyToMany(mappedBy = "roles")
 	private Set<User> users;
-
-	private String name;
 
 	@Override
 	public String getAuthority() {

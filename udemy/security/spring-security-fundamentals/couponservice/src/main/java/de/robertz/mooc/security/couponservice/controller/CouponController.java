@@ -3,15 +3,19 @@ package de.robertz.mooc.security.couponservice.controller;
 import de.robertz.mooc.security.couponservice.model.Coupon;
 import de.robertz.mooc.security.couponservice.repository.CouponRepository;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/api")
 public class CouponController {
+
+	/*
+	* We have to add the thymeleaf dependency for this to work.
+	* If it is missing, you will simply get a 403 on / (serving index.html)!
+	* */
 
 	private final CouponRepository repository;
 
@@ -19,13 +23,27 @@ public class CouponController {
 		this.repository = repository;
 	}
 
-	@PostMapping("/coupon")
-	public Coupon create(@RequestBody Coupon coupon) {
-			return repository.save(coupon);
+	@GetMapping("/showCreateCoupon")
+	public String showCreateCoupon() {
+		return "createCoupon";
 	}
 
-	@GetMapping("/coupon/{code}")
-	public Coupon get(@PathVariable("code") String code) {
-		return repository.findByCode(code);
+	@PostMapping("/saveCoupon")
+	public String save(Coupon coupon) {
+		repository.save(coupon);
+		return "createResponse";
+	}
+
+	@GetMapping("/showGetCoupon")
+	public String showGetCoupon() {
+		return "getCoupon";
+	}
+
+	@PostMapping("/getCoupon")
+	public ModelAndView getCoupon(String code) {
+		ModelAndView mav = new ModelAndView("couponDetails");
+		System.out.println(code);
+		mav.addObject(repository.findByCode(code));
+		return mav;
 	}
 }

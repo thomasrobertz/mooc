@@ -1,7 +1,5 @@
 package de.robertz.mooc.security.couponservice.security;
 
-import java.util.Optional;
-
 import de.robertz.mooc.security.couponservice.model.User;
 import de.robertz.mooc.security.couponservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +12,17 @@ import org.springframework.stereotype.Service;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	UserRepository userRepository;
+	UserRepository userRepo;
 
 	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		Optional<User> user = userRepository.findByEmail(email);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-		// User expects Collection<? extends GrantedAuthority> autorities, and we pass in our User's roles.
-		// That is why we implemented GrantedAuthority in our Role Entity.
-
-		return user
-				.map(u -> new org.springframework.security.core.userdetails.User(
-					u.getEmail(), u.getPassword(), u.getRoles()))
-				.orElseThrow(() -> new UsernameNotFoundException("User not found for Email '%s'".formatted(email)));
+		User user = userRepo.findByEmail(username);
+		if (user == null) {
+			throw new UsernameNotFoundException("User not found for email" + username);
+		}
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
+				user.getRoles());
 	}
+
 }
