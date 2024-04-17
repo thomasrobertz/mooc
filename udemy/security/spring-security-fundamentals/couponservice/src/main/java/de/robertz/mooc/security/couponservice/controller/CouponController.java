@@ -2,14 +2,12 @@ package de.robertz.mooc.security.couponservice.controller;
 
 import de.robertz.mooc.security.couponservice.model.Coupon;
 import de.robertz.mooc.security.couponservice.repository.CouponRepository;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@RestController
-@RequestMapping("/api")
+@Controller
 public class CouponController {
 
 	/*
