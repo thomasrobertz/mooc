@@ -54,6 +54,12 @@ public class WebSecurityConfig {
 		http.securityContext(c -> c.requireExplicitSave(true));
 		http.csrf(AbstractHttpConfigurer::disable);
 
+		// Standard logout is already handled by Spring Security.
+		// But we want to make sure session cookies are deleted and configure the logout page:
+		http.logout(l -> l
+				.invalidateHttpSession(true) // Is the default, just shown for demonstration purposes
+				.logoutSuccessUrl("/"));
+
 		return http.build();
 	}
 
