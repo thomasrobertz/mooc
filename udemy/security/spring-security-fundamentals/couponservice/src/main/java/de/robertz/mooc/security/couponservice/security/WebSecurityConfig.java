@@ -19,14 +19,20 @@ public class WebSecurityConfig {
 
 		http.authorizeHttpRequests(a ->
 
-				a.requestMatchers(HttpMethod.GET,"/api/coupon/{code:^[A-Z]*$}", "/")
+				a.requestMatchers(HttpMethod.GET,"/api/coupon/{code:^[A-Z]*$}",
+								"/showGetCoupon", "/getCoupon", "/")
 					.hasAnyRole("USER", "ADMIN")
 
-				.requestMatchers(HttpMethod.GET,"/showCreateCoupon", "/createCoupon")
+				.requestMatchers(HttpMethod.GET,"/showCreateCoupon",
+						"/createCoupon", "/createResponse")
 						.hasAnyRole("ADMIN")
 
-				.requestMatchers(HttpMethod.POST, "/api/coupon")
-					.hasRole("ADMIN"));
+				.requestMatchers(HttpMethod.POST, "/api/coupon", "/saveCoupon")
+					.hasRole("ADMIN")
+
+				.requestMatchers(HttpMethod.POST, "/getCoupon", "/saveCoupon")
+					.hasAnyRole("ADMIN", "USER")
+		);
 
 		http.csrf(AbstractHttpConfigurer::disable);
 
