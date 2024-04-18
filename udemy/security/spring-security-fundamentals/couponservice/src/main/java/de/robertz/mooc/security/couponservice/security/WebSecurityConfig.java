@@ -14,6 +14,10 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.context.DelegatingSecurityContextRepository;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.security.web.context.RequestAttributeSecurityContextRepository;
+import org.springframework.security.web.context.SecurityContextRepository;
 
 @Configuration
 public class WebSecurityConfig {
@@ -24,11 +28,15 @@ public class WebSecurityConfig {
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-		http.formLogin(Customizer.withDefaults());
+		// We don't need this anymore now, because we have implemented our own login form.
+		// http.formLogin(Customizer.withDefaults());
 
-		http.authorizeHttpRequests(a ->
+		http.authorizeHttpRequests(a -> a
 
-				a.requestMatchers(HttpMethod.GET,"/api/coupon/{code:^[A-Z]*$}",
+				// Anyone should be able to log in at any time
+				.requestMatchers("/login", "/").permitAll()
+
+				.requestMatchers(HttpMethod.GET,"/api/coupon/{code:^[A-Z]*$}",
 								"/showGetCoupon", "/getCoupon", "/")
 					.hasAnyRole("USER", "ADMIN")
 
@@ -43,6 +51,7 @@ public class WebSecurityConfig {
 					.hasAnyRole("ADMIN", "USER")
 		);
 
+		http.securityContext(c -> c.requireExplicitSave(true));
 		http.csrf(AbstractHttpConfigurer::disable);
 
 		return http.build();
@@ -54,6 +63,14 @@ public class WebSecurityConfig {
 		provider.setUserDetailsService(userDetailsService);
 		provider.setPasswordEncoder(passwordEncoder());
 		return new ProviderManager(provider);
+	}
+
+	@Bean
+	SecurityContextRepository securityContextRepository() {
+		// Save the security context across sessions (in HttpSession).
+		return new DelegatingSecurityContextRepository(
+				new RequestAttributeSecurityContextRepository(),
+				new HttpSessionSecurityContextRepository());
 	}
 
 	@Bean
