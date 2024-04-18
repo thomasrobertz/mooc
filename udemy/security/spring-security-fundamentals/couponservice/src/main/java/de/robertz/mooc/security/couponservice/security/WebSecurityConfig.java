@@ -33,8 +33,8 @@ public class WebSecurityConfig {
 
 		http.authorizeHttpRequests(a -> a
 
-				// Anyone should be able to log in at any time
-				.requestMatchers("/login", "/").permitAll()
+				// Anyone should be able to log in and register at any time
+				.requestMatchers("/login", "/showRegistration", "/registerUser", "/").permitAll()
 
 				.requestMatchers(HttpMethod.GET,"/api/coupon/{code:^[A-Z]*$}",
 								"/showGetCoupon", "/getCoupon", "/")
