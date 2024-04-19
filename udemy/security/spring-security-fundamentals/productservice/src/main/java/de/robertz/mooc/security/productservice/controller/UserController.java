@@ -1,11 +1,10 @@
-package de.robertz.mooc.security.couponservice.controller;
+package de.robertz.mooc.security.productservice.controller;
 
 import java.util.HashSet;
 
-import de.robertz.mooc.security.couponservice.model.Role;
-import de.robertz.mooc.security.couponservice.model.User;
-import de.robertz.mooc.security.couponservice.repository.UserRepository;
-import de.robertz.mooc.security.couponservice.security.SecurityService;
+import de.robertz.mooc.security.productservice.model.User;
+import de.robertz.mooc.security.productservice.repository.UserRepository;
+import de.robertz.mooc.security.productservice.security.SecurityService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,16 +49,16 @@ public class UserController {
 	@PostMapping("/registerUser")
 	public String register(User user) {
 
-		user.setPassword(encoder.encode(user.getPassword()));
-
-		// Hardcoded for now
-		HashSet<Role> roles = new HashSet<>();
-		Role userRole = new Role();
-		userRole.setId(2L); // Existing ROLE_USER
-		roles.add(userRole);
-		user.setRoles(roles);
-
-		userRepository.save(user);
+//		user.setPassword(encoder.encode(user.getPassword()));
+//
+//		// Hardcoded for now
+//		HashSet<Role> roles = new HashSet<>();
+//		Role userRole = new Role();
+//		userRole.setId(2L); // Existing ROLE_USER
+//		roles.add(userRole);
+//		user.setRoles(roles);
+//
+//		userRepository.save(user);
 		return "login";
 	}
 }

@@ -44,7 +44,7 @@ public class WebSecurityConfig {
 						"/createCoupon", "/createResponse")
 						.hasAnyRole("ADMIN")
 
-				.requestMatchers(HttpMethod.POST, "/api/coupon", "/saveCoupon")
+				.requestMatchers(HttpMethod.POST, "/api/coupon")
 					.hasRole("ADMIN")
 
 				.requestMatchers(HttpMethod.POST, "/getCoupon", "/saveCoupon")

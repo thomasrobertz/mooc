@@ -1,58 +1,41 @@
 package de.robertz.mooc.security.productservice.controller;
 
-import java.util.Optional;
-
-import de.robertz.mooc.security.productservice.dto.Coupon;
 import de.robertz.mooc.security.productservice.model.Product;
 import de.robertz.mooc.security.productservice.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
-@RequestMapping("api")
+@Controller
 public class ProductController {
 
 	private final ProductRepository repository;
-	private final RestTemplate rest;
 
-	@Value("${service.coupon.url}")
-	private String couponServiceUrl;
-
-	public ProductController(ProductRepository repository, RestTemplate rest) {
+	public ProductController(ProductRepository repository) {
 		this.repository = repository;
-		this.rest = rest;
 	}
 
-	@PostMapping("/product")
-	public Product create(@RequestBody Product product) {
-		return repository.save(product);
+	@GetMapping("/showCreateProduct")
+	public String showCreateProduct() {
+		return "createProduct";
 	}
 
-	@GetMapping("/product/{id}")
-	public Product get(@PathVariable(value = "id") Long id) {
-		return find(id).orElseThrow(
-			() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
+	@PostMapping("/saveProduct")
+	public String save(Product product) {
+		repository.save(product);
+		return "createResponse";
 	}
 
-	@GetMapping("/product/{id}/discount/{coupon}")
-	public Product getDiscounted(@PathVariable(value = "id") Long id, @PathVariable(value = "coupon") String couponCode) {
-		Coupon coupon = rest.getForObject(couponServiceUrl + couponCode, Coupon.class);
-		return find(id).map(p -> {
-			p.setPrice(p.getPrice().subtract(coupon.getDiscount()));
-			return p;
-		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
+	@GetMapping("/showGetProduct")
+	public String showGetProduct() {
+		return "getProduct";
 	}
 
-	// Should be in a service
-	private Optional<Product> find(Long id) {
-		return repository.findById(id);
+	@PostMapping("/getProduct")
+	public ModelAndView getProduct(String name) {
+		ModelAndView mav = new ModelAndView("productDetails");
+		mav.addObject(repository.findByName(name));
+		return mav;
 	}
 }
