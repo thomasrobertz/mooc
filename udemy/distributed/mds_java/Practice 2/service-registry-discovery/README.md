@@ -46,7 +46,7 @@ Hello Robert from srd-greeter:fcfc274a-37a1-4c95-a553-dbb7982c840c
 5. Now start another greeter service from the console. 
 Check in consul, you should see 2 greeter instances.
 
-Sending new requests, we should now be load balanced between the services3,
+Sending new requests, we should now be load balanced between the services,
 resulting in alternating `instanceId`s:
 
 ```
@@ -70,6 +70,16 @@ Since the error occured in the other service, the load balancer should in this c
 
 ```
 Hello Lukasz from srd-greeter:b1172582-42cb-4fbc-aca6-a3a3f3c2ab5d
+  (Exception occurs behind the scenes)
 Hello Robert from srd-greeter:b1172582-42cb-4fbc-aca6-a3a3f3c2ab5d
+```
+
+This is configured in gateway's application properties:
+```yaml
+          filters:
+            - name: Retry
+              args:
+                retries: 3
+  ...
 ```
 
