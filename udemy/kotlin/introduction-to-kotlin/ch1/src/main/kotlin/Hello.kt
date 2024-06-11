@@ -173,6 +173,8 @@ fun arrays() {
     // Unlike in ranges, we here get an initial array from 0 to 9
     var squares = Array(10, {(it * it).toString()})
     println(squares.toList())
+
+
 }
 
 fun ranges() {
