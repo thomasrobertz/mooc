@@ -7,7 +7,45 @@ fun main(args:Array<String>) {
     //nullability()
     //if_statement()
     //flow_based_typing()
-    for_loops()
+    //for_loops()
+    when_exp()
+}
+
+fun when_exp() {
+    val code = 49
+
+    // when is like switch case
+    when(code) {
+        44 -> println("UK")
+        46 -> println("Sweden")
+        germany() -> println("Germany")
+        39, 379 -> println("Vatican")
+        in 380..400 -> println("Handled by department B")
+        else -> {
+            println("Unknown code")
+        }
+    }
+
+    // Type matching
+    val z:Any = 5
+    //val z:Any = "5"
+
+    when(z) {
+        is Int -> println("It's an int")
+        is String -> println("It's a string")
+    }
+
+    // It's also an expression
+    val q = when(code) {
+        46 -> "Sweden"
+        germany() -> "Germany"
+        else -> { "Invalid" }
+    }
+    println(q)
+}
+
+fun germany(): Any {
+    return 49
 }
 
 fun for_loops() {
