@@ -1,6 +1,33 @@
 fun main(args:Array<String>) {
     println("Hello Kotlin")
-    var_declarations()
+    //var_declarations()
+    ranges()
+}
+
+fun ranges() {
+    val a:IntRange = 1..10  // Closed: Includes 1 and 10
+    for (x in a) println(x)
+
+    val b = 1.rangeTo(10) // Same as above
+    for (x in b) println(x)
+
+    val c = b.reversed() // Is now an IntProgression
+    println("Sum of $c = ${c.sum()}")
+
+    // From the above we get a hint why we cant do 10..1 (Like we neither can in haskell)
+    // Instead we need to do this:
+    val d = 10.downTo(1)
+    for(x in d) println(x)
+
+    // kotlin syntax: omit dot and parenthesis
+    var f = 10 downTo 1
+
+    // steps in ranges
+    var g = 30 downTo 1 step 3
+    for(x in g) println(x)
+
+    //b.forEach(x -> println(x))
+
 }
 
 fun var_declarations() {
