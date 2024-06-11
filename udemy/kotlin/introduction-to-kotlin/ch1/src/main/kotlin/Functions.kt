@@ -23,6 +23,10 @@ fun main(args: Array<String>) {
 
     val(m,n) = anotherDestructuringExample()
     println("destructured pair: $m $n")
+
+    val a = 10.8
+    val b = 12.7
+    println("Avg is ${a averagedWith b}")
 }
 
 fun triple(x:Int): Int {
@@ -50,3 +54,6 @@ fun anotherDestructuringExample():Pair<Int, Int> {
     return Pair(5,9)
 }
 
+infix fun Double.averagedWith(other:Double):Double {
+    return (this + other) / 2.0
+}
