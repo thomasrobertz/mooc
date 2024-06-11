@@ -1,3 +1,5 @@
+package KotlinSamples.Hello
+
 fun main(args:Array<String>) {
     println("Hello Kotlin")
     //var_declarations()
