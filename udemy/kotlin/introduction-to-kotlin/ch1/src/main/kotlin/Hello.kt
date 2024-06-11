@@ -6,7 +6,24 @@ fun main(args:Array<String>) {
     //chars_and_strings()
     //nullability()
     //if_statement()
-    flow_based_typing()
+    //flow_based_typing()
+    for_loops()
+}
+
+fun for_loops() {
+    for(a in (10 downTo 1)) print("$a\t")
+    println()
+
+    val ints = intArrayOf(4,3,2,1)
+    for((index, value) in ints.withIndex())
+        print("$index,$value\t")
+
+    println()
+
+    // Destructuring
+    val capitals = mapOf("Paris" to "France", "London" to "UK")
+    for((city, country) in capitals)
+        println("$city is the capital of $country")
 }
 
 fun flow_based_typing() {
