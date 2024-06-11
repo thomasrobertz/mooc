@@ -18,6 +18,11 @@ fun main(args: Array<String>) {
 
     // Var args
     println(sum_up(2,4,5,1))
+
+    println(nestedFun(1,5))
+
+    val(m,n) = anotherDestructuringExample()
+    println("destructured pair: $m $n")
 }
 
 fun triple(x:Int): Int {
@@ -32,3 +37,16 @@ fun calcWagesDefault(hours:Int = 100, rate:Int = 15) = hours * rate
 fun sum_up(vararg values:Int): Int {
     return values.sum()
 }
+
+fun nestedFun(x: Int, y: Int): Int {
+    // innerFun scoped to nestedFun, not visible outside of it.
+    fun innerFun(u:Int, v:Int): Int = u+v
+    // Access to nestedFun's scope:
+    fun doubleLeft(): Int = 2*x
+    return innerFun(doubleLeft(), y) * 4
+}
+
+fun anotherDestructuringExample():Pair<Int, Int> {
+    return Pair(5,9)
+}
+
