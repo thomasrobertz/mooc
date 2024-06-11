@@ -174,7 +174,10 @@ fun arrays() {
     var squares = Array(10, {(it * it).toString()})
     println(squares.toList())
 
-
+    // Star merge operator
+    val toMerge = intArrayOf(2,3,5)
+    val oneToSeven = intArrayOf(1,*toMerge,4,6,7)
+    println(oneToSeven.toList())
 }
 
 fun ranges() {
