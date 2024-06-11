@@ -3,7 +3,25 @@ fun main(args:Array<String>) {
     //var_declarations()
     //ranges()
     //arrays()
-    chars_and_strings()
+    //chars_and_strings()
+    nullability()
+}
+
+fun nullability() {
+    // Error Kotlin: Null can not be a value of a non-null type String
+    //var t: String = null
+
+    var nullableString: String? = null
+    println(nullableString) // prints "null"
+
+    var nullableLength: Int? = nullableString?.length
+    println(nullableLength) // Also prints "null"
+
+    val defaultLength: Int = nullableString?.length ?: -1
+    println(defaultLength) // Prints "-1"
+
+    val weKnowThisWillProbablyHaveAString:String? = "foo"
+    println(weKnowThisWillProbablyHaveAString!!.length)
 }
 
 fun chars_and_strings() {
