@@ -4,6 +4,10 @@ fun main(args:Array<String>) {
 }
 
 fun var_declarations() {
+
+    // val
+    // ---
+
     val a:Int = 64
     val b:Long = 123
     val c:Float = 3.2f
@@ -12,6 +16,7 @@ fun var_declarations() {
 
     val g:Int
     g = 78
+    // g = 89 // Error:  Kotlin: Val cannot be reassigned
 
     println("$a $b $c $d $e $g")
 
@@ -20,4 +25,13 @@ fun var_declarations() {
     val f = StringBuffer("test")
     f.replace(0, 1, "T")
     println(f)
+
+    // var
+    // ---
+
+    // var h:Int = 56
+    // Here also the type is redundant b/c it can be inferred:
+    var h = 56
+    h = 67
+    println(h)
 }
