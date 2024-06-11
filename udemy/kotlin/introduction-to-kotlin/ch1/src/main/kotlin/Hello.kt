@@ -4,7 +4,59 @@ fun main(args:Array<String>) {
     //ranges()
     //arrays()
     //chars_and_strings()
-    nullability()
+    //nullability()
+    //if_statement()
+    flow_based_typing()
+}
+
+fun flow_based_typing() {
+    var s:String? = "nlbl"
+
+    // Error: Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type String?
+    //s.length
+
+    if(s != null) {
+        // In this block s has been null checked, like in Java OptionalisPresent
+        // so access to s.length is allowed
+        println(s.length)
+    }
+
+    // We get a super type that doesn't have the property
+    // (Cloneable as super type just used for demonstrative purposes here)
+    var x:Cloneable = intArrayOf(1, 2, 3)
+
+    // Cloneable doesnt have size
+    //x.size
+
+    if (x is IntArray) {
+        // Similar to above, we can now access size
+        println(x.size)
+    }
+}
+
+fun if_statement() {
+    val temp = 20
+    var feel:String
+
+    // Standard
+    if (temp < 10)
+        feel = "cold"
+    else if (temp >= 20)
+        feel = "hot"
+    else feel = "OK"
+
+    println("It feels $feel.")
+
+    // if is an expression
+    val exprFeel = if (temp < 10)
+        "cold"
+    else if (temp >= 20)
+        "hot"
+    else "OK"
+
+    println("It feels $exprFeel")
+
+    println("It feels ${if (temp > 18) "warm" else "cold"}")
 }
 
 fun nullability() {
@@ -41,7 +93,8 @@ fun chars_and_strings() {
     println(lit)
 
     val price = 123
-    println("$price${'$'} at 10% discount = ${price - (price/10)}")
+    // Can use double quotes for strings within ${ }
+    println("$price${"$"} at 10% discount = ${price - (price/10)}")
 }
 
 fun arrays() {
