@@ -1,7 +1,29 @@
 fun main(args:Array<String>) {
     println("Hello Kotlin")
     //var_declarations()
-    ranges()
+    //ranges()
+    arrays()
+}
+
+fun arrays() {
+    //var names:Array<String> = arrayOf("John", "Jane", "Jill")
+    // Again, the type can be inferred:
+    var names = arrayOf("John", "Jane", "Jill")
+    names[0] = "Jack"
+    println(names.toList())
+
+    var ages: IntArray = intArrayOf(44, 30 ,27)
+    println(ages.toList())
+
+    // Type Double inferred on the array
+    var value = Array(10, {2.1})
+    println(value.toList())
+
+    // An array of 10 square numbers as strings
+    // special name "it" refers to an item in the array
+    // Unlike in ranges, we here get an initial array from 0 to 9
+    var squares = Array(10, {(it * it).toString()})
+    println(squares.toList())
 }
 
 fun ranges() {
@@ -19,15 +41,12 @@ fun ranges() {
     val d = 10.downTo(1)
     for(x in d) println(x)
 
-    // kotlin syntax: omit dot and parenthesis
+    // kotlin syntax: omit dot and parenthesis (not on all declarations though)
     var f = 10 downTo 1
 
     // steps in ranges
     var g = 30 downTo 1 step 3
     for(x in g) println(x)
-
-    //b.forEach(x -> println(x))
-
 }
 
 fun var_declarations() {
