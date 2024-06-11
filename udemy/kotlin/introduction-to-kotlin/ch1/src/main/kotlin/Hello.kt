@@ -2,7 +2,28 @@ fun main(args:Array<String>) {
     println("Hello Kotlin")
     //var_declarations()
     //ranges()
-    arrays()
+    //arrays()
+    chars_and_strings()
+}
+
+fun chars_and_strings() {
+    // Single quotes just like in Java
+    val a: Char = '\u0001'
+    println(a)
+
+    val b: String = "A string"
+    println(b)
+    println(b[4])
+    for (letter in b) println(letter)
+
+    val lit = """
+        hello
+          this is literal
+    """.trimIndent()
+    println(lit)
+
+    val price = 123
+    println("$price${'$'} at 10% discount = ${price - (price/10)}")
 }
 
 fun arrays() {
