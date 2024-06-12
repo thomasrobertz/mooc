@@ -1,7 +1,8 @@
 package KotlinSamples.Hello
 
+// Generics just like in Java Array<String>
 fun main(args:Array<String>) {
-    println("Hello Kotlin")
+    println("Hello Kotlin") // No semicolon necessary
     //var_declarations()
     //ranges()
     //arrays()
@@ -96,6 +97,8 @@ fun if_statement() {
     var feel:String
 
     // Standard
+    // Like in haskell, we always need an else block to,
+    //    becuase ifs are expressions and must always return something.
     if (temp < 10)
         feel = "cold"
     else if (temp >= 20)
@@ -167,6 +170,7 @@ fun arrays() {
     println(ages.toList())
 
     // Type Double inferred on the array
+    // Also notice how there is no "new" (as in new Array())
     var value = Array(10, {2.1})
     println(value.toList())
 
