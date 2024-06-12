@@ -21,9 +21,10 @@ fun main(args: Array<String>) {
 
     println(nestedFun(1,5))
 
-    val(m,n) = anotherDestructuringExample()
+    val(m, n) = anotherDestructuringExample()
     println("destructured pair: $m $n")
 
+    // Infix
     val a = 10.8
     val b = 12.7
     println("Avg is ${a averagedWith b}")
@@ -51,9 +52,10 @@ fun nestedFun(x: Int, y: Int): Int {
 }
 
 fun anotherDestructuringExample():Pair<Int, Int> {
-    return Pair(5,9)
+    return Pair(5, 9)
 }
 
+// Extension
 infix fun Double.averagedWith(other:Double):Double {
     return (this + other) / 2.0
 }

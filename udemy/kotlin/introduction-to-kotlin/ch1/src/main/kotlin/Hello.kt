@@ -73,12 +73,12 @@ fun flow_based_typing() {
     //s.length
 
     if(s != null) {
-        // In this block s has been null checked, like in Java OptionalisPresent
+        // In this block s has been null checked, like in Java Optional isPresent
         // so access to s.length is allowed
         println(s.length)
     }
 
-    // We get a super type that doesn't have the property
+    // Example: A super type that doesn't have a property we need
     // (Cloneable as super type just used for demonstrative purposes here)
     var x:Cloneable = intArrayOf(1, 2, 3)
 
@@ -123,9 +123,11 @@ fun nullability() {
     var nullableString: String? = null
     println(nullableString) // prints "null"
 
+    // Elvis
     var nullableLength: Int? = nullableString?.length
     println(nullableLength) // Also prints "null"
 
+    // Default value
     val defaultLength: Int = nullableString?.length ?: -1
     println(defaultLength) // Prints "-1"
 
@@ -169,7 +171,7 @@ fun arrays() {
     println(value.toList())
 
     // An array of 10 square numbers as strings
-    // special name "it" refers to an item in the array
+    // special name "it" refers to an item in the array (Like in Groovy)
     // Unlike in ranges, we here get an initial array from 0 to 9
     var squares = Array(10, {(it * it).toString()})
     println(squares.toList())
