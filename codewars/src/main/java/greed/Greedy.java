@@ -3,7 +3,7 @@ import java.util.Stack;
 import java.util.stream.IntStream;
 
 // https://www.codewars.com/kata/5270d0d18625160ada0000e4
-public class Greed {
+public class Greedy {
 
     public static class LedgerEntry {
         public int amountOccurred = 0;
