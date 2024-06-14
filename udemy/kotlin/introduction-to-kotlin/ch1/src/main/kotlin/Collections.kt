@@ -25,7 +25,7 @@ fun folds() {
         numbers.foldIndexed(0) { i, p, c ->
             val xp = Math.pow(base, (2 - i).toDouble()).toInt()
             println("i = $i \t p = $p \t c = $c \t xp = $xp")
-            c * xp + p // Ensure this is the last statement for the return value
+            c * xp + p // Last statement is automatically returned
         }
     }")
 
