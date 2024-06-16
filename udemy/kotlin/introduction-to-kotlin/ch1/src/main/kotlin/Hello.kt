@@ -38,7 +38,7 @@ fun when_exp() {
         is String -> println("It's a string")
     }
 
-    // It's also an expression
+    // It's also an expression (but then, like if, must be exhaustive)
     val q = when(code) {
         46 -> "Sweden"
         germany() -> "Germany"
@@ -126,7 +126,7 @@ fun nullability() {
     var nullableString: String? = null
     println(nullableString) // prints "null"
 
-    // Elvis
+    // Elvis Op
     var nullableLength: Int? = nullableString?.length
     println(nullableLength) // Also prints "null"
 
