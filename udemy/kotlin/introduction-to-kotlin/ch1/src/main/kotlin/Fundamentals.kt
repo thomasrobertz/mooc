@@ -1,4 +1,4 @@
-package KotlinSamples.Hello
+package KotlinSamples.Fundamentals
 
 // Generics just like in Java Array<String>
 fun main(args:Array<String>) {
