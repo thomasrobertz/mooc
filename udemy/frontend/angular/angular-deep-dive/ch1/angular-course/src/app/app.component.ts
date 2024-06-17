@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   data = {
-    title: 'angular-course-dd'
+    title: 'angular-course-dd<script>alert("malicious")</script>'
   }
   onLogoClick() {
     alert("You clicked")
