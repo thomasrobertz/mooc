@@ -1,5 +1,6 @@
 package KotlinSamples.Misc
 
+// Type aliases
 typealias FloatSet = Set<Float>
 typealias MapWithStringKeys<T> = Map<String, T>
 
