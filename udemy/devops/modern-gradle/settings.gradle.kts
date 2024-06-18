@@ -1,42 +1,28 @@
-// Recommended to set root project name (also is a SonarLint rule)
-rootProject.name = "modern-gradle"
-
 pluginManagement {
-    // Add plugins repos just like in dependency management
     repositories.gradlePluginPortal()
+    // repositories.mavenCentral()
+    // repositories.google()
+    // repositories.maven("https://my.location/repo") {
+    //     credentials.username = "..."
+    //     credentials.password = "..."
+    // }
 
-    // Add custom repos, include builds,...
+    includeBuild("gradle/plugins")
 }
 
-// Dependency management
 dependencyResolutionManagement {
     repositories.mavenCentral()
-    repositories.google()
+    // repositories.google()
+    // repositories.maven("https://my.location/repo") {
+    //     credentials.username = "..."
+    //     credentials.password = "..."
+    // }
 
-    /* Adding custom repos could look like:
-    repositories.maven("https://my.repo/repo") {
-        credentials.username = "youruser"
-        credentials.password = "passwd"
-    }
-    */
-
-    // Usually components downloaded from repos are binaries.
-    // In gradle we can also build components:
-    // includeBuild("../your-other-project") // Where to find components, need to add actual components too
+    // includeBuild("../my-other-project")
 }
 
-// Gradle projects consist of subprojects by default. Here we include them:
-include("app") // Corresponds to /app folder
+rootProject.name = "my-project"
+
+include("app")
 include("business-logic")
 include("data-model")
-
-// We put source into the gradle standard folder sturcture src/main/java
-// To add Java project facet to this, we add a build.gradle.kts file.
-// Now if we sync gradle, IntelliJ should pick up src/main as a gradle Java build directory
-// and mark 'MessageModel.java' as a source file.
-// As soon as we do that and open the MessageModel file, we should see the linter complain:
-//
-//    The default unnamed package should not be used
-//
-// So we add a package and class definition.
-

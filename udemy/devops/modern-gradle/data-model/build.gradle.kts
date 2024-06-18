@@ -1,6 +1,7 @@
-// A clean gradle build file should start with a plugin block
+// A clean gradle build file should start with a plugin block.
+// This also allows us to define plugins locally.
 plugins {
-    id("java-library") // Specifies a Java library module. Also applies id("java") which adds core Java functionality
+    id("my-java-library") // Specifies a Java library module. Also applies id("java") which adds core Java functionality
 }
 
 java {
