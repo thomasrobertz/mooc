@@ -25,7 +25,12 @@ dependencyResolutionManagement {
     // includeBuild("../your-other-project") // Where to find components, need to add actual components too
 }
 
-// Gradle projects consist of subprojects by default. Here we include them
-include("app")
+// Gradle projects consist of subprojects by default. Here we include them:
+include("app") // Corresponds to /app folder
 include("business-logic")
 include("data-model")
+
+// We put source into the gradle standard folder sturcture src/main/java
+// To add Java project facet to this, we add a build.gradle.kts file.
+// Now if we sync gradle, IntelliJ should pick up src/main as a gradle Java build directory
+// and mark 'MessageModel.java' as a source file.
