@@ -34,3 +34,9 @@ include("data-model")
 // To add Java project facet to this, we add a build.gradle.kts file.
 // Now if we sync gradle, IntelliJ should pick up src/main as a gradle Java build directory
 // and mark 'MessageModel.java' as a source file.
+// As soon as we do that and open the MessageModel file, we should see the linter complain:
+//
+//    The default unnamed package should not be used
+//
+// So we add a package and class definition.
+
