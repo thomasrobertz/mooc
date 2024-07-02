@@ -13,17 +13,19 @@ import org.springframework.web.client.RestClient;
 @RequestMapping("traditional")
 @Slf4j
 public class TraditionalWebController {
-	private final RestClient restClient = RestClient.builder().build();
+	private final RestClient restClient = RestClient.builder()
+			.baseUrl("http://localhost:7070")
+			.build();
 
 	@GetMapping("products")
 	public List<Product> getProducts() {
-		Object resultList = this.restClient
+		List<Product> resultList = restClient
 				.get()
-				.uri("http://localhost:7070/demo01/products")
+				.uri("/demo01/products")
 				.retrieve()
 				.body(new ParameterizedTypeReference<>() {
 				});
 		log.info("Response: {}", resultList);
-		return (List<Product>) resultList;
+		return resultList;
 	}
 }
