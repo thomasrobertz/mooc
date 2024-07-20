@@ -1,6 +1,6 @@
-package de.robertz.publisher;
+package de.robertz.sec01.subscriber.publisher;
 
-import de.robertz.subscriber.MySubscriber;
+import de.robertz.sec01.subscriber.MySubscriber;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.slf4j.Logger;

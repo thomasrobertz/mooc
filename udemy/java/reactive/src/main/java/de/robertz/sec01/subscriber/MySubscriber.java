@@ -1,4 +1,4 @@
-package de.robertz.subscriber;
+package de.robertz.sec01.subscriber;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

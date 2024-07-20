@@ -1,7 +1,7 @@
-package de.robertz.publisher;
+package de.robertz.sec01.subscriber.publisher;
 
 import com.github.javafaker.Faker;
-import de.robertz.subscriber.MySubscriber;
+import de.robertz.sec01.subscriber.MySubscriber;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import org.slf4j.Logger;
