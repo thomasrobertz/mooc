@@ -20,6 +20,9 @@ import { ContactComponent } from './contact/contact.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
+// In this commit we can learn about the lifecycles that happen in routing.events
+// We have added logging to HomeComponent. Look at the console when browsing.
+
 export const ROUTES: Routes = [
   {
     path: 'home',
@@ -60,7 +63,7 @@ export const ROUTES: Routes = [
     MatMenuModule,
     MatButtonModule,
     RouterModule.forRoot(ROUTES, {
-      enableTracing: false  // Logs router events to the console
+      enableTracing: true  // Logs router events to the console
     })
   ],
   providers: [],
