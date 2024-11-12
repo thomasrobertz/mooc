@@ -28,9 +28,13 @@ export const ROUTES: Routes = [
   {
     path: '',
     //component: HomeComponent  // Would work, too
-    redirectTo: '/home',          // But this way it will always show /home. (We may or may not want that)
+    redirectTo: '/home',        // But this way it will always show /home. (We may or may not want that)
     pathMatch: 'full',
   },
+  {
+    path: '**', // Wildcard matcher
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({
@@ -55,7 +59,9 @@ export const ROUTES: Routes = [
     RouterModule,
     MatMenuModule,
     MatButtonModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES, {
+      enableTracing: false  // Logs router events to the console
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
