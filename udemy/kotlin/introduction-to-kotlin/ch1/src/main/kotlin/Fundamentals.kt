@@ -1,4 +1,4 @@
-package KotlinSamples.Hello
+package KotlinSamples.Fundamentals
 
 // Generics just like in Java Array<String>
 fun main(args:Array<String>) {
@@ -68,6 +68,8 @@ fun for_loops() {
 }
 
 fun flow_based_typing() {
+    // Also called Smart Typing
+
     var s:String? = "nlbl"
 
     // Error: Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type String?
@@ -97,8 +99,8 @@ fun if_statement() {
     var feel:String
 
     // Standard
-    // Like in haskell, we always need an else block to,
-    //    becuase ifs are expressions and must always return something.
+    // Like in haskell, we always need an else block too,
+    //    because ifs are expressions and must always return something.
     if (temp < 10)
         feel = "cold"
     else if (temp >= 20)

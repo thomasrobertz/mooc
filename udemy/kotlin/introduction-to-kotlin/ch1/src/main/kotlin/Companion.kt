@@ -9,12 +9,12 @@ fun main(a:Array<String>) {
 
     var factoryPoint = PointC.newCartesianPoint(4.5, 5.6)
 
-    // Could also reference by Companion explicitly, but that is redundant
+    // Could also reference by Companion explicitly, but that is redundant in this case
     PointC.Companion.newPolarPoint(1.2, 3.4)
 }
 
 class PointC(var x:Double, var y:Double) {
-    // Companion is like an inner static class that can partially reference the containing class
+    // Companion is like an inner static class that can reference the containing class
     companion object {
         fun newCartesianPoint(x:Double, y:Double): PointC {
             return PointC(x, y)

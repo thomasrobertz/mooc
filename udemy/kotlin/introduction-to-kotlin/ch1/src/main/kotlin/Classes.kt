@@ -41,7 +41,7 @@ class Person {
     var name: String = ""
     var age:Int = -1
 
-    // Read only field with getter
+    // Read only field with getter. An example of canVote being the "backing field"
     val canVote: Boolean
         get() = age >= 16
 
@@ -82,4 +82,45 @@ class Human(name:String, age:Int) {
 
 // Primary Cons with init block, storing parameters as vals
 class HumanWithStoredParams(val name:String, var age:Int) {
+}
+
+class Secondary {
+    val name: String
+
+    init {
+        println("Initializer block runs after the secondary constructor.")
+    }
+
+    // Secondary constructor
+    constructor(name: String) {
+        this.name = name
+        println("Secondary constructor: Name is $name")
+    }
+}
+
+class PrimaryAndSecondary(val name: String) {
+    init {
+        println("Primary constructor: Name is $name")
+    }
+
+    // Must delegate to the primary cons
+    constructor(name: String, age: Int) : this(name) {
+        println("Secondary constructor: Name is $name, Age is $age")
+    }
+}
+
+class StaticInitializer {
+    companion object {
+        init {
+            println("This is similar to a static initializer block in Java.")
+        }
+
+        val staticValue: String = "Static Property Initialized"
+    }
+}
+
+class LazyInit {
+    val expensiveResource: Resource by lazy { // See also lateinit 
+        Resource.load()
+    }
 }

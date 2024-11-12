@@ -5,7 +5,6 @@ fun main(a: Array<String>) {
     var a = Manager("Alfred", listOf(j))
 
     j.talk()
-    // In this commit, Manager doesn't have talk()
     a.talk()
 }
 

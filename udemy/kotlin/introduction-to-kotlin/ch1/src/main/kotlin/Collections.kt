@@ -59,7 +59,7 @@ fun aggregates() {
         }
     }")
 
-    /*
+    /* Essentially reduce reversed (meaning, starting at the end of the list instead of at the beginning)
         RR 4 + 5    (9 <- partial result)
         RR 3 + 9    (12)
         RR 2 + 12   (14)

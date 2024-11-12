@@ -1,6 +1,6 @@
 package KotlinSamples.Functions
 
-import KotlinSamples.Hello.germany
+import KotlinSamples.Fundamentals.germany
 
 fun printGermany() {
     println(germany())
