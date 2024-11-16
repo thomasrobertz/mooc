@@ -1,12 +1,12 @@
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withDebugTracing } from '@angular/router';
 import { ROUTES } from './app.routes'
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
-    provideRouter(ROUTES),
+    provideRouter(ROUTES, withDebugTracing()),
   ]
 };
 
