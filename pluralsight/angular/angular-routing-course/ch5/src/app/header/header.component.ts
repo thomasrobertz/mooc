@@ -23,7 +23,16 @@ import { ROUTE_SEGMENTS } from '../app.routes';
 })
 export class HeaderComponent {
   readonly Category = Category;
+
+  /* Why this "redclaration" of ROUTE_SEGMENTS despite it already being imported above?
+   In Angular, templates can only access properties and methods defined on the
+   component instance. Imported constants or variables are not automatically available
+    in the template's scope.
+    So this is *Template context*, and this behavior is therefore consistent across both
+    standalone and non-standalone components (In effect, the declaration is mandatory).
+   */
   readonly ROUTE_SEGMENTS = ROUTE_SEGMENTS;
+
   constructor(
     private readonly pieService: PieService
   ){}
