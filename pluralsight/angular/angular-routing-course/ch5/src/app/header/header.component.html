@@ -1,0 +1,46 @@
+<header class="site-header">
+  <div class="site-header-wrapper">
+    <h1>
+      <button
+        routerLink="/"
+        mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></button>
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <button
+            routerLinkActive="active-link"
+            class="menu-item" mat-button [matMenuTriggerFor]="menu"
+          >Shop
+            <span>&#8964;</span>
+            <mat-menu class="menu-dropdown" #menu="matMenu">
+              <button mat-menu-item
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
+                      (click)="changeCategory(Category.SEASONAL_PIE)">Seasonal Pies</button>
+              <button mat-menu-item
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
+                      (click)="changeCategory(Category.FRUIT_PIE)">Fruit Pies</button>
+              <button mat-menu-item
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
+                      (click)="changeCategory(Category.CHEESECAKE)">Cheesecakes</button>
+              <button mat-menu-item
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
+                      (click)="changeCategory(Category.ALL)">All Pies</button>
+            </mat-menu>
+          </button>
+        </li>
+        <li><button class="menu-item" mat-button
+          routerLinkActive="active-link"
+          [routerLink]="[ROUTE_SEGMENTS.CONTACT]">Contact</button></li>
+        <li><button class="menu-item" mat-button
+          routerLinkActive="active-link"
+          [routerLink]="[ROUTE_SEGMENTS.ABOUT]">About</button></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <ul>
+        <li><button mat-menu-item><img src="../../assets/images/cart-icon.png" alt="shopping cart icon" /></button></li>
+      </ul>
+    </div>
+  </div>
+</header>
