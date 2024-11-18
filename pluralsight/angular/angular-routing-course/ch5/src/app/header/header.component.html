@@ -8,7 +8,9 @@
     <nav>
       <ul>
         <li>
+          <!-- aria-current is for accessibility (indicate element for screen reader or similar) -->
           <button
+            ariaCurrentWhenActive="page"
             routerLinkActive="active-link"
             class="menu-item" mat-button [matMenuTriggerFor]="menu"
           >Shop
@@ -30,9 +32,11 @@
           </button>
         </li>
         <li><button class="menu-item" mat-button
+          ariaCurrentWhenActive="page"
           routerLinkActive="active-link"
           [routerLink]="[ROUTE_SEGMENTS.CONTACT]">Contact</button></li>
         <li><button class="menu-item" mat-button
+          ariaCurrentWhenActive="page"
           routerLinkActive="active-link"
           [routerLink]="[ROUTE_SEGMENTS.ABOUT]">About</button></li>
       </ul>
