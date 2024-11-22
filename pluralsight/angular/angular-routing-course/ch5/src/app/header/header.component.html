@@ -16,18 +16,22 @@
           >Shop
             <span>&#8964;</span>
             <mat-menu class="menu-dropdown" #menu="matMenu">
+              <!-- The second parameter is the path parameter.
+                We also removed the click events.
+                We could now also use anchors instead of buttons.
+              -->
               <button mat-menu-item
-                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
-                      (click)="changeCategory(Category.SEASONAL_PIE)">Seasonal Pies</button>
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.SEASONAL_PIE]"
+              >Seasonal Pies</button>
               <button mat-menu-item
-                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
-                      (click)="changeCategory(Category.FRUIT_PIE)">Fruit Pies</button>
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.FRUIT_PIE]"
+              >Fruit Pies</button>
               <button mat-menu-item
-                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
-                      (click)="changeCategory(Category.CHEESECAKE)">Cheesecakes</button>
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.CHEESECAKE]"
+              >Cheesecakes</button>
               <button mat-menu-item
-                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS]"
-                      (click)="changeCategory(Category.ALL)">All Pies</button>
+                      [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.ALL]"
+              >All Pies</button>
             </mat-menu>
           </button>
         </li>

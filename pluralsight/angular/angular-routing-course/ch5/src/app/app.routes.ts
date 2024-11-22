@@ -23,7 +23,7 @@ export const ROUTES: Routes = [
     component: HomeComponent,
   },
   {
-    path: ROUTE_SEGMENTS.PRODUCTS,
+    path: `${ROUTE_SEGMENTS.PRODUCTS}/:categoryId`,
     component: ProductsViewComponent,
   },
   {
