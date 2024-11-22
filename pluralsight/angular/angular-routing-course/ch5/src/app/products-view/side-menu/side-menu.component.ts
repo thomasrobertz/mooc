@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -8,6 +9,8 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
     NgFor,
     NgIf,
     AsyncPipe,
+    RouterLink, // As we know by now, in standalone components we need to import used classes.
+    RouterLinkActive,
   ],
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
