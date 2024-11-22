@@ -24,6 +24,7 @@ export class CardComponent {
   selectPie(pie: Pie) {
     this.router.navigate([`../${ROUTE_SEGMENTS.PRODUCTS}`, pie.category], {
       relativeTo: this.activatedRoute,
+      queryParams: { productId: pie.id },
     });
   }
 }

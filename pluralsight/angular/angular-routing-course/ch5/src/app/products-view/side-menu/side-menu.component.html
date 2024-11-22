@@ -2,6 +2,7 @@
   <button
     *ngFor="let pie of pies$ | async"
     class="image-button"
+    routerLinkActive="active-link"
     [routerLink] = "'./'"
     [queryParams]="{ productId: pie.id }"
   >
