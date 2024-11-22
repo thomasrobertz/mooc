@@ -21,15 +21,19 @@
                 We could now also use anchors instead of buttons.
               -->
               <button mat-menu-item
+                      routerLinkActive = "active-link-li"
                       [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.SEASONAL_PIE]"
               >Seasonal Pies</button>
               <button mat-menu-item
+                      routerLinkActive = "active-link-li"
                       [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.FRUIT_PIE]"
               >Fruit Pies</button>
               <button mat-menu-item
+                      routerLinkActive = "active-link-li"
                       [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.CHEESECAKE]"
               >Cheesecakes</button>
               <button mat-menu-item
+                      routerLinkActive = "active-link-li"
                       [routerLink]="[ROUTE_SEGMENTS.PRODUCTS, Category.ALL]"
               >All Pies</button>
             </mat-menu>

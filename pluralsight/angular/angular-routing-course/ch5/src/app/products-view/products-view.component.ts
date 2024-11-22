@@ -23,6 +23,9 @@ export class ProductsViewComponent {
 
     So ProductsViewComponent is where we'll "land". That's why we need to consume the
     path parameter here.
+
+    Flow of state is:
+    User selection -> Router -> Activated Component -> Stateful Service -> Consumer
   */
 
   // Consume the categoryId path parameter and set category. Not the name must match (categoryId).
