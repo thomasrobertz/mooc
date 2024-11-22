@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Category } from '../models/pie';
-import { PieService } from '../services/pie.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -13,8 +12,6 @@ import { ROUTE_SEGMENTS } from '../app.routes';
     MatMenuModule,
     MatButtonModule,
     RouterLink,
-    // Without this, everything would work but we would not see active link css applied (Silent Error)
-    // Remember we are in a standalone component so everything has to be imported/declared.
     RouterLinkActive,
   ],
   selector: 'app-header',
@@ -23,15 +20,19 @@ import { ROUTE_SEGMENTS } from '../app.routes';
 })
 export class HeaderComponent {
   readonly Category = Category;
-
-  /* Why this "redclaration" of ROUTE_SEGMENTS despite it already being imported above?
-   In Angular, templates can only access properties and methods defined on the
-   component instance. Imported constants or variables are not automatically available
-    in the template's scope.
-    So this is *Template context*, and this behavior is therefore consistent across both
-    standalone and non-standalone components (In effect, the declaration is mandatory).
-   */
   readonly ROUTE_SEGMENTS = ROUTE_SEGMENTS;
+
+/* We can remove this code. It was for handling the click events from the categories.
+ But now we want to use path parameter categoryId to drive state change.
+
+ We will use the Router for this (It will become Single Source Of Truth for the state):
+  -It is already a globally available service
+  -It is already concerned with routing
+  -It can drive state changes
+  -It already accepts parameters and allows to consume them
+
+So all we need to do is add some form of storage to the Router, effectively
+making the routerLink parameters (like categoryId) available globally.
 
   constructor(
     private readonly pieService: PieService
@@ -40,5 +41,6 @@ export class HeaderComponent {
   changeCategory(category: Category){
     this.pieService.setSelectedCategory(category);
   }
+*/
 
 }
