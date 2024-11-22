@@ -1,6 +1,6 @@
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter, withDebugTracing } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withDebugTracing } from '@angular/router';
 import { ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -8,6 +8,8 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideRouter(
       ROUTES,
+      // Automatically bind input parameters. Needed for standalone components.
+      withComponentInputBinding(),
       withDebugTracing(),
     ),
   ]
