@@ -33,7 +33,10 @@ export const ROUTES: Routes = [
   },
   {
     path: ROUTER_TOKENS.CONTACT,
-    component: ContactComponent,
+    // For a standalone component, we are already "telling" the router which component to load.
+    // So there's no need to add a child route. You should still see the lazy laoding of:
+    //    http://localhost:4200/src_app_contact_contact_component_ts.js
+    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
   },
   {
     path: ROUTER_TOKENS.ABOUT,
