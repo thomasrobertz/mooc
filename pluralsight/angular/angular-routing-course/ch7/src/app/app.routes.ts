@@ -4,6 +4,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsViewComponent } from './products-view/products-view.component';
+import { PRODUCT_ROUTES } from './products-view/products.routes'
 
 export enum ROUTER_TOKENS {
   HOME = 'home',
@@ -27,6 +28,7 @@ export const ROUTES: Routes = [
   {
     path: `${ROUTER_TOKENS.SHOP}/:categoryId` ,
     component: ProductsViewComponent,
+    children: PRODUCT_ROUTES,
   },
   {
     path: ROUTER_TOKENS.CONTACT,
