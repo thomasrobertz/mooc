@@ -3,6 +3,7 @@
     Bethany's Pie Shop Shopping Cart
   </span><button
     mat-raised-button
+    (click)="close()"
   >close</button></div>
   <div class="cart-items-wrapper" *ngIf="!submitted; else formSubmitted">
     <div class="cart-item" *ngFor="let item of cartItemsPlusQuantity()">
@@ -47,7 +48,7 @@
       </div>
       <div class="totals-details-wrapper">
         <button *ngIf="!loading" mat-button-raised
-        (click)="checkout()">Checkout</button>
+                (click)="checkout()">Checkout</button>
         <mat-spinner diameter="40" *ngIf="loading"></mat-spinner>
       </div>
     </div>
@@ -64,12 +65,12 @@
         </div>
         <div class="totals-details-wrapper">
           <button
-          mat-button-raised
+            mat-button-raised
+            (click)="close()"
           >Close Cart</button>
         </div>
       </div>
     </div>
   </ng-template>
 </div>
-
 

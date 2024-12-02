@@ -7,7 +7,8 @@ import { ReplaySubject, takeUntil } from 'rxjs';
 import { ContactForm } from '../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { ROUTER_TOKENS } from '../app.routes';
 
 @Component({
   selector: 'app-cart',
@@ -18,13 +19,13 @@ import { RouterLink } from '@angular/router';
     MatButtonModule,
     FormsModule,
     MatProgressSpinnerModule,
-    RouterLink,
   ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
   readonly cartService = inject(CartService);
+  readonly router = inject(Router);
 
   readonly cartItemsPlusQuantity = this.cartService.cartItemsPlusQuantity;
   readonly subtotal = this.cartService.subtotal;
@@ -51,7 +52,11 @@ export class CartComponent {
   }
 
   close() {
-    this.submitted = false;
+    // Passing null "removes" the route (effectively closing the cart)
+    this.router.navigate([{ outlets: { [ROUTER_TOKENS.CART]: null } }], {
+      // We want our query parameters to persist though.
+      queryParamsHandling: 'merge'
+    });
   }
 
   ngOnDestroy(): void {
