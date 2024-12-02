@@ -27,14 +27,23 @@ export const ROUTES: Routes = [
     component: HomeComponent,
   },
   {
-    path: `${ROUTER_TOKENS.SHOP}/:categoryId` ,
-    component: ProductsViewComponent,
-    children: PRODUCT_ROUTES,
+    path: `${ROUTER_TOKENS.SHOP}/:categoryId`,
+
+    // If we kept this, we wouldn't be lazy loading, the component would be loaded instantly by the router instead.
+    // So we move this to PRODUCT_ROUTES from products.routes as child routes.
+    //component: ProductsViewComponent,
+
+    loadChildren: () => import('./products-view/products.routes').then(m => m.PRODUCT_ROUTES),
+
+    // We should see something lazy loaded like:
+    //    http://localhost:4200/src_app_products-view_products-view_component_ts-src_app_products-view_products_routes_ts-src-98f286.js
+    //
+    // Note: Try `ng build` to see how each code split is built, it will be listed.
   },
   {
     path: ROUTER_TOKENS.CONTACT,
     // For a standalone component, we are already "telling" the router which component to load.
-    // So there's no need to add a child route. You should still see the lazy laoding of:
+    // So there's no need to add a child route. You should still see the lazy loading of:
     //    http://localhost:4200/src_app_contact_contact_component_ts.js
     loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
   },
