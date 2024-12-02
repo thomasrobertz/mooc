@@ -37,9 +37,6 @@ export const ROUTES: Routes = [
   },
   {
     path: ROUTER_TOKENS.ABOUT,
-    // This won't work on its own, because it only tells ng which chunk js to load.
-    // We also need to add a child route to be appended to the router.
-    // We will do that in the AboutComponent.
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
   },
   {
