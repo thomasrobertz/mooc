@@ -19,7 +19,7 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <!-- Tried with higher versions (3.7.2, 3.9.2), always get an error -->
-            <version>3.4.12</version>
+            <version>3.8.4</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
